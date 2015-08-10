@@ -42,11 +42,11 @@
     width: 100%;height:auto;
 }
 .card1{
-    width: 96%;height:auto;padding:40px;font-size:18px;margin:0 auto;background:#fff;margin-top:-24px;font-weight: bold;
-    position: relative;z-index: 1;line-height:38px ;
+    width: 96%;height:auto;padding:20px;font-size:18px;margin:0 auto;background:#fff;margin-top:-24px;font-weight: bold;
+    position: relative;z-index: 1;line-height:30px ;
 }
 .card2{
-    width: 96%;height:auto;padding:40px;font-size:16px;margin:0 auto;background:#fff;margin-top:15px;  line-height: 38px;
+    width: 96%;height:auto;padding:20px;font-size:16px;margin:0 auto;background:#fff;margin-top:15px;  line-height: 30px;
 }
 .pinglun{
     width: 96%;height:auto;background:#fff;margin:0 auto;margin-top:15px;
@@ -125,10 +125,10 @@ width: 100%;height: auto;
     width: 26%;height:69%;float:left;margin-left:5%;
 }
 .bigword{
-    width: 120%;height:auto;font-size:24px;color:#fff;
+    width: 120%;height:auto;font-size:20px;color:#fff;
 }
 .sword{
-    width:120%;height:auto;font-size:8px;margin-top:14px;color:#fff;
+    width:150%;height:auto;font-size:10px;margin-top:14px;color:#fff;
 }
 .download{
     display:inline-block;width: 27%;height:100%;float:left;margin-left:13%;line-height:60px;
