@@ -1,0 +1,144 @@
+*{
+    margin:0;padding:0;list-style: none;font-weight: normal;box-sizing: border-box;
+}
+.header{
+    width: 100%;height: 50px;background:#999;position: relative;
+}
+.headerword{
+    width: 100%;height:100%;font-size:24px;color:#fff;text-align: center;line-height: 50px;
+}
+.headercircle{
+    width: 20px;height: 100%;position: absolute;right: 10%;top:0
+}
+.circle{
+    width: 10px;height: 10px;background: #fff;border-radius: 50%;margin-top:5px;margin-left:5px
+}
+.banner{
+    width: 100%;height: auto;position: relative;
+}
+#bannerImg{
+    width: 100%;
+}
+.bannertitle{
+    display:block;width: 90%;height: 88px;position:absolute;left:5%;bottom:10%;font-size: 22px;
+    line-height: 26px;color:#fff;
+}
+.bannertime{
+    width: 90%;height:16px;position: absolute;left: 5%;bottom:9%;line-height:16px;
+}
+.date{
+      display: block;float:left;font-size: 14px;color:#fff;
+}
+.time{
+    display: block;float:left;font-size: 14px;color:#fff;margin-left:24px ;
+}
+.wendu{
+    display: block;float:left;font-size: 14px;color:#fff;margin-left:36px;
+}
+.wenduword{
+    width: 90px;height: 100%;margin-left:20px;color:red;
+}
+.cardbox{
+    width: 100%;height:auto;
+}
+.card1{
+    width: 96%;height:auto;padding:40px;font-size:18px;margin:0 auto;background:#fff;margin-top:-24px;font-weight: bold;
+    position: relative;z-index: 1;line-height:38px ;
+}
+.card2{
+    width: 96%;height:auto;padding:40px;font-size:16px;margin:0 auto;background:#fff;margin-top:15px;  line-height: 38px;
+}
+.pinglun{
+    width: 96%;height:auto;background:#fff;margin:0 auto;margin-top:15px;
+}
+.pingluntop{
+width: 100%;height: auto;
+}
+.pingluntop img{
+    width: 100%;
+}
+.pinglunbox{
+    width: 100%;height: auto;padding: 56px 40px;margin: 0 auto;
+}
+.pingluncard{
+    width:100%;height:auto;overflow: hidden;margin-top:22px;
+}
+.pinglunperson{
+    width: 35px;height:35px;float:left;border:2px solid blue;border-radius: 50%;overflow: hidden;
+}
+.pinglunword{
+    width: 84%;height: auto;float:left;margin-left:3%;position: relative;
+}
+.pingluntitle{
+    display:block;width: 100%;height: 25px;
+}
+.pinglunname{
+    font-size:14px;color:#2b2b2b;margin-left:3%;float:left;
+}
+.pingluncon{
+    display:block;width: 100%;height:auto;line-height: 29px;margin-top:25px;
+}
+.pinglunw{
+    width: 35px;height:100%;float:left;border:1px solid #fff;
+}
+.plconword{
+    margin-float:333px;font-size:16px;color:#9c9c9c;
+}
+.pinglunline{
+    width: 100%;height: 22px;border-bottom:1px dashed #dadada;
+}
+.pinglunfoot{
+    width: 100%;height: 125px;border-top:1px solid #dadada;font-size:18px;text-align: center;
+    line-height: 125px;
+}
+/*pinglun end*/
+.pointcard{
+    width: 100%;height:230px;padding:35px 30px;border-bottom:1px solid #dadada;overflow: hidden;position: relative;
+}
+.pointtu{
+    width: 24%;height: 69%;background: red;float:left;overflow: hidden;
+}
+.pointword{
+    width:73%;height: auto;margin-left:3%;font-size:16px;color:#2b2b2b;line-height:40px;float:left;
+}
+.pointsword{
+    width: 50%;height: auto;font-size: 12px;color:#9c9c9c;position: absolute;right: 30px;bottom:35px;
+    text-align:right;
+}
+/*point end*/
+.footimg{
+    width: 96%;height:auto;margin:0 auto;margin-top:15px;
+}
+.footimg img{
+    width: 100%;
+}
+.footer{
+    width: 100%;height:100px;background:rgba(0,0,0,0.8);padding:25px;margin-top:15px;position:fixed;bottom:0px;z-index:99;
+}
+.footertu{
+    width: 13%;height: 69%;float:left;
+}
+.footertu img{
+    width: 100%;
+}
+.footerword{
+    width: 26%;height:69%;float:left;margin-left:5%;
+}
+.bigword{
+    width: 120%;height:auto;font-size:24px;color:#fff;
+}
+.sword{
+    width:120%;height:auto;font-size:8px;margin-top:14px;color:#fff;
+}
+.download{
+    display:inline-block;width: 27%;height:100%;float:left;margin-left:13%;line-height:60px;
+}
+.download img{
+    width: 100%;
+}
+.close{
+    width: 3%;height:100%;float:left;margin-left:7%;display: inline-block;line-height: 50px;
+}
+.close img{
+    width:100%;
+}
