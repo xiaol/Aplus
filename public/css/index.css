@@ -42,11 +42,11 @@
     width: 100%;height:auto;
 }
 .card1{
-    width: 96%;height:auto;padding:20px;font-size:18px;margin:0 auto;background:#fff;margin-top:-24px;font-weight: bold;
-    position: relative;z-index: 1;line-height:30px ;
+    width: 96%;height:auto;padding:10px;font-size:18px;margin:0 auto;background:#fff;margin-top:-24px;font-weight: bold;
+    position: relative;z-index: 1;line-height:25px ;
 }
 .card2{
-    width: 96%;height:auto;padding:20px;font-size:16px;margin:0 auto;background:#fff;margin-top:15px;  line-height: 30px;
+    width: 96%;height:auto;padding:10px;font-size:16px;margin:0 auto;background:#fff;margin-top:15px;  line-height: 25px;
 }
 .pinglun{
     width: 96%;height:auto;background:#fff;margin:0 auto;margin-top:15px;
