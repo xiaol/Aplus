@@ -19,6 +19,9 @@
 #bannerImg{
     width: 100%;
 }
+.yingdao{
+    width: 40%;height: auto;position: absolute;top:0;right:5%;display: none;
+}
 .bannertitle{
     display:block;width: 90%;height: 88px;position:absolute;left:5%;bottom:10%;font-size: 22px;
     line-height: 26px;color:#fff;
