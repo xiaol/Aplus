@@ -16,6 +16,9 @@
 .banner{
     width: 100%;height: auto;position: relative;
 }
+.bannerzhe{
+    width: 100%;heigh:auto;background:rgba(0,0,0,0.5);position: absolute;bottom: 0;left:0;z-index:1;
+}
 #bannerImg{
     width: 100%;
 }
@@ -26,11 +29,11 @@
     width: 100%;
 }
 .bannertitle{
-    display:block;width: 90%;height: 88px;position:absolute;left:5%;bottom:9%;font-size: 22px;
+    display:block;width: 90%;height:40px;font-size: 22px;margin-top:3%;margin-left:5%;
     line-height: 26px;color:#fff;
 }
 .bannertime{
-    width: 90%;height:16px;position: absolute;left: 5%;bottom:9%;line-height:16px;
+    width: 90%;height:16px;margin-bottom:9% ;margin-left:5%;
 }
 .date{
     display: block;float:left;font-size: 14px;color:#fff;
@@ -109,7 +112,7 @@ img[class=card2]{
     width: 84%;height: auto;float:left;margin-left:3%;position: relative;font-size:16px;color:#35a6fb;line-height:25px;
 }
 .pinglunshu{
-    width: 40px;height: 20px;float:right;margin-top:10px;font-size: 16px;color:#35a6fb;text-align:left;line-height: 20px;
+    width: 40px;height: 20px;float:right;margin-top:10px;font-size: 16px;color:#35a6fb;text-align:center;line-height: 20px;
 }
 .pinglunmore{
     width: 28px;height: 18px;background:url("../img/pingluntu.png");float:right;margin-right:2%;margin-top:10px;
@@ -182,7 +185,7 @@ img[class=card2]{
     width: 100%;
 }
 .close{
-    width: 3%;height:100%;float:right;margin-left:3%;display: inline-block;margin-top:0 ;
+    width: 3%;height:100%;float:right;margin-left:3%;display: inline-block;margin-top:0px;position:absolute;top:7px;right:7px;
 }
 .close img{
     width:100%;
