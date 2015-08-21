@@ -26,7 +26,7 @@
     width: 100%;
 }
 .bannertitle{
-    display:block;width: 90%;height: 88px;position:absolute;left:5%;bottom:10%;font-size: 22px;
+    display:block;width: 90%;height: 88px;position:absolute;left:5%;bottom:9%;font-size: 22px;
     line-height: 26px;color:#fff;
 }
 .bannertime{
@@ -53,6 +53,9 @@
 }
 .card2{
     width: 96%;height:auto;padding:10px;font-size:16px;margin:0 auto;background:#fff;margin-top:15px;  line-height: 25px;
+}
+img[class=card2]{
+    display:block;width: 100%;height:auto;font-size:16px;margin:0 auto;background:#fff;line-height: 25px;
 }
 .cardChild{
     width: 100%;height:auto;margin-top:10px;font-size:16px;color:#35a6fb;line-height:25px;overflow:hidden;

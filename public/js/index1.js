@@ -1,5 +1,26 @@
 $(function(){
     var ch=$(window).height();
+    function obj2key(obj, keys){
+        var n = keys.length,
+            key = [];
+        while(n--){
+            key.push(obj[keys[n]]);
+        }
+        return key.join('|');
+    }
+//去重操作
+    function uniqeByKeys(array,keys){
+        var arr = [];
+        var hash = {};
+        for (var i = 0, j = array.length; i < j; i++) {
+            var k = obj2key(array[i], keys);
+            if (!(k in hash)) {
+                hash[k] = true;
+                arr .push(array[i]);
+            }
+        }
+        return arr ;
+    }
     $(window).ready(function(){
         function GetRequest() {
             var url =location.search; //获取url中"?"符后的字串
@@ -32,18 +53,44 @@ $(function(){
                 success: function (data) {
                     var cons=data['content'];
                     var time=data['updateTime'];
+                    var point=data['point'];
                     var abs=data['abs'];$(".date").html(time);$(".card1").html(abs);
+                    var img=data['imgUrl'];
+                    $("#bannerImg").attr("src",img);
+                    var title=data['title'];
+                    $(".bannertitle").html(title);
+                    var arr = uniqeByKeys(point,['paragraphIndex']);console.log(arr);
                     for(var i=0;i<cons.length;i++){
                         for(var j in cons[i]){
                             for(var k in cons[i][j]){
-                                if(k=="img"){$("#bannerImg").attr("src",cons[i][j][k]);
-                                }else if(k=="img_info"){
-                                    $(".bannertitle").html(cons[i][j][k]);
-                                }else if(k=="txt"){
-                                    //$("<div class='cardChild'></div>").html(j).appendTo(".card2");
+                                if(k=="img"){
+                                    //$("#bannerImg").attr("src",cons[i][j][k]);
+                                    $("<div class='card2'></div>").attr({"src":cons[i][j][k],"id":"card"+j}).css("margin","15px auto").appendTo(".cardbox");
+                                    $("<img class='card2'>").attr("src",cons[i][j][k]).appendTo("#card"+j);
+                                }else{
+                                    $("<div class='card2'></div>").attr("id","card"+j).html(cons[i][j][k]).appendTo(".cardbox");
+                                }
+                            }}}
+                    for(var k=0;k<arr.length;k++) {//循环arr数组，为每段内容动态添加相应的评论
 
-                                    $("<div class='card2'></div>").html(cons[i][j][k]).appendTo(".cardbox");}}}}},
-                error: function () {alert("失败");}})
+                        $("<div class='cardChild'</div>").attr("id","child"+arr[k]['paragraphIndex']).appendTo("#card"+arr[k]['paragraphIndex']);
+                        $("<div class='pinglunword'></div>").appendTo("#child"+arr[k]['paragraphIndex']);
+                        $("<div class='pinglunperson'></div>").appendTo("#child"+arr[k]['paragraphIndex']);
+                        $("<img src="+arr[k]['userIcon']+">").css({"background-clip":"content-box",width:"100%"}).appendTo(".pinglunperson");
+                        $("<div class='pinglunword'></div>").html(arr[k]['srcText']).appendTo("#child"+arr[k]['paragraphIndex']);
+                        $("<div class='pinglunshu'></div>").html(arr[k]['comments_count']).appendTo("#child"+arr[k]['paragraphIndex']);
+                        $("<div class='pinglunmore'></div>").css("background-clip","content-box").appendTo("#child"+arr[k]['paragraphIndex']);
+                        $(".pinglunmore").click(function(){
+                            $(".zhezhao").css({"display":"block","height":ch});
+                        })
+
+
+                    }
+                },
+                error: function () {
+                    alert("失败");
+                }
+            })
         }else if(type==0){
             $.ajax({
                 url:"http://api.deeporiginalx.com/news/baijia/fetchContent?url="+str,
@@ -61,22 +108,23 @@ $(function(){
                     $(".card1").html(abs);
                     var con=e['content'];
                     var cons=con.split("\n",4);
+                    var conn=con.split("\n");
+                    var cons=conn.slice(0,-1)
+                    var arr = uniqeByKeys(point,['paragraphIndex']);
                     for(var i=0;i<cons.length;i++){
-                        $("<div class='card2'></div>").html(cons[i]).appendTo(".cardbox");
-                        for(var j=0;j<point.length;j++){
-                            if(point[j]['paragraphIndex']==i&&j==0){
-                                $("<div class='cardChild'></div>").appendTo(".card2");
-                                $("<div class='pinglunperson'></div>").appendTo(".cardChild");
-                                $("<img src="+point[i]['userIcon']+">").css("background-clip","content-box").appendTo(".pinglunperson");
-                                $("<div class='pinglunword'></div>").html(point[j]['srcText']).appendTo(".cardChild");
-                                $("<div class='pinglunshu'></div>").html(point[j]['comments_count']).appendTo(".cardChild");
-                                $("<div class='pinglunmore'></div>").appendTo(".cardChild");
-                                $(".pinglunmore").click(function(){
-                                    $(".zhezhao").css({"display":"block","height":ch});
-                                })
-
-                            }
-                        }
+                        $("<div class='card2'></div>").attr("id","card"+i).html(cons[i]).appendTo(".cardbox");
+                    }
+                    for(var k=0;k<arr.length;k++) {
+                        $("<div class='cardChild'</div>").attr("id","child"+arr[k]['paragraphIndex']).appendTo("#card"+arr[k]['paragraphIndex']);
+                        $("<div class='pinglunword'></div>").appendTo("#child"+arr[k]['paragraphIndex']);
+                        $("<div class='pinglunperson'></div>").appendTo("#child"+arr[k]['paragraphIndex']);
+                        $("<img src="+arr[k]['userIcon']+">").css({"background-clip":"content-box",width:"100%"}).appendTo(".pinglunperson");
+                        $("<div class='pinglunword'></div>").html(arr[k]['srcText']).appendTo("#child"+arr[k]['paragraphIndex']);
+                        $("<div class='pinglunshu'></div>").html(arr[k]['comments_count']).appendTo("#child"+arr[k]['paragraphIndex']);
+                        $("<div class='pinglunmore'></div>").css("background-clip","content-box").appendTo("#child"+arr[k]['paragraphIndex']);
+                        $(".pinglunmore").click(function(){
+                            $(".zhezhao").css({"display":"block","height":ch});
+                        })
                     }
                 }
             })
@@ -106,6 +154,7 @@ $(function(){
             $(".yingdao").css("display","block");
         })
         $(".pinglunmore").click(function(){
+            $(".zhezhao").css("display","none");
             $(".yingdao").css("display","block");
         })
 
