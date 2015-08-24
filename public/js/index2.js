@@ -80,7 +80,7 @@ $(function(){
                         $("<div class='pinglunword'></div>").html(arr[k]['srcText']).appendTo("#child"+arr[k]['paragraphIndex']);
                         $("<div class='pinglunshu'></div>").html(arr[k]['comments_count']).appendTo("#child"+arr[k]['paragraphIndex']);
                         $("<div class='pinglunmore'></div>").appendTo("#child"+arr[k]['paragraphIndex']);
-                        $("<img src='img/pingluntu.png'>").css("width","100%").appendTo(".pinglunmore");
+                        $("<img src='img/pingluntu.png' class='pinglundown'>").css("width","100%").appendTo(".pinglunmore");
                         //$(".pinglunmore").click(function(){
                         //    $(".zhezhao").css({"display":"block","height":ch});
                         //})
@@ -123,7 +123,7 @@ $(function(){
                         $("<div class='pinglunword'></div>").html(arr[k]['srcText']).appendTo("#child"+arr[k]['paragraphIndex']);
                         $("<div class='pinglunshu'></div>").html(arr[k]['comments_count']).appendTo("#child"+arr[k]['paragraphIndex']);
                         $("<div class='pinglunmore'></div>").appendTo("#child"+arr[k]['paragraphIndex']);
-                        $("<img src='img/pingluntu.png'>").css("width","100%").appendTo(".pinglunmore");
+                        $("<img src='img/pingluntu.png' class='pinglundown'>").css("width","100%").appendTo(".pinglunmore");
                         //$(".pinglunmore").click(function(){
                         //    $(".zhezhao").css({"display":"block","height":ch});
                         //})
@@ -158,12 +158,12 @@ $(function(){
         $("#footertu").click(function(){
             $(".yingdao").css("display","block");
         })
-        $(".pinglunmore").click(function(){
+        $(".pinglundown").click(function(){
             $(".yingdao").css("display","block");
         })
 
     }else{
-        $(".pinglunmore").click(function(){
+        $(".pinglundown").click(function(){
                 $(".zhezhao").css({"display":"block","height":ch});
             })
     }
