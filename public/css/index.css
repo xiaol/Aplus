@@ -23,7 +23,7 @@
     width: 100%;
 }
 .yingdao{
-    width: 40%;height: auto;position: fixed;top:0;right:5%;display:none;
+    width: 40%;height: auto;position: fixed;top:0;right:5%;display:none;z-index: 999;
 }
 .yingdao img{
     width: 100%;

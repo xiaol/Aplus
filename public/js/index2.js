@@ -24,6 +24,9 @@ $(function(){
     $(window).ready(function(){
         function GetRequest() {
             var url =location.search; //获取url中"?"符后的字串
+            if(url==''){
+                $(".bannerzhe").css("display","none");
+            }
             var theRequest = new Object();
             if (url.indexOf("?") != -1) {
                 var str = url.substr(1);
@@ -81,9 +84,9 @@ $(function(){
                         $("<div class='pinglunshu'></div>").html(arr[k]['comments_count']).appendTo("#child"+arr[k]['paragraphIndex']);
                         $("<div class='pinglunmore'></div>").appendTo("#child"+arr[k]['paragraphIndex']);
                         $("<img src='img/pingluntu.png' class='pinglundown'>").css("width","100%").appendTo(".pinglunmore");
-                        //$(".pinglunmore").click(function(){
-                        //    $(".zhezhao").css({"display":"block","height":ch});
-                        //})
+                        $(".pinglunmore").click(function(){
+                            $(".zhezhao").css({"display":"block","height":ch});
+                        })
 
 
                     }
@@ -124,9 +127,9 @@ $(function(){
                         $("<div class='pinglunshu'></div>").html(arr[k]['comments_count']).appendTo("#child"+arr[k]['paragraphIndex']);
                         $("<div class='pinglunmore'></div>").appendTo("#child"+arr[k]['paragraphIndex']);
                         $("<img src='img/pingluntu.png' class='pinglundown'>").css("width","100%").appendTo(".pinglunmore");
-                        //$(".pinglunmore").click(function(){
-                        //    $(".zhezhao").css({"display":"block","height":ch});
-                        //})
+                        $(".pinglunmore").click(function(){
+                            $(".zhezhao").css({"display":"block","height":ch});
+                        })
                     }
                 }
             })
@@ -162,10 +165,6 @@ $(function(){
             $(".yingdao").css("display","block");
         })
 
-    }else{
-        $(".pinglundown").click(function(){
-                $(".zhezhao").css({"display":"block","height":ch});
-            })
     }
 
     if(isAndroid){if(qq){$("#download").attr("href","http://koudaiv.com/static/file/app-official.apk");$("#footertu").attr("href","http://koudaiv.com/static/file/app-official.apk")}else{$("#download").attr("href","http://koudaiv.com/static/file/app-official.apk");$("#footertu").attr("href","http://koudaiv.com/static/file/app-official.apk")};}else if(isiOS||webApp){$("#download").attr("href","https://itunes.apple.com/cn/app/tou-tiao-bai-jia/id987333155?mt=8");$("#footertu").attr("href","https://itunes.apple.com/cn/app/tou-tiao-bai-jia/id987333155?mt=8");}else{$("#download").attr("href","http://deeporiginalx.com/");$("#footertu").attr("href","http://deeporiginalx.com/");}
