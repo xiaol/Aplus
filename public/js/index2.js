@@ -79,10 +79,11 @@ $(function(){
                         $("<img src="+arr[k]['userIcon']+">").css({"background-clip":"content-box",width:"100%"}).appendTo(".pinglunperson");
                         $("<div class='pinglunword'></div>").html(arr[k]['srcText']).appendTo("#child"+arr[k]['paragraphIndex']);
                         $("<div class='pinglunshu'></div>").html(arr[k]['comments_count']).appendTo("#child"+arr[k]['paragraphIndex']);
-                        $("<div class='pinglunmore'></div>").css("background-clip","content-box").appendTo("#child"+arr[k]['paragraphIndex']);
-                        $(".pinglunmore").click(function(){
-                            $(".zhezhao").css({"display":"block","height":ch});
-                        })
+                        $("<div class='pinglunmore'></div>").appendTo("#child"+arr[k]['paragraphIndex']);
+                        $("<img src='img/pingluntu.png'>").css("width","100%").appendTo(".pinglunmore");
+                        //$(".pinglunmore").click(function(){
+                        //    $(".zhezhao").css({"display":"block","height":ch});
+                        //})
 
 
                     }
@@ -121,10 +122,11 @@ $(function(){
                         $("<img src="+arr[k]['userIcon']+">").css({"background-clip":"content-box",width:"100%"}).appendTo(".pinglunperson");
                         $("<div class='pinglunword'></div>").html(arr[k]['srcText']).appendTo("#child"+arr[k]['paragraphIndex']);
                         $("<div class='pinglunshu'></div>").html(arr[k]['comments_count']).appendTo("#child"+arr[k]['paragraphIndex']);
-                        $("<div class='pinglunmore'></div>").css("background-clip","content-box").appendTo("#child"+arr[k]['paragraphIndex']);
-                        $(".pinglunmore").click(function(){
-                            $(".zhezhao").css({"display":"block","height":ch});
-                        })
+                        $("<div class='pinglunmore'></div>").appendTo("#child"+arr[k]['paragraphIndex']);
+                        $("<img src='img/pingluntu.png'>").css("width","100%").appendTo(".pinglunmore");
+                        //$(".pinglunmore").click(function(){
+                        //    $(".zhezhao").css({"display":"block","height":ch});
+                        //})
                     }
                 }
             })
@@ -152,12 +154,18 @@ $(function(){
     if(isWeiXin()){
         $("#download").click(function(){
             $(".yingdao").css("display","block");
+        });
+        $("#footertu").click(function(){
+            $(".yingdao").css("display","block");
         })
         $(".pinglunmore").click(function(){
-            $(".zhezhao").css("display","none");
             $(".yingdao").css("display","block");
         })
 
+    }else{
+        $(".pinglunmore").click(function(){
+                $(".zhezhao").css({"display":"block","height":ch});
+            })
     }
 
     if(isAndroid){if(qq){$("#download").attr("href","http://koudaiv.com/static/file/app-official.apk");$("#footertu").attr("href","http://koudaiv.com/static/file/app-official.apk")}else{$("#download").attr("href","http://koudaiv.com/static/file/app-official.apk");$("#footertu").attr("href","http://koudaiv.com/static/file/app-official.apk")};}else if(isiOS||webApp){$("#download").attr("href","https://itunes.apple.com/cn/app/tou-tiao-bai-jia/id987333155?mt=8");$("#footertu").attr("href","https://itunes.apple.com/cn/app/tou-tiao-bai-jia/id987333155?mt=8");}else{$("#download").attr("href","http://deeporiginalx.com/");$("#footertu").attr("href","http://deeporiginalx.com/");}

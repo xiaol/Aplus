@@ -115,7 +115,7 @@ img[class=card2]{
     width: 40px;height: 20px;float:right;margin-top:10px;font-size: 16px;color:#35a6fb;text-align:center;line-height: 20px;
 }
 .pinglunmore{
-    width: 28px;height: 18px;background:url("../img/pingluntu.png");float:right;margin-right:2%;margin-top:10px;
+    width: 28px;height: 18px;float:right;margin-right:2%;margin-top:10px;
 }
 .pingluntitle{
     display:block;width: 100%;height: 25px;
@@ -170,22 +170,22 @@ img[class=card2]{
     height: 120%;
 }
 .footerword{
-    width: 26%;height:59%;float:left;margin-left:5%;
+    width: 26%;height:69%;float:left;margin-left:6%;
 }
 .bigword{
     width: 120%;height:auto;font-size:20px;color:#fff;
 }
 .sword{
-    width:150%;height:auto;font-size:10px;margin-top:10px;color:#fff;
+    width:150%;height:auto;font-size:10px;margin-top:8px;color:#fff;
 }
 .download{
-    display:inline-block;width: 37%;height:100%;float:left;margin-left:10%;line-height:60px;
+    display:inline-block;width: 37%;height:100%;float:right;margin-right:1%;line-height:60px;
 }
 .download img{
     width: 100%;
 }
 .close{
-    width: 3%;height:100%;float:right;margin-left:3%;display: inline-block;margin-top:0px;position:absolute;top:7px;right:7px;
+    width: 3%;height:100%;float:right;display: inline-block;margin-top:0px;position:absolute;top:7px;right:7px;
 }
 .close img{
     width:100%;
