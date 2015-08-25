@@ -43,14 +43,12 @@ $(function(){
         Request =GetRequest();
         var str=Request['url'];
         var type=Request['type'];
-        //console.log(str);
-        //console.log(type);
         if(type==1){
             $.ajax({
                 url: "http://api.deeporiginalx.com/news/baijia/newsFetchContent",
                 type: "post",
-                cache:false,
-                async:false,
+                cache:"false",
+                async:"false",
                 data:{"url":str,},
                 datatype:"json",
                 contentType: "application/x-www-form-urlencoded; charset=utf-8",
@@ -58,25 +56,29 @@ $(function(){
                     var cons=data['content'];
                     var time=data['updateTime'];
                     var point=data['point'];
-                    var abs=data['abs'];$(".date").html(time);$(".card1").html(abs);
+                    var abs=data['abs'];
+                    $(".date").html(time);
+                    if(abs==''){
+                        $(".bannertime").css("margin-bottom","3%");
+                    }else{
+                        $("<div class='card1'></div>").html(abs).appendTo(".cardbox");
+                    }
                     var img=data['imgUrl'];
                     $("#bannerImg").attr("src",img);
                     var title=data['title'];
                     $(".bannertitle").html(title);
-                    var arr = uniqeByKeys(point,['paragraphIndex']);console.log(arr);
+                    var arr = uniqeByKeys(point,['paragraphIndex']);
                     for(var i=0;i<cons.length;i++){
                         for(var j in cons[i]){
                             for(var k in cons[i][j]){
                                 if(k=="img"){
-                                    //$("#bannerImg").attr("src",cons[i][j][k]);
                                     $("<div class='card2'></div>").attr({"src":cons[i][j][k],"id":"card"+j}).css("margin","15px auto").appendTo(".cardbox");
                                     $("<img class='card2'>").attr("src",cons[i][j][k]).appendTo("#card"+j);
                                 }else{
                                     $("<div class='card2'></div>").attr("id","card"+j).html(cons[i][j][k]).appendTo(".cardbox");
                                 }
                             }}}
-                    for(var k=0;k<arr.length;k++) {//循环arr数组，为每段内容动态添加相应的评论
-
+                    for(var k=0;k<arr.length;k++) {
                         $("<div class='cardChild'</div>").attr("id","child"+arr[k]['paragraphIndex']).appendTo("#card"+arr[k]['paragraphIndex']);
                         $("<div class='pinglunword'></div>").appendTo("#child"+arr[k]['paragraphIndex']);
                         $("<div class='pinglunperson'></div>").appendTo("#child"+arr[k]['paragraphIndex']);
@@ -100,7 +102,7 @@ $(function(){
             $.ajax({
                 url:"http://api.deeporiginalx.com/news/baijia/fetchContent?url="+str,
                 type:"get",
-                cache:false,
+                cache:"false",
                 async:"false",
                 datatype:"jsonp",
                 jsonp: "callbackparam",
@@ -111,7 +113,11 @@ $(function(){
                     var time=e['updateTime'];
                     var abs=e['abs'];
                     $(".date").html(time);
-                    $(".card1").html(abs);
+                    if(abs==''){
+                        $(".bannertime").css("margin-bottom","3%");
+                    }else{
+                        $("<div class='card1'></div>").html(abs).appendTo(".cardbox");
+                    }
                     var con=e['content'];
                     var cons=con.split("\n",4);
                     var conn=con.split("\n");
@@ -136,9 +142,6 @@ $(function(){
                 }
             })
         }
-
-
-
     })
     $(".closeB img").click(function(){$(".zhezhao").css("display","none")})
     $(".close").click(function(){$(".footer").css("display","none");})
@@ -168,7 +171,6 @@ $(function(){
         })
 
     }
-
     if(isAndroid){if(qq){$("#download").attr("href","http://koudaiv.com/static/file/app-official.apk");$("#footertu").attr("href","http://koudaiv.com/static/file/app-official.apk")}else{$("#download").attr("href","http://koudaiv.com/static/file/app-official.apk");$("#footertu").attr("href","http://koudaiv.com/static/file/app-official.apk")};}else if(isiOS||webApp){$("#download").attr("href","https://itunes.apple.com/cn/app/tou-tiao-bai-jia/id987333155?mt=8");$("#footertu").attr("href","https://itunes.apple.com/cn/app/tou-tiao-bai-jia/id987333155?mt=8");}else{$("#download").attr("href","http://deeporiginalx.com/");$("#footertu").attr("href","http://deeporiginalx.com/");}
     if(isAndroid){if(qq){$(".down a").attr("href","http://koudaiv.com/static/file/app-official.apk");}else{$(".down a").attr("href","http://koudaiv.com/static/file/app-official.apk");};}else if(isiOS||webApp){$(".down a").attr("href","https://itunes.apple.com/cn/app/tou-tiao-bai-jia/id987333155?mt=8");}else{$(".down a").attr("href","http://deeporiginalx.com/");}
 })

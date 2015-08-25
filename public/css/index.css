@@ -68,11 +68,11 @@ img[class=card2]{
     width: 100%;height:300px;background:rgba(0,0,0,0.5);position:relative;position: fixed;top:0;left:0;display: none;z-index:3;
 }
 .zhezhaodownload{
-    width: 70%;height:auto;background:rgba(255,255,255,0.9);border-radius: 2%;padding:10%;position: absolute;left: 15%;top:30%;
+    width: 60%;height:auto;background:rgba(255,255,255,0.9);border-radius: 2%;padding:20px;position: absolute;left: 20%;top:30%;
 }
-.zhezhaodownload span{
-    display:block;width: 100%;height: 20px;font-size: 16px;text-align: center;line-height: 20px;
-}
+/*.zhezhaodownload span{*/
+    /*display:block;width: 100%;height: 20px;font-size: 16px;text-align: center;line-height: 20px;*/
+/*}*/
 .down{
     width: 40%;height: auto;margin:0 auto;
 }
@@ -80,7 +80,7 @@ img[class=card2]{
     width: 100%;
 }
 .closeB{
-    width:40px;height: 40px;position: absolute;top:5%;right:5%;
+    width:40px;height: 40px;position: absolute;top:7px;right:7px;
 }
 .closeB img{
     width: 50%;margin: 20% auto;
