@@ -49,6 +49,7 @@ $(function(){
             $.ajax({
                 url: "http://api.deeporiginalx.com/news/baijia/newsFetchContent",
                 type: "post",
+                cache:false,
                 async:false,
                 data:{"url":str,},
                 datatype:"json",
@@ -99,6 +100,7 @@ $(function(){
             $.ajax({
                 url:"http://api.deeporiginalx.com/news/baijia/fetchContent?url="+str,
                 type:"get",
+                cache:false,
                 async:"false",
                 datatype:"jsonp",
                 jsonp: "callbackparam",
@@ -161,7 +163,7 @@ $(function(){
         $("#footertu").click(function(){
             $(".yingdao").css("display","block");
         })
-        $(".pinglundown").click(function(){
+        $(".down a").click(function(){
             $(".yingdao").css("display","block");
         })
 
