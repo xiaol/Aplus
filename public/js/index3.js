@@ -113,11 +113,11 @@ $(function(){
                     var time=e['updateTime'];
                     var abs=e['abs'];
                     $(".date").html(time);
-                    //if(abs==''){
-                    //    $(".bannertime").css("margin-bottom","3%");
-                    //}else{
-                    //    $("<div class='card1'></div>").html(abs).appendTo(".cardbox");
-                    //}
+                    if(abs==''){
+                        $(".bannertime").css("margin-bottom","3%");
+                    }else{
+                        $("<div class='card1'></div>").html(abs).appendTo(".cardbox");
+                    }
                     $("<div class='card1'></div>").html(abs).appendTo(".cardbox");
                     var con=e['content'];
                     var cons=con.split("\n",4);
