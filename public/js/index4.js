@@ -73,7 +73,7 @@ $(function(){
                             for(var k in cons[i][j]){
                                 if(k=="img"){
                                     $("<div class='card2'></div>").attr({"src":cons[i][j][k],"id":"card"+j}).css({margin:"15px auto",padding:"0"}).appendTo(".cardbox");
-                                    $("<img class='card2'>").attr("src",cons[i][j][k]).appendTo("#card"+j);
+                                    $("<img class='card2'>").attr("src",cons[i][j][k]).css("padding","0").appendTo("#card"+j);
                                 }else{
                                     $("<div class='card2'></div>").attr("id","card"+j).html(cons[i][j][k]).appendTo(".cardbox");
                                 }
@@ -118,7 +118,7 @@ $(function(){
                     }else{
                         $("<div class='card1'></div>").html(abs).appendTo(".cardbox");
                     }
-                    $("<div class='card1'></div>").html(abs).appendTo(".cardbox");
+                    //$("<div class='card1'></div>").html(abs).appendTo(".cardbox");
                     var con=e['content'];
                     var cons=con.split("\n",4);
                     var conn=con.split("\n");
