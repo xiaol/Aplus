@@ -72,7 +72,7 @@ $(function(){
                         for(var j in cons[i]){
                             for(var k in cons[i][j]){
                                 if(k=="img"){
-                                    $("<div class='card2'></div>").attr({"src":cons[i][j][k],"id":"card"+j}).css("margin","15px auto").appendTo(".cardbox");
+                                    $("<div class='card2'></div>").attr({"src":cons[i][j][k],"id":"card"+j}).css({margin:"15px auto",padding:"0"}).appendTo(".cardbox");
                                     $("<img class='card2'>").attr("src",cons[i][j][k]).appendTo("#card"+j);
                                 }else{
                                     $("<div class='card2'></div>").attr("id","card"+j).html(cons[i][j][k]).appendTo(".cardbox");
