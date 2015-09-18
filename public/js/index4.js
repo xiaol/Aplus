@@ -64,6 +64,11 @@ $(function(){
                         $("<div class='card1'></div>").html(abs).appendTo(".cardbox");
                     }
                     var img=data['imgUrl'];
+                    if(img==null||""){
+                        $("#bannerImg").attr("src","img/guanggao.png")
+                    }else{
+                        $("#bannerImg").attr("src",img);
+                    }
                     $("#bannerImg").attr("src",img);
                     var title=data['title'];
                     $(".bannertitle").html(title);
