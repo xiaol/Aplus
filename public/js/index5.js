@@ -1,5 +1,4 @@
 $(function(){
-    field:title function=’ ( strlen(”@me”)>30 ? cn_substr(”@me”,30).”…” : “@me” ) ‘
     var ch=$(window).height();
     function obj2key(obj, keys){
         var n = keys.length,
