@@ -130,14 +130,14 @@ $(function(){
                     }else{
                         $("<div class='card1'></div>").html(abs).appendTo(".cardbox");
                     }
-                    var img=data['imgUrl'];
+                    var img=e['imgUrl'];
                     if(img==null||""){
                         $("#bannerImg").attr("src","img/guanggao.png")
                     }else{
                         $("#bannerImg").attr("src",img);
                     }
                     $("#bannerImg").attr("src",img);
-                    var title=data['title'];
+                    var title=e['title'];
                     if(title==null||""){
                         return;
                     }else{
