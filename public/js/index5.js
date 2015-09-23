@@ -24,7 +24,7 @@ $(function(){
     }
     $(window).ready(function(){
         function GetRequest() {
-            var url =window.unescape(location.search); //获取url中"?"符后的字串
+            var url =location.search; //获取url中"?"符后的字串
             if(url==''){
                 $(".bannerzhe").css("display","none");
             }
