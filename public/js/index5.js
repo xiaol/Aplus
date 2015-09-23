@@ -70,7 +70,6 @@ $(function(){
                     }else{
                         $("#bannerImg").attr("src",img);
                     }
-                    $("#bannerImg").attr("src",img);
                     var title=data['title'];
                     if(title==null||""){
                         return;
@@ -136,7 +135,6 @@ $(function(){
                     }else{
                         $("#bannerImg").attr("src",img);
                     }
-                    $("#bannerImg").attr("src",img);
                     var title=e['title'];
                     if(title==null||""){
                         return;
