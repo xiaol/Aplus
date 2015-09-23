@@ -1,4 +1,5 @@
 $(function(){
+    field:title function=’ ( strlen(”@me”)>30 ? cn_substr(”@me”,30).”…” : “@me” ) ‘
     var ch=$(window).height();
     function obj2key(obj, keys){
         var n = keys.length,
@@ -23,7 +24,7 @@ $(function(){
     }
     $(window).ready(function(){
         function GetRequest() {
-            var url =location.search; //获取url中"?"符后的字串
+            var url =window.unescape(location.search); //获取url中"?"符后的字串
             if(url==''){
                 $(".bannerzhe").css("display","none");
             }
@@ -71,7 +72,13 @@ $(function(){
                     }
                     $("#bannerImg").attr("src",img);
                     var title=data['title'];
-                    $(".bannertitle").html(title);
+                    if(title==null||""){
+                        return;
+                    }else{
+                        $(".bannertitle").html(title);
+                        document.title=title;
+                    }
+
                     var arr = uniqeByKeys(point,['paragraphIndex']);
                     for(var i=0;i<cons.length;i++){
                         for(var j in cons[i]){
@@ -123,7 +130,21 @@ $(function(){
                     }else{
                         $("<div class='card1'></div>").html(abs).appendTo(".cardbox");
                     }
-                    //$("<div class='card1'></div>").html(abs).appendTo(".cardbox");
+                    var img=data['imgUrl'];
+                    if(img==null||""){
+                        $("#bannerImg").attr("src","img/guanggao.png")
+                    }else{
+                        $("#bannerImg").attr("src",img);
+                    }
+                    $("#bannerImg").attr("src",img);
+                    var title=data['title'];
+                    if(title==null||""){
+                        return;
+                    }else{
+                        $(".bannertitle").html(title);
+                        document.title=title;
+                    }
+
                     var con=e['content'];
                     var cons=con.split("\n",4);
                     var conn=con.split("\n");
