@@ -30,7 +30,7 @@ a{-webkit-tap-highlight-color:rgba(0,0,0,0);}
     width: 100%;
 }
 .bannertitle{
-    display:block;width: 90%;height:auto;font-size: 22px;margin-top:3%;margin-left:5%;
+    display:block;width: 90%;height:auto;font-size: 20px;margin-top:3%;margin-left:5%;
     line-height: 26px;color:#fff;
 }
 .bannertime{
