@@ -81,7 +81,7 @@ $(function(){
                     for(var i=0;i<cons.length;i++){
                         for(var j in cons[i]){
                             for(var k in cons[i][j]){
-                                if(k=="img"){
+                                if(k=="img"&&con[i][j][k]!=img){
                                     $("<div class='card2'></div>").attr({"src":cons[i][j][k],"id":"card"+j}).css({margin:"15px auto",padding:"0"}).appendTo(".cardbox");
                                     $("<img class='card2'>").attr("src",cons[i][j][k]).css("padding","0").appendTo("#card"+j);
                                 }else{
