@@ -146,7 +146,7 @@ $(function(){
                     //var cons=con.split("\n",4);
                     var conn;
                     var cons;
-                    if(con.indexOf("\n")){
+                    if(con.indexOf("\n")>0){
                          conn=con.split("\n");
                          cons=conn.slice(0,-1);
                         for(var i=0;i<cons.length;i++){
