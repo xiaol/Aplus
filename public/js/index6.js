@@ -148,14 +148,16 @@ $(function(){
                     var cons;
                     if(con.indexOf("\n")){
                          conn=con.split("\n");
-                         cons=conn.slice(0,-1)
+                         cons=conn.slice(0,-1);
+                        for(var i=0;i<cons.length;i++){
+                            $("<div class='card2'></div>").attr("id","card"+i).html(cons[i]).appendTo(".cardbox");
+                        }
                     }else{
                         cons=con;
+                        $("<div class='card2'></div>").html(cons).appendTo(".cardbox");
                     }
                     var arr = uniqeByKeys(point,['paragraphIndex']);
-                    for(var i=0;i<cons.length;i++){
-                        $("<div class='card2'></div>").attr("id","card"+i).html(cons[i]).appendTo(".cardbox");
-                    }
+
                     for(var k=0;k<arr.length;k++) {
                         $("<div class='cardChild'</div>").attr("id","child"+arr[k]['paragraphIndex']).appendTo("#card"+arr[k]['paragraphIndex']);
                         $("<div class='pinglunword'></div>").appendTo("#child"+arr[k]['paragraphIndex']);
