@@ -81,7 +81,7 @@ $(function(){
                     for(var i=0;i<cons.length;i++){
                         for(var j in cons[i]){
                             for(var k in cons[i][j]){
-                                if(k=="img"&&con[i][j][k]!=img){
+                                if(k=="img"&&cons[i][j][k]!=img){
                                     $("<div class='card2'></div>").attr({"src":cons[i][j][k],"id":"card"+j}).css({margin:"15px auto",padding:"0"}).appendTo(".cardbox");
                                     $("<img class='card2'>").attr("src",cons[i][j][k]).css("padding","0").appendTo("#card"+j);
                                 }else{
@@ -143,9 +143,15 @@ $(function(){
                     }
 
                     var con=e['content'];
-                    var cons=con.split("\n",4);
-                    var conn=con.split("\n");
-                    var cons=conn.slice(0,-1)
+                    //var cons=con.split("\n",4);
+                    var conn;
+                    var cons;
+                    if(con.indexOf("\n")){
+                         conn=con.split("\n");
+                         cons=conn.slice(0,-1)
+                    }else{
+                        cons=con;
+                    }
                     var arr = uniqeByKeys(point,['paragraphIndex']);
                     for(var i=0;i<cons.length;i++){
                         $("<div class='card2'></div>").attr("id","card"+i).html(cons[i]).appendTo(".cardbox");
