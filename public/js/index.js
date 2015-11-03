@@ -4,6 +4,9 @@ $(function() {
     fss = new ddfullscreenslider({
         sliderid: 'dowebok',
         onslide: function($slide, index) {
+            setTimeout(function(){
+                $(".jia").remove();
+            },2000)
             if(index==0){
                 var t1=setTimeout(function(){
                     $($(".phonen img")[1]).css("transform","scale(1.2,1.2)").animate({opacity:"0"},function(){
