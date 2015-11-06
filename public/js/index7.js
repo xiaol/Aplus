@@ -41,15 +41,16 @@ $(function(){
         }
         var Request = new Object();
         Request =GetRequest();
-        var str=Request['url'];
+        var str=Request['newsid'];
         var type=Request['type'];
+        var collection=Request['collection']
         if(type==1){
             $.ajax({
-                url: "http://api.deeporiginalx.com/news/baijia/newsFetchContent",
+                url: "121.40.34.56/news/baijia/fetchDetail",
                 type: "post",
                 cache:"false",
                 async:"false",
-                data:{"url":str,},
+                data:{"newsid":str,"collection":collection},
                 datatype:"json",
                 contentType: "application/x-www-form-urlencoded; charset=utf-8",
                 success: function (data) {
