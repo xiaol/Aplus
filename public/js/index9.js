@@ -50,7 +50,7 @@ $(function(){
             var str=Request['newsid'];
             var collection=Request['collection'];
         }else if(isiOS||webApp){
-            var str1=Request['url'];
+            var str=Request['url'];
         }
 
         var type=Request['type'];
@@ -113,7 +113,7 @@ $(function(){
                     url: "http://api.deeporiginalx.com/news/baijia/newsFetchContent",
                     type: "post",
                     async:false,
-                    data:{"url":str1},
+                    data:{"url":str},
                     datatype:"json",
                     contentType: "application/x-www-form-urlencoded; charset=utf-8",
                     success: function (data) {
