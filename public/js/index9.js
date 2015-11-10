@@ -28,7 +28,7 @@ $(function(){
     var webApp = u.indexOf('Safari') == -1;
     $(window).ready(function(){
         function GetRequest() {
-            var url =location.search; //获取url中"?"符后的字串
+            var url =unescape(location.search); //获取url中"?"符后的字串
             //url = "http://deeporiginalx.com/news.html?type=1&newsid=3774fcbf55929622d58e5336c51e67ad&collection=NewsItem";
             if(url==''){
                 $(".bannerzhe").css("display","none");
