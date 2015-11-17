@@ -27,8 +27,10 @@ $(function(){
     var qq =u.indexOf('MQQBrowser') > -1;
     var webApp = u.indexOf('Safari') == -1;
     $(window).ready(function(){
+        var num;
         function GetRequest() {
-            var url =unescape(location.search); //获取url中"?"符后的字串
+            var url =unescape(location.search);//获取url中"?"符后的字串
+            num=url.substring(url.lastIndexOf("="));
             //url = "http://deeporiginalx.com/news.html?type=1&newsid=3774fcbf55929622d58e5336c51e67ad&collection=NewsItem";
             if(url==''){
                 $(".bannerzhe").css("display","none");
@@ -50,7 +52,7 @@ $(function(){
             var str=Request['newsid'];
             var collection=Request['collection'];
         }else if(isiOS||webApp){
-            var str=Request['url'];
+            var str=Request['url']+num;
         }
 
         var type=Request['type'];
