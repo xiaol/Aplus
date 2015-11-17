@@ -115,7 +115,7 @@ $(function(){
                         }
                     },
                     error: function () {alert("失败");}})
-            }else if(isiOS||webApp){
+            }else if(isiOS||webApp||(isiOS&&qq)){
                 $.ajax({
                     url: "http://api.deeporiginalx.com/news/baijia/newsFetchContent",
                     type: "post",
