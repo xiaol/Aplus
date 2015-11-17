@@ -30,7 +30,12 @@ $(function(){
         var num;
         function GetRequest() {
             var url =unescape(location.search);//获取url中"?"符后的字串
-            num=url.substring(url.lastIndexOf("="));
+            if(url.match('id')=='id'){
+                num=url.substring(url.lastIndexOf("="));
+            }else{
+                num="";
+            }
+
             //url = "http://deeporiginalx.com/news.html?type=1&newsid=3774fcbf55929622d58e5336c51e67ad&collection=NewsItem";
             if(url==''){
                 $(".bannerzhe").css("display","none");
