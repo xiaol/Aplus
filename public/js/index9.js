@@ -29,7 +29,7 @@ $(function(){
     $(window).ready(function(){
         var num;
         function GetRequest() {
-            var url =unescape(location.search);//获取url中"?"符后的字串
+            var url =decodeURIComponent(location.search);//获取url中"?"符后的字串
             if(url.match('id')=='id'){
                 num=url.substring(url.lastIndexOf("="));
             }else{
