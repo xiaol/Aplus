@@ -29,7 +29,7 @@ $(function(){
     $(window).ready(function(){
         var num;
         function GetRequest() {
-            var url =decodeURIComponent(location.search);//获取url中"?"符后的字串
+            var url =location.search;//获取url中"?"符后的字串
             if(url.match('id')=='id'){
                 num=url.substring(url.lastIndexOf("="));
             }else{
@@ -45,7 +45,7 @@ $(function(){
                 var str = url.substr(1);
                 strs = str.split("&");
                 for(var i = 0; i < strs.length; i ++) {
-                    theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+                    theRequest[strs[i].split("=")[0]]=strs[i].split("=")[1];
                 }return theRequest;
             }else{
                 location.href="error.html";
@@ -146,15 +146,12 @@ $(function(){
                         var arr = uniqeByKeys(point,['paragraphIndex']);console.log(arr);
                         for(var i=0;i<cons.length;i++){
                             for(var j in cons[i]){
-                                for(var k in cons[i][j]){
-                                    if(k=="img"){
-                                        $("<div class='card2'></div>").attr({"src":cons[i][j][k],"id":"card"+j}).css("padding","0px").appendTo(".cardbox");
-                                        $("<img class='card2'>").attr("src",cons[i][j][k]).css("padding","0").appendTo("#card"+j);
-                                    }else if(k=="txt"){
-                                        $("<div class='card2'></div>").attr("id","card"+j).html(cons[i][j][k]).appendTo(".cardbox");
-                                    }
+                                if(j=="img"){
+                                    $("<div class='card2'></div>").attr({"src":cons[i][j],"id":"card"+j}).css("padding","0px").appendTo(".cardbox");
+                                    $("<img class='card2'>").attr("src",cons[i][j]).css("padding","0").appendTo("#card"+j);
+                                }else if(j=="txt"){
+                                    $("<div class='card2'></div>").attr("id","card"+j).html(cons[i][j]).appendTo(".cardbox");
                                 }
-
                             }}
                         for(var k=0;k<arr.length;k++) {
                             $("<div class='cardChild'</div>").attr("id","child"+arr[k]['paragraphIndex']).appendTo("#card"+arr[k]['paragraphIndex']);//根据id，为相应的段落添加评论
