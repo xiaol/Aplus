@@ -28,8 +28,9 @@ $(function(){
     var webApp = u.indexOf('Safari') == -1;
     $(window).ready(function(){
         var num;
+        var url;
         function GetRequest() {
-            var url =location.search;//获取url中"?"符后的字串
+            url =location.search;//获取url中"?"符后的字串
             if(url.match('id=')=='id='){
                 num=url.substring(url.lastIndexOf("="));
             }else{
@@ -53,17 +54,17 @@ $(function(){
         }
         var Request = new Object();
         Request =GetRequest();
-        if(isAndroid){
+        if(url.match('newsid')=='newsid'){
             var str=Request['newsid'];
             var collection=Request['collection'];
-        }else if(isiOS||webApp){
+        }else if(url.match('url')=='url'){
             var str=Request['url']+num;
         }
 
         var type=Request['type'];
 
         if(type==1){
-            if(isAndroid){
+            if(url.match('newsid')=='newsid'){
                 $.ajax({
                     url: "http://121.40.34.56/news/baijia/fetchDetail",
                     type: "post",
@@ -115,7 +116,7 @@ $(function(){
                         }
                     },
                     error: function () {alert("失败");}})
-            }else if(isiOS||webApp||(isiOS&&qq)){
+            }else if(url.match('url')=='url'){
                 $.ajax({
                     url: "http://api.deeporiginalx.com/news/baijia/newsFetchContent",
                     type: "post",
