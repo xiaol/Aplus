@@ -32,7 +32,7 @@ $(function(){
         function GetRequest() {
             url =location.search;//获取url中"?"符后的字串
             if(url.match('id=')=='id='){
-                num=url.substring(url.lastIndexOf("="));
+                num=url.substr(url.indexOf("id=")+2,5);
             }else{
                 num="";
             }
