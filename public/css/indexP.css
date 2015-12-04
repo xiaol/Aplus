@@ -1,0 +1,187 @@
+/*@font-face {*/
+    /*font-family:SourceHanSansCN-Light;*/
+    /*src: url('../font/word.TTF');*/
+/*}*/
+*{
+    margin:0;padding:0;list-style: none;box-sizing: border-box;
+}
+a{
+    list-style: none;text-decoration: none;
+}
+.topBox{
+    width:100%;height:auto;overflow: hidden;
+}
+.nav{
+    width:62.5%;height:100%;margin:0 auto;margin-top:4.8%;overflow: hidden;
+}
+.logoBox{
+    width:308px;height:auto;float:left;
+}
+.logoBox1{
+    width:179px;height:auto;
+}
+.logoBox1>img{
+    width:100%;
+}
+.logoBox2{
+    width:307px;height:auto;margin-top:10px;
+}
+.logoBox2>img{
+    width:100%;
+}
+.navBox{
+    width:50%;height:auto;float:right;overflow: hidden;margin-top:4%;
+}
+.navBox>li>a{
+    font-size:16px;color:#878787;float:right;margin-right:6.2%;
+}
+.sanjiao{
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 8px solid #6cc1fb;margin:2px auto 0 auto;opacity:0
+}
+.underline{
+    width:100%;height:3px;background: #6cc1fb;opacity:0
+}
+.navBox>li>a:hover{
+    color:#6cc1fb;
+}
+.bannerBox{
+    width:100%;height:auto;overflow: hidden;margin-top:1%;position: relative;
+}
+.bannerBox>img{width:100%}
+.bannerWord1{
+    width:166px;height:41px;background:url("../img/bw1.png");background-size: cover;position: absolute;top:33%;left:50%;margin-left:-83px;
+}
+.bannerWord2{
+    width:459px;height:43px;background: url("../img/bw2.png");background-size: cover;position: absolute;top:50%;left:50%;margin-left:-229px
+}
+.bannerWord3{
+    width:172px;height:46px;font-size: 26px;color:#6cc1fb;text-align: center;line-height: 44px;position: absolute;top:70%;left:50%;margin-left:-76px;background:rgba(255,255,255,0.95);background-size: cover;
+}
+/*banner*/
+.mainBox{
+    width:62.5%;height:auto;overflow: hidden;margin:0 auto;
+}
+.serve{
+   width:28%;height:auto;margin:56px auto 0 auto;font-size: 32px;color:#323232;text-align: center;
+}
+#underline{
+    width:28%;height:2px;margin:18px auto;background:#6cc1fb ;
+}
+.mainWord{
+    width:95%;height:auto;margin:0 auto 13px auto;font-size: 13px;color:#323232;
+}
+.iconBox{
+    width:100%;height:auto;margin:60px auto 0 auto;overflow: hidden;
+}
+.iconInner{
+    width:25%;height:auto;float:left;
+}
+.iconInner>a{
+    display: block;width:88px;height:auto;margin:0 auto;
+}
+.iconInner>a>img{
+    width:100%;
+}
+.iconWord1{
+    width:100%;height:auto;margin:30px auto 0 auto;text-align: center;font-size: 20px;color:#323232;
+}
+.iconWord2{
+    width:100%;height:auto;margin:20px auto 0 auto;text-align: center;font-size: 13px;color: #858585;
+}
+.tiyanBox{
+    display:block;width:36%;height:auto;margin:30px auto 0 auto;overflow: hidden;
+}
+.tiyan{
+    display:block;font-size: 13px;color:#979797;float: left;
+}
+.tiyanBox>a>img{
+    display: block;width:10px;height:auto;float: left;margin-left:10px;
+}
+/*main*/
+footer{
+    width:100%;height:100px;margin-top:80px;background: url("../img/footer.png");font-size: 15px;color:#fff;text-align: center;line-height: 100px;
+}
+.bannerboxP{
+    display:none;
+}
+.callP{
+    display: none;
+}
+/*手机端main页面开始*/
+.mainPtitle{
+    width:244px;height:38px;background: url("../imgPhone/logoP.png");background-size: cover;margin:40px auto;
+}
+.mainPunderline{
+    width:100%;height:1px;background: #828282;
+}
+.mainPline{
+    width:45.3%;height:1px;background: #939393;margin:14px auto 0 auto;
+}
+.mainPword{
+    width:82%;height:auto;margin:14px auto 0 auto;font-size: 1em;color:#323232;line-height: 24px;text-indent: 2em;
+}
+/*联系我们页面*/
+.calltitle{
+    width:62.5%;height:auto;margin:50px auto 0 auto;font-size: 32px;color:#323232;text-align: left;line-height: 32px;
+}
+.calljieshao{
+    width:62.5%;height:auto;font-size: 16px;color:#323232;line-height: 31px;margin:20px auto 50px auto;
+}
+.calllianxi{
+    width:62.5%;height:auto;margin:0 auto 0 auto;font-size: 32px;color:#1f1f1f;text-align: left;line-height: 32px;
+}
+/*.calltitleP{*/
+    /*width:82%;height:auto;margin:50px auto 0 auto;font-size: 1.5em;color: #323232;*/
+/*}*/
+/*jianshe*/
+.jianshe{
+    width:72px;height:70px;background: url("../imgPhone/jianshe.png");margin:40% auto 26px auto;
+}
+.jiansw{
+    width:80%;height:auto;margin:0 auto;font-size: 1.25em;color: #5a5a5a;text-align: center;
+}
+@media screen and (max-width:992px){
+.topBox{display: none}
+    .mainBox{display: none}
+    footer{display: none}
+    .callP{
+        display:block;
+    }
+    .bannerboxP{
+        display:block;width:100%;height:100%;background: url("../imgPhone/bannerP.png");background-size:cover;
+    }
+    .bannerboxP>img{
+        width:100%;
+    }
+    .topP{
+        width:100%;height:128px;background: #fff;position: relative;top:0;left:0;
+    }
+    .logoP{
+        width:244px;height:38px;background: url("../imgPhone/logoP.png");position: absolute;top:50%;margin-top:-19px;left:50%;margin-left:-122px;background-size: cover;
+    }
+    .btnP{
+        width:50px;height:38px;background: url("../imgPhone/btnP.png");background-size: cover;position:absolute;top:50%;margin-top:-19px;right:30px;
+    }
+    .navP{
+       width:40%;height:auto;position: absolute;top:125px;right:0;z-index: 99;background: rgba(255,255,255,0.9);display: none;
+    }
+    .navP li{
+        width:100%;height:88px;border-bottom:1px solid #d2d2d2;padding:22px 34px;
+    }
+    .iconP{
+        width:44px;height:44px;float: left;
+    }
+    .iconP>img{
+        width:100%;
+    }
+    .navWord{
+        width:60%;height:44px;float: left;margin-left:36px;text-align: left;line-height: 44px;font-size:1.75em;color:#333;
+    }
+    .beginP{
+        width:252px;height:88px;position: absolute;top:70%;left:50%;margin-left:-126px;background: url("../imgPhone/rectP.png");font-size:2em;text-align: center;line-height: 88px;color:#6cc1fb;
+    }
+}
