@@ -92,7 +92,7 @@ a{
     width:100%;height:auto;margin:20px auto 0 auto;text-align: center;font-size: 13px;color: #858585;
 }
 .tiyanBox{
-    display:block;width:auto;height:auto;margin:30px auto 0 auto;position: relative;bottom:0;left:50%;margin-left:-18%;}
+    display:block;width:36%;height:auto;margin:30px auto 0 auto;position: relative;bottom:0;left:50%;margin-left:-18%;}
 .tiyan{
     display:block;font-size: 13px;color:#979797;float: left;
 }
