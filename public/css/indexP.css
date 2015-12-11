@@ -72,12 +72,13 @@ a{
     width:28%;height:2px;margin:18px auto;background:#6cc1fb ;
 }
 .mainWord{
-    width:100%;height:auto;margin:0 auto;font-size: 13px;color:#323232;text-indent: 2em;line-height: 26px;}
+    width:100%;height:auto;margin:0 auto;font-size: 13px;color:#323232;text-indent: 2em;line-height: 26px;
+}
 .iconBox{
     width:100%;height:auto;margin:60px auto 0 auto;overflow: hidden;
 }
 .iconInner{
-    width:25%;height:auto;float:left;position: relative;
+    width:25%;height:auto;float:left;background: yellow;position: relative;
 }
 .iconInner>a{
     display: block;width:88px;height:auto;margin:0 auto;
@@ -92,7 +93,8 @@ a{
     width:100%;height:auto;margin:20px auto 0 auto;text-align: center;font-size: 13px;color: #858585;
 }
 .tiyanBox{
-    display:block;width:36%;height:auto;margin:30px auto 0 auto;position: relative;bottom:0;left:50%;margin-left:-18%;}
+    display:block;width:auto;height:auto;margin:30px auto 0 auto;background: red;position: relative;bottom:0;left:50%;margin-left:-18%;
+}
 .tiyan{
     display:block;font-size: 13px;color:#979797;float: left;
 }
@@ -103,6 +105,255 @@ a{
 footer{
     width:100%;height:100px;margin-top:80px;background: url("../img/footer.png");font-size: 15px;color:#fff;text-align: center;line-height: 100px;
 }
+/*功能页面*/
+.card1{
+    width:100%;height:auto;background: #6cc1fb;margin-top:50px;padding:0px 0 30px 0;
+}
+.card1Box{
+    width:62.5%;height:auto;margin:0 auto;position: relative;padding:0 0 50px 0;padding-top:1px ;
+}
+#icon1{
+    width:124px;height:124px;background: url("../imgServe/icon1.png");background-size:cover ;margin:90px auto 0 auto;
+}
+.cWord1{
+    display:block;width:100%;height:auto;text-align:center;font-size:36px ;color: #fff;margin:30px auto 0 auto;line-height: 38px;
+}
+.cWord2{
+    display:block;width:100%;height:auto;text-align:center;font-size:26px ;color: #fff;margin:20px auto 0 auto;line-height: 38px;
+}
+.cInner1{
+    width:100%;height:auto;margin:90px auto 0 auto;display: block;
+}
+.circle1{
+    width:88px;height:88px;border:4px solid #fff;border-radius: 50%;font-size: 14px;color:#fff;text-align: center;padding: 22px 0;line-height: 20px;float: left;margin-left: 5%;
+}
+.lineBox{
+    width:70%;background: #fff;height:1px;float: left;margin:43px auto 0 auto;
+}
+.circle2{
+    width:82px;height:64px;float: left;margin-top:12px
+}
+.more1{
+    width:18px;height:50%;border-bottom: 2px dotted #fff;float: left;margin-top:1px;
+}
+.circle2_1{
+    width:64px;height:64px;border-radius: 50%;background: rgba(255,255,255,0.6);float: left;margin-left:-3px;
+}
+.circle2_2{
+    width:32px;height: 32px;border-radius: 50%;background: rgba(255,255,255,0.7);margin: 16px auto;overflow: hidden;
+}
+.circle2_3{
+    width:12px;height: 12px;border-radius: 50%;background: rgba(255,255,255,1);margin:10px auto;
+}
+.cInnerp{
+    display: none;
+}
+.lineWbox{
+    width:20%;height:150px;margin-top:-75px;float: left;
+}
+.lineTitle{
+    width:100%;height:33.333%;font-size:14px ;color:#fff;padding: 3px 5px;line-height:20px;text-align: center;
+}
+.lineCircle{
+    width:22px;height:22px;border-radius: 50%;background: #fff;position: absolute;top:50%;margin-top:-11px;left:50%;margin-left:-11px;
+}
+.lineDate{
+    width:100%;height:33.333%;font-size: 12px;color:#fff;padding: 3px 5px;text-align: center;
+}
+.num1{
+    width:98px;height:102px;background: url("../imgServe/num1.png");background-size: cover;position: absolute;top:-30px;left:0;
+}
+/*card1结束*/
+.card2{
+    width:100%;height:auto;padding-bottom:80px ;
+}
+.card2Box{
+    width:62.5%;height:auto;padding-top:1px;margin:0 auto;position: relative;
+}
+.icon2Box{
+    width:35%;height:auto;float:right;margin-top:200px;
+}
+#icon2{
+    width:124px;height:124px;background:url("../imgServe/icon2.png");background-size: cover;margin:0 auto;
+}
+.card2Wbox{
+    width:60%;height:auto;float:left;margin-left:0px;
+}
+.card2Word{
+    display:block;width:100%;height:auto;background:#f5f5f5;margin-top:50PX;padding:30px 20px;
+}
+.card2Word>li{
+    width:100%;height:auto;font-size: 16px;line-height: 28px;
+}
+.card2Jian{
+    width:40px;height:40px;background: url("../imgServe/blue.png");background-size: cover;margin-left: 25px;margin-top:-10px;margin-bottom: -10px;position:relative;z-index: 3;
+}
+.card2Biaoqian{
+    width:31%;height:auto;float:left;background: #f5f5f5;border-radius: 10px;padding: 20px 20px;overflow: hidden;margin-left: 5px;
+}
+.biaoqianWord{
+    width:30%;height:auto;float: left;font-size: 16px;text-align: right;
+}
+.biaoqianNum{
+    width:60%;height:auto;float: left;margin-left:10px;overflow: hidden;
+}
+.bqn{
+    width:16px;height:16px;border-radius: 50%;background: #6dc1fd;font-size: 14px;text-align: center;line-height: 16px;float:left;margin-left:5px;
+}
+.num2{
+    width:98px;height:102px;background: url("../imgServe/num2.png");background-size: cover;position: absolute;top:-30px;right:0;
+}
+/*card2结束*/
+.num3{
+    width:98px;height:102px;background: url("../imgServe/num3.png");background-size: cover;position: absolute;top:-30px;left:0;
+}
+.icon3Box{
+    width:40%;height:auto;float:left;margin-top:180px;
+}
+#icon3{
+    width:124px;height:124px;background:url("../imgServe/icon3.png");background-size: cover;margin:0 auto;
+}
+.card3Wbox{
+    width:55%;height:auto;float:right;margin-right:0px;margin-top:120PX;
+}
+.card3Word{
+    display:block;width:100%;height:auto;padding:10px;border: 2px solid #fff;
+}
+.card3Word>li{
+    width:100%;height:auto;font-size: 16px;line-height: 30px;color: #fff;
+}
+.card3Jian{
+    width:40px;height:40px;background: url("../imgServe/write.png");background-size: cover;margin-left:85%;margin-top:-10px;margin-bottom: -10px;position:relative;z-index: 3;
+}
+.card3Word2{
+    width:90%;height:auto;border: 2px solid #fff;border-radius: 10px;padding: 25px 20px;font-size:16px ;color: #fff;float: right;
+}
+/*card3结束*/
+#icon4{
+    width:124px;height:124px;background:url("../imgServe/icon4.png");background-size: cover;margin:0 auto;
+}
+.num4{
+    width:98px;height:102px;background: url("../imgServe/num4.png");background-size: cover;position: absolute;top:-30px;right:0;
+}
+.card4Word2{
+    width:100%;height:auto;border-radius: 10px;padding: 25px 20px;font-size:16px ;background:#f5f5f5 ;line-height: 28px;
+}
+/*card4结束*/
+.num5{
+    width:98px;height:102px;background: url("../imgServe/num5.png");background-size: cover;position: absolute;top:-30px;left:0;
+}
+#icon5{
+    width:124px;height:124px;background:url("../imgServe/icon5.png");background-size: cover;margin:0 auto;
+}
+.card5Wbox{
+    width:55%;height:auto;float:right;margin-right:0px;margin-top:50PX
+}
+.card51{
+    width:197px;height:292px;background: url("../imgServe/card51.png");background-size: cover;float: left;margin-top:8%;
+}
+.card52{
+    width:222px;height:376px;background: url("../imgServe/card52.png");background-size: cover;float: left;position: relative;
+}
+.card5Jian{
+    width:40px;height:40px;background: url("../imgServe/write.png");background-size: cover;float: left;margin-top:30%;transform: rotate(-90deg);margin-left:-10px;
+}
+.card5W{
+    width:140%;height:auto;font-size: 14px;color:#fff;text-align: center;position: absolute;bottom:-40px;left: 50%;margin-left: -70%;
+}
+/*card6结束*/
+#icon6{
+    width:124px;height:124px;background:url("../imgServe/icon6.png");background-size: cover;margin:0 auto;
+}
+.num6{
+    width:98px;height:102px;background: url("../imgServe/num6.png");background-size: cover;position: absolute;top:-30px;right:0;
+}
+.card6Box{
+    width:100%;height:auto;overflow: hidden;margin-top:30px;
+}
+.rmb{
+    width:49%;height:auto;float: left;padding: 30px;font-size: 20px;border:2px solid #f5f5f5;
+}
+.card6Jian{
+    width:40px;height:40px;background: url("../imgServe/blue.png");background-size: cover;margin-top:-15px;margin-left:46%;margin-bottom: -10px;position: relative;z-index: 3;
+}
+.card6tu{
+    width:100%;height:auto;
+}
+.card6tu>img{
+    width:100%;
+}
+/*card6结束*/
+.num7{
+    width:98px;height:102px;background: url("../imgServe/num7.png");background-size: cover;position: absolute;top:-30px;left:0;
+}
+#icon7{
+    width:124px;height:124px;background:url("../imgServe/icon7.png");background-size: cover;margin:0 auto;
+}
+.card7Jian{
+    width:40px;height:40px;background: url("../imgServe/write.png");background-size: cover;float: left;margin-top:45%;transform: rotate(-90deg);margin-left:-10px;position: relative;margin-right:-10px;
+}
+.card71{
+    width:10%;height:auto;float:left;padding:100px 0;font-size: 28px;color:#fff;border:2px solid #fff;line-height: 32px;margin-top: 15%;text-align: center;
+}
+.card72{
+    width:75%;height:auto;float: right;
+}
+.card72>li{
+    width:100%;height:auto;padding: 5px 0;overflow: hidden;
+}
+.card7icon{
+    width:10%;height:auto;float: left;padding: 7% 0;
+}
+.card7icon>img{
+    width:100%;
+}
+.card7Word{
+    width:85%;height:auto;padding: 10px;float: right;border:2px solid #fff;border-radius: 10px;font-size: 14px;color: #fff;line-height: 20px;
+}
+/*card7结束*/
+#icon8{
+    width:124px;height:124px;background:url("../imgServe/icon8.png");background-size: cover;margin:0 auto;
+}
+.num8{
+    width:98px;height:102px;background: url("../imgServe/num8.png");background-size: cover;position: absolute;top:-30px;right:0;
+}
+.card8Box{
+    width:60%;height:auto;font-size: 18px;border:2px solid #f5f5f5;margin:30px auto 0 auto;padding: 10px;text-align: center;
+}
+.card81{
+    width:100%;height:auto;
+}
+.card81tu{
+    width:3%;height:auto;margin:-5px auto;
+}
+.card81tu>img{
+    width:100%;
+}
+.card81Word{
+    width:100%;height:auto;font-size: 16px;line-height: 30px;text-indent: 2em;text-align: center;
+}
+.card82Word{
+    width:100%;height:auto;background:#f5f5f5 ;padding: 10px 15px;
+}
+.card82Word>li{
+    width:100%;height:auto;font-size: 16px;line-height: 28px;
+}
+.card83{
+    width:100%;height:auto;overflow: hidden;
+}
+.card83Box{
+    width:33.333%;height:auto;float:left;margin-top:16px;
+}
+.card83Boxword{
+    width:100%;height:auto;font-size: 16px;text-align: center;
+}
+.card83Boxnum{
+    width:40px;height:40px;border-radius: 50%;background: #6cc1fb;font-size: 16px;text-align: center;line-height: 40px;margin:24px auto;
+}
+.blue{
+    background:#6cc1fb ;padding: 2px;
+}
+/**/
 .bannerboxP{
     display:none;
 }
@@ -120,7 +371,7 @@ footer{
     width:45.3%;height:1px;background: #939393;margin:14px auto 0 auto;
 }
 .mainPword{
-    width:82%;height:auto;margin:14px auto 0 auto;font-size: 1em;color:#323232;line-height: 24px;text-indent: 2em;
+    width:82%;height:auto;margin:14px auto 0 auto;font-size:22px;color:#323232;line-height: 24px;text-indent: 2em;
 }
 /*联系我们页面*/
 .calltitle{
@@ -142,10 +393,14 @@ footer{
 .jiansw{
     width:80%;height:auto;margin:0 auto;font-size: 1.25em;color: #5a5a5a;text-align: center;
 }
+
 @media screen and (max-width:992px){
-.topBox{display: none}
+    .topBox{display: none}
     .mainBox{display: none}
     footer{display: none}
+    .cInner1{
+        display: none;
+    }
     .callP{
         display:block;
     }
@@ -165,7 +420,7 @@ footer{
         width:50px;height:38px;background: url("../imgPhone/btnP.png");background-size: cover;position:absolute;top:50%;margin-top:-19px;right:30px;
     }
     .navP{
-       width:40%;height:auto;position: absolute;top:125px;right:0;z-index: 99;background: rgba(255,255,255,0.9);display: none;
+        width:40%;height:auto;position: absolute;top:125px;right:0;z-index: 99;background: rgba(255,255,255,0.9);display: none;
     }
     .navP li{
         width:100%;height:88px;border-bottom:1px solid #d2d2d2;padding:22px 34px;
@@ -181,5 +436,97 @@ footer{
     }
     .beginP{
         width:252px;height:88px;position: absolute;top:70%;left:50%;margin-left:-126px;background: url("../imgPhone/rectP.png");font-size:2em;text-align: center;line-height: 88px;color:#6cc1fb;
+    }
+
+    /*产品页面*/
+    .num1,.num2,.num3,.num4,.num5,.num6,.num7,.num8{
+        left:50%;margin-left: -44px;top:-48px;width:88px;height:91px
+    }
+    #icon1,#icon2,#icon3,#icon4,#icon5,#icon6,#icon7,#icon8{
+        width:109px;height:109px
+    }
+    #icon1{
+        margin-top:100px;
+    }
+    .card1Box,.card2Box{
+        width:90%;
+    }
+    .icon2Box,.icon3Box{
+        width:100%;margin:100px auto 0 auto;float: none;
+    }
+    .card2Wbox,.card3Wbox,.card3Word2,.card5Wbox{
+        width:100%;float: none;
+    }
+    .card2Biaoqian{
+        width:100%;margin:30px auto 0 auto;float: none;
+    }
+    .biaoqianWord,.biaoqianNum{
+        width: 45%;
+    }
+    .card2Jian,.card3Jian{
+        margin-left: 45%;
+    }
+    .card3Wbox{
+        margin-top:50px;
+    }
+    .card51{
+        width:123px;height:183px;margin-left: 5%;
+    }
+    .card52{
+        width: 139px;height:235px;
+    }
+    .card5Jian{
+        margin-top: 27%;
+    }
+    .card71{
+        width:10%;font-size: 20px;padding: 60px 0;margin-top:40%
+    }
+    .card7Jian{
+        position:absolute;top:50%;left:11%
+    }
+    .cWord1{
+        font-size: 28px;
+    }
+    .cWord2{
+        font-size: 22px;margin-top:10px
+    }
+    .card2Word,.card3Wbox{
+        margin-top:20px
+    }
+    .pad{
+        padding-bottom:120px ;
+    }
+    .card83Box{
+        width:30%;margin-left: 1%;
+    }
+    .cInnerp{
+        width:100%;height:auto;margin:30px auto 0 auto;display: block;
+    }
+    .circle1p{
+        width:65px;height:65px;border-radius: 50%;border:2px solid #fff;font-size: 12px;color: #fff;text-align: center;line-height: 18px;padding: 10px 0;margin:0 auto;
+    }
+    .lineBoxp{
+        width:1px;height:500px;margin:0 auto;background: #ffffff;
+    }
+    .lineWboxp{
+        width:200px;height:20%;margin:0 auto;margin-left: -100px;
+    }
+    .lineTitlep{
+        width: 33.333%;height:100%;float: right;font-size: 14px;color: #ffffff;text-align:left;padding: 15% 0;line-height: 20px;
+    }
+    .lineDatep{
+        width: 33.333%;height:100%;float: right;font-size: 14px;color: #ffffff;text-align:left;padding: 18% 0;line-height: 20px;
+    }
+    .lineCirclep{
+        width:20px;height:20px;background: #fff;position: absolute;top:50%;margin-top:-10px;left: 50%;margin-left:-10px;border-radius: 50%;
+    }
+    .circle2_1p{
+        width:58px;height:58px;border-radius: 50%;background: rgba(255,255,255,0.6);margin:0 auto;overflow: hidden;
+    }
+    .circle2_2p{
+        width:26px;height: 26px;border-radius: 50%;background: rgba(255,255,255,0.7);margin: 13px auto;overflow: hidden;
+    }
+    .circle2_3p{
+        width:10px;height: 10px;border-radius: 50%;background: rgba(255,255,255,1);margin:8px auto;
     }
 }
