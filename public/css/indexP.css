@@ -78,7 +78,7 @@ a{
     width:100%;height:auto;margin:60px auto 0 auto;overflow: hidden;
 }
 .iconInner{
-    width:25%;height:auto;float:left;background: yellow;position: relative;
+    width:25%;height:auto;float:left;position: relative;
 }
 .iconInner>a{
     display: block;width:88px;height:auto;margin:0 auto;
