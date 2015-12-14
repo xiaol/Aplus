@@ -93,7 +93,7 @@ a{
     width:100%;height:auto;margin:20px auto 0 auto;text-align: center;font-size: 13px;color: #858585;
 }
 .tiyanBox{
-    display:block;width:auto;height:auto;margin:30px auto 0 auto;background: red;position: relative;bottom:0;left:50%;margin-left:-18%;
+    display:block;width:35%;height:auto;margin:30px auto 0 auto;background: red;position: relative;bottom:0;left:50%;margin-left:-12.5%;
 }
 .tiyan{
     display:block;font-size: 13px;color:#979797;float: left;
@@ -528,5 +528,14 @@ footer{
     }
     .circle2_3p{
         width:10px;height: 10px;border-radius: 50%;background: rgba(255,255,255,1);margin:8px auto;
+    }
+    .tiyanBox>a>img{
+        width:20px;
+    }
+    .iconWord1,.iconWord2,.tiyanBox{
+        margin-top:15px;
+    }
+    .tiyanBox{
+        width:50%;
     }
 }
