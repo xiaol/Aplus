@@ -70,25 +70,28 @@ a{
         width:100%;height:70px;background: #fff;position: relative;top:0;left:0;
     }
     .logoP{
-        width:179px;height:30px;background: url("../imgPhone/logoP.png");position: absolute;top:50%;margin-top:-15px;left:50%;margin-left:-90px;background-size: cover;
+        width: 50%;height:auto;margin:5% 25%;
+    }
+    .logoP>img{
+        width: 100%;
     }
     .btnP{
-        width:40px;height:30px;background: url("../imgPhone/btnP.png");background-size: cover;position:absolute;top:50%;margin-top:-19px;right:30px;
+        width:30px;height:22px;background: url("../imgPhone/btnP.png");background-size: cover;position:absolute;top:50%;margin-top:-11px;right:10px;
     }
     .navP{
-        width:50%;height:auto;position: absolute;top:70px;right:0;z-index: 99;background: rgba(255,255,255,0.9);display: none;
+        width:50%;height:auto;position: absolute;top:50px;right:0;z-index: 99;background: rgba(255,255,255,0.9);display: none;
     }
     .navP li{
         width:100%;height:35px;border-bottom:1px solid #d2d2d2;padding:12px 22px;
     }
     .iconP{
-        width:30px;height:30px;float: left;
+        width:25px;height:25px;float: left;
     }
     .iconP>img{
         width:100%;
     }
     .navWord{
-        width:65%;height:35px;float: left;margin-left:20px;text-align: left;line-height: 35px;font-size:1.3em;color:#333;
+        width:65%;height:35px;float: left;margin-left:20px;text-align: left;line-height: 35px;font-size:1em;color:#333;
     }
     .beginP{
         width:252px;height:88px;position: absolute;top:70%;left:50%;margin-left:-126px;background: url("../imgPhone/rectP.png");font-size:2em;text-align: center;line-height: 88px;color:#6cc1fb;
