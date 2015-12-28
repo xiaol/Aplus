@@ -67,19 +67,19 @@ a{
         width:100%;
     }
     .topP{
-        width:100%;height:70px;background: #fff;position: relative;top:0;left:0;
+        width:100%;height:40px;background: #fff;position: relative;top:0;left:0;overflow: hidden;
     }
     .logoP{
-        width: 50%;height:auto;margin:5% 25%;
+        width: 30%;height:auto;margin:5% 35%;
     }
     .logoP>img{
         width: 100%;
     }
     .btnP{
-        width:30px;height:22px;background: url("../imgPhone/btnP.png");background-size: cover;position:absolute;top:50%;margin-top:-11px;right:10px;
+        width:20px;height:15px;background: url("../imgPhone/btnP.png");background-size: cover;position:absolute;top:50%;margin-top:-8px;right:13px;
     }
     .navP{
-        width:50%;height:auto;position: absolute;top:50px;right:0;z-index: 99;background: rgba(255,255,255,0.9);display: none;
+        width:50%;height:auto;position: absolute;top:40px;right:0;z-index: 99;background: rgba(255,255,255,0.9);display: none;
     }
     .navP li{
         width:100%;height:35px;border-bottom:1px solid #d2d2d2;padding:12px 22px;
