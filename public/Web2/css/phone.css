@@ -53,7 +53,7 @@
         display: none;
     }
     .phonewordbox{
-        width:100%;height:auto;margin:30% auto 0 auto;display: block;
+        width:100%;height:auto;margin:20% auto 0 auto;display: block;
     }
     .phoneBaijia{
         width: 120px;height:30px;font-size: 30px;color:#fff;margin:0 auto 0 auto;
@@ -65,7 +65,7 @@
         width:170px;height:20px;font-size: 20px;color: #fff;margin:3% auto 0 auto;
     }
     .phonedown{
-        display:block;width:100%;height:auto;margin:100% auto 0 auto;overflow: hidden;
+        display:block;width:100%;height:auto;margin:110% auto 0 auto;overflow: hidden;
     }
     .phoneandroid{
         width:96px;height:36px;float:left;margin-left:25%;
@@ -105,7 +105,7 @@
         width:100%
     }
     .phoneWord2tu{
-        width:0%;height:auto;position: absolute;bottom:7%;left: 50%;margin-left:-35%
+        width:0%;height:auto;position: absolute;bottom:2%;left: 50%;margin-left:-35%
 
     }
     .phoneWord2tu>img{
