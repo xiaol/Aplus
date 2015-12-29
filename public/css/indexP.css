@@ -87,16 +87,16 @@ a{
     width:33%;height:auto;float:left;position: relative;
 }
 .iconInner>a{
-    display: block;width:130px;height:auto;margin:0 auto;
+    display: block;width:110px;height:auto;margin:0 auto;
 }
 .iconInner>a>img{
     width:100%;
 }
 .iconWord1{
-    width:100%;height:auto;margin:28px auto 0 auto;text-align: center;font-size: 28px;color:#323232;
+    width:100%;height:auto;margin:28px auto 0 auto;text-align: center;font-size: 24px;color:#323232;
 }
 .iconWord2{
-    width:100%;height:auto;margin:16px auto 0 auto;text-align: center;font-size: 24px;color: #858585;
+    width:100%;height:auto;margin:16px auto 0 auto;text-align: center;font-size: 17px;color: #858585;
 }
 .tiyanBox{
     display:block;width:90%;height:auto;margin:26px auto 0 auto;position: relative;bottom:0;left:50%;margin-left:-45%;overflow: hidden;padding: 0 0 0 30%;
