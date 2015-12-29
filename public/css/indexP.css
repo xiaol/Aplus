@@ -324,7 +324,7 @@ footer{
     width:100%;height: auto;padding: 0 20%;margin:70px auto 0 auto;
 }
 .imgCbox{
-    width: 62.5%;height:auto;margin:20% auto 0 auto;
+    width: 62.5%;height:auto;position: fixed;top:20%;
 }
 /*card6结束*/
 #icon6{
@@ -495,6 +495,7 @@ footer{
     .topBox,.card5_1,.card5_2,.card5_3,.nav{display: none}
     .mainBox{display: none}
     footer{display: none}
+    .imgCbox{position: static}
     .cInner1{
         display: none;
     }
