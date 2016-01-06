@@ -273,55 +273,85 @@ footer{
     width:40%;height:auto;margin:100px auto 0 auto;
 }
 .imgA{
-    width:200px;height:auto;margin:30px auto 0 auto;
+    width: 100%;height:auto;margin:56px auto 0 auto;display: block;
 }
-.imgA>img{
+.imgA_L{
+    width:42%;height:auto;float: left;
+}
+.imgA_L1{
+    width: 40%;height:auto;float: left;padding: 40% 0;
+}
+.imgA_L1>img{
     width:100%
 }
-.imgA_1{
-    width: 267px;height:auto;margin:30px auto 0 auto;
+.imgA_L2{
+    width: 11%;height: auto;float: left;margin-left: 2%;
 }
-.imgA_1>img{
-    width:100%
-}
-.imgA_jian{
-    width:40px;height:40px;background: url("../imgServe/write.png");margin:24px auto ;background-size: cover
-}
-.imgA_word{
-    width:100%;height:auto;margin:0 auto;
-}
-.imgA_word1{
-    width:30%;height:auto;float: left;margin-left: 5%;padding: 5% 0;
-}
-.imgA_word1>img{
-    width:100%
-}
-.imgA_2{
-    width:460px;height:auto;margin:0 auto;margin-left:26.5%
-}
-.imgA_2>img{
-    width:100%
-}
-.imgB{
-    width:200px;height:auto;margin:40px auto 0 auto;
-}
-.imgB>img{
-    width:100%
-}
-.imgB_1{
-    width:393px;height:auto;margin:48px auto 0 auto;
-}
-.imgB_1>img{
-    width:100%
-}
-.imgB_word1{
-    width: 21.25%;height:auto;float: left;margin-left:5%;
-}
-.imgB_word1>img{
+.imgA_L2>img{
     width: 100%;
 }
-.imgC_1{
-    width:100%;height: auto;padding: 0 20%;margin:70px auto 0 auto;
+.imgA_L3box{
+    width:40% ;height: auto;float: left;margin-left: 10px;
+}
+.imgA_L31{
+    width:100%;height: auto;margin-bottom:10px
+}
+.imgA_L31>img{
+    width: 100%;
+}
+.imgA_C{
+    width: 40px;height:40px;float: left;padding: 25% 0;margin: 0 30px;
+}
+.imgA_C>img{
+    width: 100%;transform: rotate(-90deg);
+}
+.imgA_R{
+    width: 45%;height: auto;float: right;padding: 10% 0;
+}
+.imgA_R>img{
+    width: 100%;
+}
+.imgB_LT{
+    width: 100%;height: auto;
+}
+.imgB_LT>img{
+    width: 100%;
+}
+.imgB_LB{
+    width: 70%;height: auto;margin:48px auto 0 auto;
+}
+.imgB_LB>img{
+    width: 100%;
+}
+.imgB_R{
+    width: 35%;height: auto;float: right;
+}
+.imgB_R1{
+    width: 100%;height: auto;margin-top:25px
+}
+.imgB_R1>img{
+    width: 100%;
+}
+.imgC_L{
+    width: 35%;height: auto;float: left;
+}
+.imgC_L>img{
+    width:100%
+}
+.imgC_R{
+    width: 45%;height: auto;float: right;
+}
+.imgC_R1{
+    width:70%;height: auto;margin: 0 auto;
+}
+.imgC_R1>img{
+    width: 100%;
+}
+.imgC_R2{
+    width: 100%;height: auto;font-size: 16px;color: #fff;margin-top:10px;text-align: center;
+}
+.imgCbox{
+    width: 62.5%;height:auto;position: fixed;top:40%;
 }
 .imgCbox{
     width: 62.5%;height:auto;position: fixed;top:20%;
@@ -446,6 +476,29 @@ footer{
     width: 100%;height: auto;font-size: 14px;color: #ffffff;line-height: 22px;margin-top:10px
 }
 /*card9结束*/
+
+#icon10{
+    width:124px;height:124px;background:url("../img/icon10.png");background-size: cover;margin:0 auto;
+}
+.num10{
+    width:98px;height:102px;background: url("../imgServe/num10.png");background-size: cover;position: absolute;top:-30px;right:0;
+}
+.card10_1{
+    width: 80%;height:auto;margin:76px auto 0 auto;
+}
+.card10_1>img{
+    width: 100%;
+}
+.card10_2{
+    width: 100%;height:auto;margin:20px auto;font-size: 20px;color:#6cc1fb;text-align: center;
+}
+.card10_3{
+    width: 40px;height:auto;margin:20px auto;
+}
+.card10_3>img{
+    width: 100%;
+}
+
 .blue{
     background:#6cc1fb ;padding: 2px;
 }
@@ -490,7 +543,7 @@ footer{
     width:80%;height:auto;margin:0 auto;font-size: 1.25em;color: #5a5a5a;text-align: center;
 }
 .card5_1,.card5_2,.card5_3{display: block}
-.phoneCard5_1,.phoneCard5_2,.phoneCard5_3{display: none}
+.phoneCard5_1,.phoneCard5_2,.phoneCard5_3,.phoneImgA,.phoneImgB,.phoneImgC{display: none}
 @media screen and (max-width:992px){
     .topBox,.card5_1,.card5_2,.card5_3,.nav{display: none}
     .mainBox{display: none}
@@ -538,7 +591,7 @@ footer{
 
 
     /*产品页面*/
-    .num1,.num2,.num3,.num4,.num5,.num6,.num7,.num8,.num9{
+    .num1,.num2,.num3,.num4,.num5,.num6,.num7,.num8,.num9,.num10{
         left:50%;margin-left: -44px;top:-48px;width:88px;height:91px
     }
     #icon1,#icon2,#icon3,#icon4,#icon5,#icon6,#icon7,#icon8,#icon9{
@@ -547,8 +600,11 @@ footer{
     #icon1{
         margin-top:100px;
     }
-    .card1Box,.card2Box,.card9Box,.icon5Box{
+    .card1Box,.card2Box,.card9Box{
         width:90%;
+    }
+    .icon5Box{
+        width: 100%;margin-top:100px
     }
     .icon2Box,.icon3Box{
         width:100%;margin:100px auto 0 auto;float: none;
@@ -649,32 +705,80 @@ footer{
     .num5{
         top:103%
     }
-    .phoneImgA_1{
-        width:60%;height:auto;margin:20px auto 0 auto;
+    .imgA{
+        display: none;
     }
-    .phoneImgA_2,.phoneImgB_1{
-        width:100%;height:auto;margin:20px auto 0 auto;
+    .phoneImgA,.phoneImgB,.phoneImgC{
+        width: 100%;height: auto;margin:30px auto 0 auto;display: block;
     }
-    .phoneImgA_1>img,.phoneImgA_2>img,.phoneImgB_1>img,.phoneImgB_2>img{
+    .phoneImgA1{
+        width: 50%;height: auto;margin: 0 auto;
+    }
+    .phoneImgA1>img{
         width: 100%;
     }
-    .phoneWbox{
-        width: 100%;margin:0 auto;overflow: hidden;
+    .phoneImgA2{
+        width: 100%;height: auto;margin-top:10px
     }
-    .phoneWord{
-        width: 32%;height:auto;float: left;margin-left: 2%;font-size: 16px;color: #fff;border: 1px solid #fff;padding: 3px;text-align: center;
+    .phoneImgA2>img{
+        width: 100%;
     }
-    .phoneImgB_2{
-        width:100%;height:auto;margin:0px auto 0 auto;
+    .phoneImgA3{
+        width: 100%;height:auto;overflow: hidden;
     }
-    .phoneBbox{
-        width:100%;height:auto;margin:20px auto 0 auto;overflow: hidden;
+    .phoneImgA31{
+        width: 40%;height:auto;margin:10px auto;
     }
-    .phoneBword{
-       width:40%;height:auto;float: left;margin-left: 15%;
+    .phoneImgA31>img{
+        width: 100%;
     }
-    .phoneBword>img{
+    .phoneImgA4{
+        width: 40px;height:auto;margin: 30px auto;
+    }
+    .phoneImgA4>img{
+        width: 100%;
+    }
+    .phoneImgA5{
+        width: 100%;height: auto;margin-left: 15px;
+    }
+    .phoneImgA5>img{
+        width: 100%;
+    }
+    .phoneImgB1{
+        width: 100%;height: auto;margin: 0 auto;
+    }
+    .phoneImgB1>img{
+        width: 100%;
+    }
+    .phoneImgB2{
+        width: 80%;height: auto;margin: 20px auto;
+    }
+    .phoneImgB2>img{
+        width: 100%;
+    }
+    .phoneImgB3{
+        width: 100%;height: auto;margin-bottom: 10px;
+    }
+    .phoneImgB3>img{
+        width: 100%;
+    }
+    .phoneImgC1{
+        width: 80%;height: auto;margin: 0 auto;
+    }
+    .phoneImgC1>img{
+        width: 100%;
+    }
+    .phoneImgC2box{
+        width: 100%;height:auto;float: right;
+    }
+    .phoneImgC2{
+        width: 80%;height:auto;margin:0 auto;
+    }
+    .phoneImgC2>img{
         width:100%
+    }
+    .phoneImgCword{
+        width: 100%;height:auto;font-size: 14px;color: #fff;margin-top:20px
     }
     .imgCbox{
         top:110px;
