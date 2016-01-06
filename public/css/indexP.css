@@ -253,6 +253,12 @@ footer{
 #icon5{
     width:124px;height:124px;background:url("../imgServe/icon5.png");background-size: cover;margin:0 auto;
 }
+#icon51{
+    width:124px;height:124px;background:url("../imgServe/icon5.png");background-size: cover;margin:0 auto;
+}
+#icon52{
+    width:124px;height:124px;background:url("../imgServe/icon5.png");background-size: cover;margin:0 auto;
+}
 .card5Wbox{
     width:55%;height:auto;float:right;margin-right:0px;margin-top:50PX
 }
@@ -270,7 +276,7 @@ footer{
 }
 
 .icon5Box{
-    width:40%;height:auto;margin:100px auto 0 auto;
+    width:40%;height:auto;margin:36px auto 0 auto;
 }
 .imgA{
     width: 100%;height:auto;margin:56px auto 0 auto;display: block;
@@ -484,7 +490,7 @@ footer{
     width:98px;height:102px;background: url("../imgServe/num10.png");background-size: cover;position: absolute;top:-30px;right:0;
 }
 .card10_1{
-    width: 80%;height:auto;margin:76px auto 0 auto;
+    width: 60%;height:auto;margin:56px auto 0 auto;
 }
 .card10_1>img{
     width: 100%;
