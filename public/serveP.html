@@ -9,6 +9,16 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/swiper.min.js"></script>
 </head>
+<script>
+    $(function(){
+        var cw=$(window).width();
+        if(cw<=992){
+            $(".card9Jian img").attr("src","imgServe/write.png");
+        }else{
+            $(".card9Jian img").attr("src","imgServe/white_h.png");
+        }
+    })
+</script>
 <body>
 <div class="topBox">
     <div class="nav">
@@ -255,7 +265,7 @@
                     </div>
                 </div>
                 <div class="imgA_C">
-                    <img src="imgServe/write.png">
+                    <img src="imgServe/white_h.png">
                 </div>
                 <div class="imgA_R">
                     <img src="imgServe/card5s/imgA_R.png">
@@ -306,7 +316,7 @@
                     </div>
                 </div>
                 <div class="imgA_C">
-                    <img src="imgServe/write.png">
+                    <img src="imgServe/white_h.png">
                 </div>
                 <div class="imgB_R">
                     <div class="imgB_R1" style="margin-top:0">
@@ -361,7 +371,7 @@
                     <img src="imgServe/card51.png">
                 </div>
                 <div class="imgA_C" style="margin:0 7%;padding: 20% 0">
-                    <img src="imgServe/write.png">
+                    <img src="imgServe/white_h.png">
                 </div>
                 <div class="imgC_R">
                     <div class="imgC_R1">
@@ -509,7 +519,9 @@
             <div class="card91">
                 <img src="imgServe/img9.png">
             </div>
-            <div class="card9Jian"></div>
+            <div class="card9Jian">
+                <img src="imgServe/white_h.png">
+            </div>
             <div class="card92">
                 <span class="card9Title">世界互联网大会 习近平询问无人驾驶车何时商用</span>
                 <div class="card9Word">习近平16日在浙江省乌镇视察“互联网之光”博览会。习近平强调，互联网给人们的生产生活带来巨大变化，对很多领域的创新发展起到很强带动作用。我们要用好互联网带来的重大机遇，深入实施创新驱动发展战略。
@@ -528,6 +540,10 @@
             <span class="cWord1" style="color:#6cc1fb">内容流推荐引擎</span>
             <!--<span class="cWord2">挖掘并重新组织内容，赋予内容更高价值</span>-->
         </div>
+        <div class="card10Img">
+            <img src="imgServe/card5s/img10.png">
+        </div>
+        <div class="card10Box">
         <div class="card10_1">
             <img src="imgServe/card5s/img10_1.png">
         </div>
@@ -538,7 +554,7 @@
         <div class="card10_2" style="font-size: 30px;margin-top:0">推荐</div>
         <div class="card10_1" style="margin-top: 0;width:70%">
             <img src="imgServe/card5s/img10_2.png">
-        </div>
+        </div></div>
         <div style="clear: both"></div>
         <div class="num10" id="10"></div>
     </div>
