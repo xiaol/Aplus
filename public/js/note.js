@@ -27,17 +27,28 @@ function getNowFormatDate() {
 //    getNowFormatDate()函数获取当前时间，格式为xx-xx-xx xx：xx：xx
 
 function timeDifference(dt1,dt2){
-    var regTime = /(\d{4})-(\d{1,2})-(\d{1,2})( \d{1,2}:\d{1,2})/g;
-    var interval = Math.abs(Date.parse(dt1.replace(regTime, "$2-$3-$1$4")) - Date.parse(dt2.replace(regTime, "$2-$3-$1$4")))/1000;
-    var h = Math.floor(interval / 3600);
-    var m = Math.floor(interval % 3600 / 60);
+    var date2=transdate(dt1);  //开始时间,dt1为后面的时间
+    var date1=transdate(dt2);    //结束时间，dt2为前面的时间
+    var date3=date2-date1  //时间差的毫秒数
     var time;
-    if(h>0){
-        time=h + "小时" + m + "分钟前";
+    //计算出相差天数
+    //    var days=Math.floor(date3/(24*3600*1000))
+    //计算出小时数
+    var leave1=date3%(24*3600*1000)    //计算天数后剩余的毫秒数
+    var hours=Math.floor(date3/(3600*1000))
+    //计算相差分钟数
+    var leave2=leave1%(3600*1000)        //计算小时数后剩余的毫秒数
+    var minutes=Math.floor(leave2/(60*1000))
+    //计算相差秒数
+    //    var leave3=leave2%(60*1000)      //计算分钟数后剩余的毫秒数
+    //    var seconds=Math.round(leave3/1000)
+
+    if(hours>0){
+        time=hours+"小时 "+minutes+" 分钟前";
     }else{
-        time=m + "分钟前";
+        time=minutes+" 分钟前"
     }
-    return (time)
+    return time;
 }
 var dt1 = getNowFormatDate();//alert(dt1)当前时间
 //var dt2 = "2016-1-20 11:20";
