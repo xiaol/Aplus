@@ -79,21 +79,22 @@
                     //alert(">40")
                     !downHasClass && downIcon.addClass("reverse_icon");
                     return "";
-                } else if (y < 40 && y > 0) {
-                    downHasClass && downIcon.removeClass("reverse_icon");
-                    return "";
-                }
-                if(y<0&&y>-5){
-                    $(".yindaoLogo").css("display","none");
-                    $(".yindaoWord").css("bottom","10%");
-                    $(".topLogo").animate({"top":"-10%"},500);
-                    $("#wrapper1").css("top",bb*0.5);
-                }else if(y>=0){
+                } else if (y < 40 && y > -10) {
                     $(".topLogo").animate({"top":"0"},function(){
                         $(".yindaoLogo").css("display","block");
                         $(".yindaoWord").css("bottom","7%");
                         $("#wrapper1").css("top",bb);
                     })
+                    downHasClass && downIcon.removeClass("reverse_icon");
+                    return "";
+                }
+                if(y<-10&&y>-100){
+                    $(".yindaoLogo").css("display","none");
+                    $(".yindaoWord").css("bottom","10%");
+                    $(".topLogo").animate({"top":"-10%"},500);
+                    $("#wrapper1").css("top",bb*0.5);
+                }else{
+                    return;
                 }
 
                 if (maxY >= 40) {
