@@ -44,9 +44,13 @@ function timeDifference(dt1,dt2){
     //    var seconds=Math.round(leave3/1000)
 
     if(hours>0){
-        time=hours+"小时 "+minutes+" 分钟前";
+        if (minutes>0) {
+            time=hours+"小时 "+minutes+" 分钟前";
+        }else{
+            time=hours+"小时前";
+        }
     }else{
-        time=minutes+" 分钟前"
+        time=minutes+" 分钟前";
     }
     return time;
 }
