@@ -83,6 +83,18 @@
                     downHasClass && downIcon.removeClass("reverse_icon");
                     return "";
                 }
+                if(y<0&&y>-5){
+                    $(".yindaoLogo").css("display","none");
+                    $(".yindaoWord").css("bottom","10%");
+                    $(".topLogo").animate({"top":"-10%"},500);
+                    $("#wrapper1").css("top",bb*0.5);
+                }else if(y>=0){
+                    $(".topLogo").animate({"top":"0"},function(){
+                        $(".yindaoLogo").css("display","block");
+                        $(".yindaoWord").css("bottom","7%");
+                        $("#wrapper1").css("top",bb);
+                    })
+                }
 
                 if (maxY >= 40) {
 
