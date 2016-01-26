@@ -20,7 +20,7 @@ function dates(){
                     //alert(true)
                     //return;
                     $("<li class='yindaoMain'></li>").attr("id","main"+i).appendTo("#thelist");
-                    $("<a></a>").attr("src",urls).attr("id","a"+i).appendTo("#main"+i);
+                    $("<a></a>").attr("href",urls).attr("id","a"+i).appendTo("#main"+i);
                     $("<div class='yindaoTitle'></div>").html(title).appendTo("#a"+i);
                     $("<div class='yindaoForm'></div>").attr("id","form"+i).appendTo("#a"+i);
                     $("<div class='yindaoForminner' style='margin-left: 0'></div>").html(pubName).appendTo("#form"+i);
