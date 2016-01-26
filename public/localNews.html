@@ -48,9 +48,9 @@
     var is=0;
     var myScroll1,bb;
     $(function(){
-        var aa=$(".topLogo").height();
-        bb=aa;
-        $("#wrapper1").css("top",bb);
+        // var aa=$(".topLogo").height();
+        // bb=aa;
+        // $("#wrapper1").css("top",bb);
         if (myScroll1 == undefined || myScroll1 == '') {
             myScroll1 = new IScroll('#wrapper1', {
                scrollbars: true,
@@ -74,20 +74,20 @@
                         maxY = this.maxScrollY - y,
                         downHasClass = downIcon.hasClass("reverse_icon"),
                         upHasClass = upIcon.hasClass("reverse_icon");
-                $("<span class='num'></span>").css("display","none").html(y).appendTo("body");
-                 var num=$(".num:first").html();
-                if(y<=num){
-                    $(".yindaoLogo").css("display","none");
-                    $(".yindaoWord").css("bottom","10%");
-                    $(".topLogo").css("top","-10%");
-                    $("#wrapper1").css("top",bb*0.5);
-                }else{
-                        $(".topLogo").css("top","0");
-                        $(".yindaoLogo").css("display","block");
-                        $(".yindaoWord").css("bottom","7%");
-                        $("#wrapper1").css("top",bb);
+                // $("<span class='num'></span>").css("display","none").html(y).appendTo("body");
+                //  var num=$(".num:first").html();
+                // if(y<=num){
+                //     $(".yindaoLogo").css("display","none");
+                //     $(".yindaoWord").css("bottom","10%");
+                //     $(".topLogo").css("top","-10%");
+                //     $("#wrapper1").css("top",bb*0.5);
+                // }else{
+                //         $(".topLogo").css("top","0");
+                //         $(".yindaoLogo").css("display","block");
+                //         $(".yindaoWord").css("bottom","7%");
+                //         $("#wrapper1").css("top",bb);
                     
-                }
+                // }
                 if (y >= 40) {
                     //alert(">40")
                     !downHasClass && downIcon.addClass("reverse_icon");
@@ -281,17 +281,18 @@
     })
 </script>
 <body>
-<div class="topLogo" style="z-index: 999">
-    <img src="img/yindao/banner.png" class="img">
-    <div class="yindaoLogo" >
-        <a href="" id="download"><img src="img/yindao/logo.png"></a>
-    </div>
-    <div class="yindaoWord">
-        <img src="img/yindao/word.png">
-    </div>
-</div>
+
 <div id="wrapper1">
     <div id="scroller1">
+        <div class="topLogo" style="z-index: 999">
+            <img src="img/yindao/banner.png" class="img">
+            <div class="yindaoLogo" >
+                <a href="" id="download"><img src="img/yindao/logo.png"></a>
+            </div>
+            <div class="yindaoWord">
+                <img src="img/yindao/word.png">
+            </div>
+        </div>
         <div id = "scroller-pullDown" style="position: fixed;top: -43px;left: 0;width: 100%">
             <!--<span id = "up-icon" class = "icon-double-angle-up pull-up-icon">↑↑</span>-->
             <span id = "pullDown-msg" class = "pull-up-msg" style="display:block;text-align: center;width: 100%;">下拉加载更多</span>
