@@ -50,7 +50,9 @@ a{
 .nav{
     display: block;
 }
-.topP{display: none}
+.topP,.navP{
+    display: none;
+}
 @media screen and (max-width:992px){
     .topBox,.nav{display: none}
     .mainBox{display: none}
@@ -68,19 +70,22 @@ a{
         width:100%;
     }
     .topP{
-        display:block;width:100%;height:40px;background: #fff;position: relative;top:0;left:0;overflow: hidden;
+        display:block;width:100%;height:50px;background: #fff;position: relative;top:0;left:0;overflow: hidden;
     }
+    /*.logoP{*/
+        /*width:179px;height:30px;background: url("../imgPhone/logoP.png");position: absolute;top:50%;margin-top:-15px;left:50%;margin-left:-90px;background-size: cover;*/
+    /*}*/
     .logoP{
-        width: 30%;height:auto;margin:3% 35%;
+        width: 50%;height:auto;margin:4% 26%;
     }
     .logoP>img{
-        width: 100%;
+        width: 80%;
     }
     .btnP{
-        width:20px;height:15px;background: url("../imgPhone/btnP.png");background-size: cover;position:absolute;top:50%;margin-top:-8px;right:13px;
+        width:30px;height:22px;background: url("../imgPhone/btnP.png");background-size: cover;position:absolute;top:50%;margin-top:-11px;right:10px;
     }
     .navP{
-        width:40%;height:auto;position: absolute;top:40px;right:0;z-index: 99;background: rgba(255,255,255,0.9);display: none;
+        width:40%;height:auto;position: absolute;top:50px;right:0;z-index: 99;background: rgba(255,255,255,0.9);display: none;
     }
     .navP li{
         width:100%;height:25px;border-bottom:1px solid #d2d2d2;padding:2px 12px;
