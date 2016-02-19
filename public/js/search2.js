@@ -143,71 +143,70 @@ $(function(){
         $("#back").click(function(){
             window.location="indexP.html";
         })
-        $(".searchInput").click(function(){
-            $(".sMainbox").remove();
-            $(".sMainbox").css("border","0px solid #cfcfcf");
-            $(".sMainbox li").remove();
-            window.location.hash="sw="+$('.searchInput').val();
-            var hash=location.hash;
-            var hashs=hash.split("=");
-            mm[hashs[0]]=hashs[1];
-            var sw=encodeURI(mm['#sw']);
-            $.ajax({
-                url:"http://fusion.deeporiginalx.com:8088/search?key="+sw,
-                type:"get",
-                dataType:"json",
-                success:function(e){
-                    $(".sMainbox").css("border","1px solid #cfcfcf");
-                    var searchItems=e["searchItems"];
+        $(".searchInput").bind('keypress',function(event){
+            if(event.keyCode == "13") {
+                $(".sMainbox").remove();
+                $(".sMainbox").css("border", "0px solid #cfcfcf");
+                $(".sMainbox li").remove();
+                window.location.hash = "sw=" + $('.searchInput').val();
+                var hash = location.hash;
+                var hashs = hash.split("=");
+                mm[hashs[0]] = hashs[1];
+                var sw = encodeURI(mm['#sw']);
+                $.ajax({
+                    url: "http://fusion.deeporiginalx.com:8088/search?key=" + sw,
+                    type: "get",
+                    dataType: "json",
+                    success: function (e) {
+                        $(".sMainbox").css("border", "1px solid #cfcfcf");
+                        var searchItems = e["searchItems"];
                         $("<ul class='sMainbox'></ul>").appendTo(".mainOutbox");
 
-                        for(var i=0;i<searchItems.length;i++){
-                            var title=searchItems[i]['title'];
-                            var url=searchItems[i]['url'];
-                            var abs=searchItems[i]['abs'];
-                            var sourceSite=searchItems[i]['sourceSite'];
-                            var updateTime=searchItems[i]['updateTime'];
-                            var searchFrom=searchItems[i]['searchFrom'];
-                            var imgs=searchItems[i]['imgUrl'];
-                            if(imgs==""){
-                                $("<li></li>").attr("id","s"+i).appendTo(".sMainbox");
-                                $("<a target='_blank'></a>").attr({"href":url,"id":"a"+i}).appendTo("#s"+i);
-                                $("<div class='sTitle'></div>").html(title).appendTo("#a"+i);
-                                $("<div class='sText'></div>").html(abs).appendTo("#a"+i);
-                                $("<div class='sMore'></div>").attr("id","more"+i).appendTo("#a"+i);
-                                $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more"+i);
-                                $("<div class='sFrom'></div>").html(sourceSite).appendTo("#more"+i);
-                                $("<div class='sTime'></div>").html(updateTime).appendTo("#more"+i);
-                            }else{
-                                $("<li></li>").attr("id","s"+i).appendTo(".sMainbox");
-                                $("<a target='_blank'></a>").attr({"href":url,"id":"a"+i}).appendTo("#s"+i);
-                                $("<div class='sTitle'></div>").html(title).appendTo("#a"+i);
-                                $("<div class='sImgbox'></div>").attr("id","imgbox"+i).appendTo("#a"+i);
-                                $("<div class='sImg'></div>").attr("id","img"+i).appendTo("#imgbox"+i);
-                                $("<img src="+imgs+">").appendTo("#img"+i);
-                                $("<div class='imgWord'>").attr("id","word"+i).appendTo("#imgbox"+i);
-                                $("<div class='sText' style='margin-top:0'>").html(abs).appendTo("#word"+i);
-                                $("<div class='sMore'></div>").attr("id","more"+i).appendTo("#word"+i);
-                                $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more"+i);
-                                $("<div class='sFrom'></div>").html(sourceSite).appendTo("#more"+i);
-                                $("<div class='sTime'></div>").html(updateTime).appendTo("#more"+i);
+                        for (var i = 0; i < searchItems.length; i++) {
+                            var title = searchItems[i]['title'];
+                            var url = searchItems[i]['url'];
+                            var abs = searchItems[i]['abs'];
+                            var sourceSite = searchItems[i]['sourceSite'];
+                            var updateTime = searchItems[i]['updateTime'];
+                            var searchFrom = searchItems[i]['searchFrom'];
+                            var imgs = searchItems[i]['imgUrl'];
+                            if (imgs == "") {
+                                $("<li></li>").attr("id", "s" + i).appendTo(".sMainbox");
+                                $("<a target='_blank'></a>").attr({"href": url, "id": "a" + i}).appendTo("#s" + i);
+                                $("<div class='sTitle'></div>").html(title).appendTo("#a" + i);
+                                $("<div class='sText'></div>").html(abs).appendTo("#a" + i);
+                                $("<div class='sMore'></div>").attr("id", "more" + i).appendTo("#a" + i);
+                                $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more" + i);
+                                $("<div class='sFrom'></div>").html(sourceSite).appendTo("#more" + i);
+                                $("<div class='sTime'></div>").html(updateTime).appendTo("#more" + i);
+                            } else {
+                                $("<li></li>").attr("id", "s" + i).appendTo(".sMainbox");
+                                $("<a target='_blank'></a>").attr({"href": url, "id": "a" + i}).appendTo("#s" + i);
+                                $("<div class='sTitle'></div>").html(title).appendTo("#a" + i);
+                                $("<div class='sImgbox'></div>").attr("id", "imgbox" + i).appendTo("#a" + i);
+                                $("<div class='sImg'></div>").attr("id", "img" + i).appendTo("#imgbox" + i);
+                                $("<img src=" + imgs + ">").appendTo("#img" + i);
+                                $("<div class='imgWord'>").attr("id", "word" + i).appendTo("#imgbox" + i);
+                                $("<div class='sText' style='margin-top:0'>").html(abs).appendTo("#word" + i);
+                                $("<div class='sMore'></div>").attr("id", "more" + i).appendTo("#word" + i);
+                                $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more" + i);
+                                $("<div class='sFrom'></div>").html(sourceSite).appendTo("#more" + i);
+                                $("<div class='sTime'></div>").html(updateTime).appendTo("#more" + i);
                             }
                         }
 
-                    //    页码按钮
-                    //    for(var j=$(".sMainbox").length;j>0;j--){
-                    //        $($(".sMainbox")[j]).css("z-Index",j);
-                    //    }
+                        //    页码按钮
+                        //    for(var j=$(".sMainbox").length;j>0;j--){
+                        //        $($(".sMainbox")[j]).css("z-Index",j);
+                        //    }
 
 
-
-
-
-                },
-                error:function(){
-                    //alert(2)
-                }
-            })
+                    },
+                    error: function () {
+                        //alert(2)
+                    }
+                })
+            }
         })
     }
 

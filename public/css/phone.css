@@ -76,28 +76,28 @@ a{
         /*width:179px;height:30px;background: url("../imgPhone/logoP.png");position: absolute;top:50%;margin-top:-15px;left:50%;margin-left:-90px;background-size: cover;*/
     /*}*/
     .logoP{
-        width: 50%;height:auto;margin:4% 26%;
+        width: 30%;height:auto;margin:4% 36%;
     }
     .logoP>img{
         width: 80%;
     }
     .btnP{
-        width:30px;height:22px;background: url("../imgPhone/btnP.png");background-size: cover;position:absolute;top:50%;margin-top:-11px;right:10px;
+        width:25px;height:19px;background: url("../imgPhone/btnP.png");background-size: cover;position:absolute;top:50%;margin-top:-9px;right:10px;
     }
     .navP{
         width:40%;height:auto;position: absolute;top:50px;right:0;z-index: 99;background: rgba(255,255,255,0.9);display: none;
     }
     .navP li{
-        width:100%;height:25px;border-bottom:1px solid #d2d2d2;padding:2px 12px;
+        width:100%;height:40px;border-bottom:1px solid #d2d2d2;padding:2px 12px;
     }
     .iconP{
-        width:15px;height:15px;float: left;
+        width:20px;height:20px;float: left;margin-top:10px;
     }
     .iconP>img{
         width:100%;
     }
     .navWord{
-        width:65%;height:25px;float: left;margin-left:20px;text-align: left;line-height: 25px;font-size:10px;color:#333;
+        width:65%;height:25px;float: left;margin-left:20px;text-align: left;line-height: 25px;font-size:14px;color:#333;margin-top:10px;
     }
     .beginP{
         width:252px;height:88px;position: absolute;top:70%;left:50%;margin-left:-126px;background: url("../imgPhone/rectP.png");font-size:2em;text-align: center;line-height: 88px;color:#6cc1fb;
