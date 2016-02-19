@@ -143,7 +143,7 @@ $(function(){
         $("#back").click(function(){
             window.location="indexP.html";
         })
-        $(".searchInput").bind('keypress',function(event){
+        $(document).bind('keydown',function(event){
             if(event.keyCode == "13") {
                 $(".sMainbox").remove();
                 $(".sMainbox").css("border", "0px solid #cfcfcf");

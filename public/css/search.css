@@ -233,7 +233,7 @@
         outline: none;
     }
     .searchForm>div{
-        width: 13%;height: 40px;font-size:20px;color: #8e8e93;text-align: center;line-height: 40px;float: right;
+        width: 13%;height: 40px;font-size:20px;color: #8e8e93;text-align: center;line-height: 35px;float: right;
     }
     .searchIcon {
         width: 5%;
