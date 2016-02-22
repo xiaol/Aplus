@@ -126,7 +126,7 @@
                     var title,pubTime,pubName,urls,nowTime,imgLists;
                     nowTime=getNowFormatDate();
                     $.ajax({
-                        url:"http://api.deeporiginalx.com/bdp/news/refresh?cid=4&tstart="+transdate(first),
+                        url:"http://api.deeporiginalx.com/bdp/news/refresh?cid=28&tstart="+transdate(first),
                         type:"get",
                         dataType:"json",
                         success:function(e){
@@ -204,7 +204,7 @@
                     var title,pubTime,pubName,urls,nowTime,imgLists;
                     nowTime=getNowFormatDate();
                     $.ajax({
-                        url:"http://api.deeporiginalx.com/bdp/news/load?cid=2&tstart="+transdate(last),
+                        url:"http://api.deeporiginalx.com/bdp/news/load?cid=28&tstart="+transdate(last),
                         type:"get",
                         dataType:"json",
                         success:function(e){

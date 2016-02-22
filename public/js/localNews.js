@@ -2,7 +2,7 @@ function dates(){
     var title,pubTime,pubName,urls,nowTime,imgLists,timeCha;
     nowTime=getNowFormatDate();
     $.ajax({
-        url:"http://api.deeporiginalx.com/bdp/news/load?cid=2&tstart="+transdate(nowTime),
+        url:"http://api.deeporiginalx.com/bdp/news/load?cid=28&tstart="+transdate(nowTime),
         type:"get",
         dataType:"json",
         success:function(e){
