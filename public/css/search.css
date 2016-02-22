@@ -31,16 +31,16 @@
 
 /**/
 .sForm{
-    width: 46.88%;height:40px;margin: 70px auto 0 auto;border: 1px solid #cfcfcf;box-shadow: 0 0 3px #6cc1fb;border-radius: 3px;display: block;
+    width: 46.88%;height:40px;margin: 70px auto 0 auto;border: 1px solid #cfcfcf;box-shadow: 0 0 5px #6cc1fb;border-radius: 5px;display: block;overflow: hidden;
 }
 .sInput{
-    width: 90%;height:100%;border: 0;font-size:16px ;color: #383838;padding: 10px 30px;
+    width: 90%;height:100%;border: 0;font-size:16px ;color: #383838;padding: 10px 10px;
 }
 .sInput:focus{
     outline: none;
 }
 .sButton{
-    width: 10%;height: 100%;background: #6cc1fb url("../img/buttonWebw.png") no-repeat;font-size: 20px;color: #fff;background-position: center;float: right;
+    width: 10%;height: 100%;background: #6cc1fb url("../img/buttonWebw.png") no-repeat;font-size: 20px;color: #fff;background-position: center;float: right;background-size: 40%;
 }
 .sButton:hover{
     cursor:pointer;
@@ -55,7 +55,45 @@
 .buttonNum:first-child{
     border: 0px;
 }
+#test{
+    width: 100%;height: 100%;position: relative;background: #6cc1fb;display: none;
+}
+#change{
+    width:40%;position: absolute;top:50%;left:50%;margin-left:-20%;margin-top: -20%
+}
+@-webkit-keyframes change
+{
+    0%   {-webkit-transform:rotate(0deg)}
+    50%  {-webkit-transform:rotate(180deg)}
+    100% {-webkit-transform:rotate(360deg)}
+}
+@-moz-keyframes change
+{
+    0%   {-webkit-transform:rotate(0deg)}
+    50%  {-webkit-transform:rotate(180deg)}
+    100% {-webkit-transform:rotate(360deg)}
+}
+@-ms-keyframes change
+{
+    0%   {-webkit-transform:rotate(0deg)}
+    50%  {-webkit-transform:rotate(180deg)}
+    100% {-webkit-transform:rotate(360deg)}
+}
+@keyframes change
+{
+    0%   {-webkit-transform:rotate(0deg)}
+    50%  {-webkit-transform:rotate(180deg)}
+    100% {-webkit-transform:rotate(360deg)}
+}
 
+#change{-webkit-animation:change 2s linear infinite;-moz-animation:change 2s linear infinite;}
+.phoneTest{
+    width: 10%;height: auto;margin:20px auto 0 auto;display: none;
+}
+#phoneChange{-webkit-animation:change 2s linear infinite;width: 80%}
+.phoneWait{
+    width: 100%;height:auto;font-size: 18px;color:#8e8d93;margin-top: 10px;text-align: center;display: none;
+}
 .next{
     width: 82px;height: 30px;border: 1px solid #ccc;font-size: 16px;color:#222;text-align: center;line-height: 30px;float: left;margin-right: 10px;
 }
@@ -66,7 +104,7 @@
     width:100%;height:auto;margin:30px auto 0 auto;
 }
 .sMainbox{
-    width:46.88%;height:auto;border:0px solid #cfcfcf;box-shadow: 0 0 3px #d7d7d7;border-radius: 3px;position: absolute;left:50%;margin-left: -23.44%;background: #fff;display: none;
+    width:46.88%;height:auto;border:0px solid #cfcfcf;box-shadow: 0 0 5px #d7d7d7;border-radius: 5px;position: absolute;left:50%;margin-left: -23.44%;background: #fff;display: none;overflow: hidden;
 }
 .sMainbox:first-child{
     z-index: 999;display: block;
@@ -107,6 +145,9 @@
 }
 
 .errorWord{
+    width: 46.88%;height:auto;margin:30px auto;font-size: 15px;color: #8e8e8e;text-align: left;display: none;
+}
+.wait{
     width: 46.88%;height:auto;margin:30px auto;font-size: 15px;color: #8e8e8e;text-align: left;display: none;
 }
 .errorBox{

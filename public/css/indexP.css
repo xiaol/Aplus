@@ -749,13 +749,13 @@ footer{
         width: 50%;height:60%;position: absolute;top:25px;left:50%;margin-left: -25%;
     }
     .placeaIcon{
-        width: 18%;height: auto;float: left;padding: 10px 0;
+        width: 18%;height: auto;float: left;padding: 13px 0;
     }
     .placeaIcon>img{
-        width: 60%;
+        width: 50%;
     }
     .placeWord{
-        width: auto;height:auto;font-size: 46px;color: #8e8e93;float: left;margin-left: 0px;line-height: 80px;
+        width: auto;height:auto;font-size: 36px;color: #8e8e93;float: left;margin-left: 0px;line-height: 80px;
     }
     .buttonIcon{
         width: 8%;height:auto;position: absolute;top:40px;left:55px;display: none;

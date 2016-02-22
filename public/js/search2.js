@@ -1,22 +1,52 @@
 $(function(){
-
+    var explorer =navigator.userAgent ;
     if($(window).width()>992){
         var mm=new Object();
         $(".sInput").focus();
         $(".sButton").click(function(){
+            $("#test").css("display","block");
+            $(".wait").css("display","block");
             $(".sMainbox").remove();
             $(".sMainbox").css("border","0px solid #cfcfcf");
             $(".sMainbox li").remove();
-            window.location.hash="sw="+$('.sInput').val();
+            var val;
+            if (explorer.indexOf("MSIE") >= 0) {
+                val=$('.sInput').val()
+            }
+//firefox
+            else if (explorer.indexOf("Firefox") >= 0) {
+                val=$('.sInput').val()
+            }
+//Chrome
+            else if(explorer.indexOf("Chrome") >= 0){
+                val=$('.sInput').val()
+            }
+//Opera
+            else if(explorer.indexOf("Opera") >= 0){
+                val=$('.sInput').val()
+            }
+//Safari
+            else if(explorer.indexOf("Safari") >= 0){
+                val=encodeURIComponent($('.sInput').val());
+            }
+//Netscape
+            else if(explorer.indexOf("Netscape")>= 0) {
+                val=$('.sInput').val()
+            }
+            window.location.hash="sw="+val;
             var hash=location.hash;
             var hashs=hash.split("=");
             mm[hashs[0]]=hashs[1];
-            var sw=encodeURI(mm['#sw']);
+            var sw=mm['#sw'];
             $.ajax({
                 url:"http://fusion.deeporiginalx.com:8088/search?key="+sw,
                 type:"get",
                 dataType:"json",
                 success:function(e){
+                    $("#test").css("display","none");
+                    $(".wait").css("display","none");
+                    $('.phoneErroricon').css("display","none");
+                    $(".phoneErrorword").css("display","none");
                     $(".sMainbox").css("border","1px solid #cfcfcf");
                     var searchItems=e["searchItems"];
                     var length=searchItems.length;
@@ -122,7 +152,10 @@ $(function(){
                     })
                 },
                 error:function(){
-                    //alert(2)
+                    $("#test").css("display","none");
+                    $(".wait").css("display","none");
+                    $('.phoneErroricon').css("display","block");
+                    $(".phoneErrorword").css("display","block");
                 }
             })
         })
@@ -145,10 +178,36 @@ $(function(){
         })
         $(document).bind('keydown',function(event){
             if(event.keyCode == "13") {
+                $(".phoneTest").css("display","block");
+                $(".phoneWait").css("display","block");
                 $(".sMainbox").remove();
                 $(".sMainbox").css("border", "0px solid #cfcfcf");
                 $(".sMainbox li").remove();
-                window.location.hash = "sw=" + $('.searchInput').val();
+                var val;
+                if (explorer.indexOf("MSIE") >= 0) {
+                    val=$('.sInput').val()
+                }
+//firefox
+                else if (explorer.indexOf("Firefox") >= 0) {
+                    val=$('.sInput').val()
+                }
+//Chrome
+                else if(explorer.indexOf("Chrome") >= 0){
+                    val=$('.sInput').val()
+                }
+//Opera
+                else if(explorer.indexOf("Opera") >= 0){
+                    val=$('.sInput').val()
+                }
+//Safari
+                else if(explorer.indexOf("Safari") >= 0){
+                    val=encodeURIComponent($('.sInput').val());
+                }
+//Netscape
+                else if(explorer.indexOf("Netscape")>= 0) {
+                    val=$('.sInput').val()
+                }
+                window.location.hash="sw="+val;
                 var hash = location.hash;
                 var hashs = hash.split("=");
                 mm[hashs[0]] = hashs[1];
@@ -158,6 +217,10 @@ $(function(){
                     type: "get",
                     dataType: "json",
                     success: function (e) {
+                        $(".phoneTest").css("display","none");
+                        $(".phoneWait").css("display","none");
+                        $('.phoneErroricon').css("display","none");
+                        $(".phoneErrorword").css("display","none");
                         $(".sMainbox").css("border", "1px solid #cfcfcf");
                         var searchItems = e["searchItems"];
                         $("<ul class='sMainbox'></ul>").appendTo(".mainOutbox");
@@ -203,11 +266,15 @@ $(function(){
 
                     },
                     error: function () {
-                        //alert(2)
+                        $(".phoneTest").css("display","none");
+                        $(".phoneWait").css("display","none");
+                        $('.phoneErroricon').css("display","block");
+                        $(".phoneErrorword").css("display","block");
                     }
                 })
             }
         })
+
     }
 
 })
