@@ -203,7 +203,7 @@ $(function(){
                 }
 //Safari
                 else if(explorer.indexOf("Safari") >= 0){
-                    val=$('.searchInput').val();
+                    val=encodeURIComponent($('.searchInput').val());
                 }
 //Netscape
                 else if(explorer.indexOf("Netscape")>= 0) {
@@ -213,7 +213,7 @@ $(function(){
                 var hash = location.hash;
                 var hashs = hash.split("=");
                 mm[hashs[0]] = hashs[1];
-                var sw = encodeURI(mm['#sw']);
+                var sw =mm['#sw'];
                 $.ajax({
                     url: "http://fusion.deeporiginalx.com:8088/search?key=" + sw,
                     type: "get",
