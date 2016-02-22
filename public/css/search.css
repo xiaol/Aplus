@@ -31,7 +31,7 @@
 
 /**/
 .sForm{
-    width: 46.88%;height:40px;margin: 70px auto 0 auto;border: 1px solid #cfcfcf;box-shadow: 0 0 5px #6cc1fb;border-radius: 5px;display: block;overflow: hidden;
+    width: 46.88%;height:42px;margin: 70px auto 0 auto;border: 1px solid #cfcfcf;box-shadow: 0 0 5px #6cc1fb;border-radius: 5px;display: block;overflow: hidden;
 }
 .sInput{
     width: 90%;height:100%;border: 0;font-size:16px ;color: #383838;padding: 10px 10px;
@@ -40,7 +40,7 @@
     outline: none;
 }
 .sButton{
-    width: 10%;height: 100%;background: #6cc1fb url("../img/buttonWebw.png") no-repeat;font-size: 20px;color: #fff;background-position: center;float: right;background-size: 40%;
+    width: 9%;height: 100%;background: #6cc1fb url("../img/buttonWebw.png") no-repeat;font-size: 20px;color: #fff;background-position: center;float: right;background-size: 40%;
 }
 .sButton:hover{
     cursor:pointer;
@@ -85,14 +85,21 @@
     50%  {-webkit-transform:rotate(180deg)}
     100% {-webkit-transform:rotate(360deg)}
 }
+@keyframes spinner
+{
+    0%   {background: url("../imgPhone/Spinner1.png") no-repeat;background-position: center;background-size: 100%;}
+    30%  {background: url("../imgPhone/Spinner2.png") no-repeat;background-position: center;background-size: 100%}
+    70% {background: url("../imgPhone/Spinner3.png") no-repeat;background-position: center;background-size: 100%}
+    100% {background: url("../imgPhone/Spinner4.png") no-repeat;background-position: center;background-size: 100%}
+}
 
 #change{-webkit-animation:change 2s linear infinite;-moz-animation:change 2s linear infinite;}
 .phoneTest{
-    width: 10%;height: auto;margin:20px auto 0 auto;display: none;
+    width:30px;height:30px;margin:20px auto 0 auto;display: none;-webkit-animation:spinner 1s linear infinite;
 }
-#phoneChange{-webkit-animation:change 2s linear infinite;width: 80%}
+/*#phoneChange{-webkit-animation:change 2s linear infinite;width: 80%}*/
 .phoneWait{
-    width: 100%;height:auto;font-size: 18px;color:#8e8d93;margin-top: 10px;text-align: center;display: none;
+    width: 100%;height:auto;font-size: 16px;color:#8e8d93;margin-top: 10px;text-align: center;display: none;
 }
 .next{
     width: 82px;height: 30px;border: 1px solid #ccc;font-size: 16px;color:#222;text-align: center;line-height: 30px;float: left;margin-right: 10px;
@@ -107,7 +114,7 @@
     width:46.88%;height:auto;border:0px solid #cfcfcf;box-shadow: 0 0 5px #d7d7d7;border-radius: 5px;position: absolute;left:50%;margin-left: -23.44%;background: #fff;display: none;overflow: hidden;
 }
 .sMainbox:first-child{
-    z-index: 999;display: block;
+    z-index: 95;display: block;
 }
 .sMainbox>li{
     width: 100%;height:auto;padding: 18px 25px;border-bottom: 1px solid #cfcfcf;
@@ -268,7 +275,7 @@
     }
 
     .searchInput{
-        width: 85%;height: 35px;border: 0;border-radius: 30px;font-size: 20px;color: #8e8e93;padding: 0 11%;
+        width: 85%;height: 35px;border: 0;border-radius: 30px;font-size: 20px;color: #8e8e93;padding: 0 2%;
     }
     .searchInput:focus{
         outline: none;
@@ -303,12 +310,12 @@
         margin-left: 20px;
     }
     .phoneErroricon{
-width:50px;height: auto;margin:40% auto 0 auto;display: none;
+width:35px;height: auto;margin:40% auto 0 auto;display: none;
     }
     .phoneErroricon>img{
         width: 100%;
     }
     .phoneErrorword{
-        width: 100%;height: auto;font-size: 22px;color:#bdbdbd;margin-top:20px;text-align: center;display: none;
+        width: 100%;height: auto;font-size:16px;color:#bdbdbd;margin-top:20px;text-align: center;display: none;
     }
 }

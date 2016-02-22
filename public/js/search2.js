@@ -71,7 +71,7 @@ $(function(){
                             }
                         }
                     }
-                    var $a = ar;console.log($a)
+                    var $a = ar;
                     for(var k=0;k<p;k++){
                         $("<ul class='sMainbox'></ul>").attr("id","sMainbox"+k).appendTo(".mainOutbox");
 
@@ -162,6 +162,7 @@ $(function(){
         $('.sInput').bind('keypress',function(event){
             if(event.keyCode == "13")
             {
+                event.preventDefault();
                 $(".sButton").click();
             }
 
@@ -178,6 +179,7 @@ $(function(){
         })
         $(document).bind('keydown',function(event){
             if(event.keyCode == "13") {
+                event.preventDefault();
                 $(".phoneTest").css("display","block");
                 $(".phoneWait").css("display","block");
                 $(".sMainbox").remove();
@@ -185,27 +187,27 @@ $(function(){
                 $(".sMainbox li").remove();
                 var val;
                 if (explorer.indexOf("MSIE") >= 0) {
-                    val=$('.sInput').val()
+                    val=$('.searchInput').val()
                 }
 //firefox
                 else if (explorer.indexOf("Firefox") >= 0) {
-                    val=$('.sInput').val()
+                    val=$('.searchInput').val()
                 }
 //Chrome
                 else if(explorer.indexOf("Chrome") >= 0){
-                    val=$('.sInput').val()
+                    val=$('.searchInput').val()
                 }
 //Opera
                 else if(explorer.indexOf("Opera") >= 0){
-                    val=$('.sInput').val()
+                    val=$('.searchInput').val()
                 }
 //Safari
                 else if(explorer.indexOf("Safari") >= 0){
-                    val=encodeURIComponent($('.sInput').val());
+                    val=$('.searchInput').val();
                 }
 //Netscape
                 else if(explorer.indexOf("Netscape")>= 0) {
-                    val=$('.sInput').val()
+                    val=$('.searchInput').val()
                 }
                 window.location.hash="sw="+val;
                 var hash = location.hash;
