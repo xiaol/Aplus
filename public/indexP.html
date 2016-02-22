@@ -256,11 +256,13 @@
 <script>
     $(function(){
         $(".phoneInput").focus(function(){
+            $(".phoneInput").attr("placeholder","");
             $(".placeBox").css("display","none");
             $(".buttonIcon").css("display","block");
             $(".buttonClose").css("display","block");
         })
         $(".phoneInput").blur(function(){
+            $(".phoneInput").attr("placeholder","全网资讯 一键搜索");
             $(".placeBox").css("display","block");
             $(".buttonIcon").css("display","none");
             $(".buttonClose").css("display","none");
