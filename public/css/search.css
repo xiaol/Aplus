@@ -95,7 +95,7 @@
 
 #change{-webkit-animation:change 2s linear infinite;-moz-animation:change 2s linear infinite;}
 .phoneTest{
-    width:30px;height:30px;margin:20px auto 0 auto;display: none;
+    width:30px;height:30px;margin:20px auto 0 auto;display: none;}
 /*#phoneChange{-webkit-animation:change 2s linear infinite;width: 80%}*/
 .phoneWait{
     width: 100%;height:auto;font-size: 16px;color:#8e8d93;margin-top: 10px;text-align: center;display: none;
