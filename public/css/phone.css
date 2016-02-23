@@ -85,7 +85,7 @@ a{
         width:25px;height:19px;background: url("../imgPhone/btnP.png");background-size: cover;position:absolute;top:50%;margin-top:-9px;right:10px;
     }
     .navP{
-        width:40%;height:auto;position: absolute;top:50px;right:0;z-index: 99;background: rgba(255,255,255,0.9);display: none;
+        width:40%;height:auto;position: absolute;right:0;z-index: 99;background: rgba(255,255,255,0.9);display: none;
     }
     .navP li{
         width:100%;height:40px;border-bottom:1px solid #d2d2d2;padding:2px 12px;
