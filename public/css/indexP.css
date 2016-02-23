@@ -719,7 +719,7 @@ footer{
         width:50px;height:38px;background: url("../imgPhone/btnP.png");background-size: cover;position:absolute;top:50%;margin-top:-19px;right:30px;
     }
     .navP{
-        width:40%;height:auto;position: absolute;top:125px;right:0;z-index: 99;background: rgba(255,255,255,0.9);display: none;
+        width:40%;height:auto;position: absolute;top:125px;right:0;z-index: 99;background: rgba(255,255,255,0.95);display: none;
     }
     .navP li{
         width:100%;height:105px;border-bottom:1px solid #d2d2d2;padding:22px 34px;
