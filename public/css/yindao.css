@@ -26,10 +26,10 @@ a{
     width: 100%;
 }
 .yindaoMain{
-    width: 90%;height:auto;margin:0 auto;border-bottom: 1px solid #e5e5e5;padding: 20px 0;overflow: hidden;
+    width: 90%;height:auto;margin:0 auto;border-bottom: 1px solid #e5e5e5;padding: 15px 0;overflow: hidden;
 }
 .yindaoTitle{
-    width: 100%;height:auto;font-size: 18px;color: #2b2b2b;line-height: 28px;
+    width: 100%;height:auto;font-size: 18px;color: #2b2b2b;line-height: 25px;
 }
 .yindaoTubox{
     width: 100%;height: auto;overflow: hidden;margin-top:16px
@@ -44,7 +44,7 @@ a{
     width: 100%;
 }
 .yindaoForm{
-    width: 100%;height:auto;margin-top:12px;overflow: hidden;
+    width: 100%;height:auto;margin-top:10px;overflow: hidden;
 }
 .yindaoForminner{
     width:auto;height: auto;float: left;margin-left:15px;font-size: 14px;color: #7c7c7c;
