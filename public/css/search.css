@@ -160,16 +160,16 @@
     width: 46.88%;height:auto;margin:40px auto;display: none;
 }
 .errorIcon{
-    width: 42px;height:auto;
+    width: 32px;height:auto;
 }
 .errorIcon>img{
     width: 100%;
 }
 .errorTitle{
-    width: 100%;height:auto;font-size:20px ;color: #535353;margin-top:18px;
+    width: 100%;height:auto;font-size:16px ;color: #535353;margin-top:18px;
 }
 .errorTitle>span{
-    font-size:20px ;color: #238bd1
+    font-size:16px ;color: #238bd1
 }
 .searchForm,.phoneErroricon,.phoneErrorword{
     display: none;

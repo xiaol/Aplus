@@ -4,6 +4,7 @@ $(function(){
         var mm=new Object();
         $(".sInput").focus();
         $(".sButton").click(function(){
+            $(".errorBox").css("display","none");
             $("#test").css("display","block");
             $(".wait").css("display","block");
             $(".sMainbox").remove();
@@ -152,10 +153,10 @@ $(function(){
                     })
                 },
                 error:function(){
+                    $(".errorTitle span").html($('.sInput').val());
                     $("#test").css("display","none");
                     $(".wait").css("display","none");
-                    $('.phoneErroricon').css("display","block");
-                    $(".phoneErrorword").css("display","block");
+                    $('.errorBox').css("display","block");
                 }
             })
         })
@@ -180,6 +181,8 @@ $(function(){
         $(document).bind('keydown',function(event){
             if(event.keyCode == "13") {
                 event.preventDefault();
+                $('.phoneErroricon').css("display","none");
+                        $(".phoneErrorword").css("display","none");
                 $(".phoneTest").css("display","block");
                 $(".phoneWait").css("display","block");
                 $(".sMainbox").remove();
