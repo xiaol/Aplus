@@ -187,29 +187,36 @@ $(function(){
                 $(".sMainbox li").remove();
                 var val;
                 if (explorer.indexOf("MSIE") >= 0) {
-                    val=$('.searchInput').val()
+                    val=$('.searchInput').val();
+                    window.location.hash="sw="+val;
                 }
 //firefox
                 else if (explorer.indexOf("Firefox") >= 0) {
-                    val=$('.searchInput').val()
+                    val=$('.searchInput').val();
+                    window.location.hash="sw="+val;
                 }
 //Chrome
                 else if(explorer.indexOf("Chrome") >= 0){
-                    val=$('.searchInput').val()
+                    val=$('.searchInput').val();
+                    window.location.hash="sw="+val;
                 }
 //Opera
                 else if(explorer.indexOf("Opera") >= 0){
-                    val=$('.searchInput').val()
+                    val=$('.searchInput').val();
+                    window.location.hash="sw="+val;
                 }
 //Safari
                 else if(explorer.indexOf("Safari") >= 0){
                     val=encodeURIComponent($('.searchInput').val());
+                    window.location.hash="sw="+val;
                 }
 //Netscape
                 else if(explorer.indexOf("Netscape")>= 0) {
-                    val=$('.searchInput').val()
+                    val=$('.searchInput').val();
+                    window.location.hash="sw="+val;
+                }else{
+                    window.location.hash="sw="+$('.searchInput').val();
                 }
-                window.location.hash="sw="+val;
                 var hash = location.hash;
                 var hashs = hash.split("=");
                 mm[hashs[0]] = hashs[1];
