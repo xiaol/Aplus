@@ -218,7 +218,7 @@ $(function(){
                     val=$('.searchInput').val();
                     window.location.hash="sw="+val;
                 }else{
-                    window.location.hash="sw="+$('.searchInput').val();
+                    window.location.hash="sw="+encodeURIComponent($('.searchInput').val());
                 }
                 var hash = location.hash;
                 var hashs = hash.split("=");
