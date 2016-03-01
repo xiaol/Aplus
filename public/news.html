@@ -10,6 +10,17 @@
     <script src="js/ex.js"></script>
     <link rel="stylesheet" href="css/ex.css"/>
 </head>
+<script>
+    $(function(){
+        setInterval(function(){
+            if($(document).scrollTop()>0){
+                $(".footer").css("display","none")
+            }else{
+                $(".footer").css("display","block")
+            }
+        },200)
+    })
+</script>
 <body>
 <div class="banner" style="top:25px">
     <div class="yingdao">
