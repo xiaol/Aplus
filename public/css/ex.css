@@ -183,7 +183,7 @@ img[class=card2]{
 }
 .bigword{font-size: 22px;color:#fff;margin-top: 5px}
 .download{
-    display:inline-block;width: auto;height:100%;float:right;margin-right:1%;background: url("../img/download1.png") no-repeat;background-size: contain;padding: 10px;
+    display:inline-block;width: auto;height:100%;float:right;margin-right:1%;background: url("../img/download.png") no-repeat;background-size: contain;padding: 10px;
 }
 .download img{
     width: 100%;
