@@ -158,7 +158,7 @@ img[class=card2]{
     width: 100%;
 }
 .footer{
-    width: 100%;height:100px;background:rgba(0,0,0,0.8);padding:25px;margin-top:15px;position:fixed;bottom:0px;z-index:99;
+    width: 100%;height:80px;background:rgba(0,0,0,0.8);padding:10px 25px;margin-top:15px;position:fixed;bottom:0px;z-index:99;
 }
 /*.footertu{*/
 /*width: 16%;height: 69%;float:left;*/
@@ -181,9 +181,9 @@ img[class=card2]{
 .sword{
     width:150%;height:auto;font-size:14px;margin-top:14px;color:#fff;
 }
-.bigword{font-size: 22px;color:#fff;margin-top: 5px}
+.bigword{font-size: 22px;color:#fff;}
 .download{
-    display:inline-block;width: auto;height:100%;float:right;margin-right:1%;background: url("../img/download.png") no-repeat;background-size: contain;padding: 10px;
+    display:inline-block;width: auto;height:100%;float:right;margin-right:1%;background: url("../img/download.png") no-repeat;background-size: contain;padding:5px;background-position: center;text-align: center;line-height: 50px;
 }
 .download img{
     width: 100%;
