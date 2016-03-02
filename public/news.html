@@ -12,13 +12,24 @@
 </head>
 <script>
     $(function(){
-        setInterval(function(){
-            if($(document).scrollTop()>0){
-                $(".footer").css("display","none")
-            }else{
-                $(".footer").css("display","block")
-            }
-        },200)
+       $('body').on("touchstart", function(e) {
+//        e.preventDefault();
+        startX = e.originalEvent.changedTouches[0].pageX,
+                startY = e.originalEvent.changedTouches[0].pageY;
+    });
+$("body").on("touchmove", function(e) {
+//    e.preventDefault();
+    moveEndX = e.originalEvent.changedTouches[0].pageX,
+            moveEndY = e.originalEvent.changedTouches[0].pageY,
+            X = moveEndX - startX,
+            Y = moveEndY - startY;
+    if ( Math.abs(Y) > Math.abs(X) && Y > 0) {
+        $(".footer").css("display","block")
+    }
+    else if( Math.abs(Y) > Math.abs(X) && Y < 0 ) {
+        $(".footer").css("display","none")
+    }
+})
     })
 </script>
 <body>
