@@ -99,8 +99,8 @@ $(function(){
                         for(var i=0;i<cons.length;i++){
                             for(var j in cons[i]){
                                 if(j=="img"){
-                                    $("<div class='card2'></div>").attr({"src":cons[i][j],"id":"card"+j}).css("padding","0px").appendTo(".cardbox");
-                                    $("<img class='card2'>").attr("src",cons[i][j]).css("padding","0").appendTo("#card"+j);
+                                    $("<div class='card2'></div>").attr("id","card"+i).css("padding","0px").appendTo(".cardbox");
+                                    $("<img class='card2'>").attr("src",cons[i][j]).css("padding","0").appendTo("#card"+i);
                                 }else if(j=="txt"){
                                     $("<div class='card2'></div>").attr("id","card"+j).html(cons[i][j]).appendTo(".cardbox");
                                 }
