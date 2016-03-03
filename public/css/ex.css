@@ -23,7 +23,7 @@
     width: 100%;
 }
 .yingdao{
-    width: 40%;height: auto;position: fixed;top:25px;right:5%;display:none;z-index: 99;
+    width: 40%;height: auto;position: fixed;top:0px;right:5%;display:none;z-index: 99;
 }
 .yingdao img{width: 100%}
 .bannertitle{
