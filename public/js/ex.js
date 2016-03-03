@@ -105,18 +105,18 @@ $(function(){
                                     $("<div class='card2'></div>").attr("id","card"+j).html(cons[i][j]).appendTo(".cardbox");
                                 }
                             }}
-                        for(var k=0;k<arr.length;k++) {
-                            $("<div class='cardChild'</div>").attr("id","child"+arr[k]['paragraphIndex']).appendTo("#card"+arr[k]['paragraphIndex']);//根据id，为相应的段落添加评论
-                            $("<div class='pinglunword'></div>").appendTo("#child"+arr[k]['paragraphIndex']);//添加评论，这里用k做测试，结果是第一段添加1，第二段添加0，1；想要结果是第一段添加1，第二段添加0，第二段不需要重复添加第一段已经加过的内容；
-                            $("<div class='pinglunperson'></div>").appendTo("#child"+arr[k]['paragraphIndex']);
-                            $("<img src="+arr[k]['userIcon']+">").css({"background-clip":"content-box",width:"100%"}).appendTo(".pinglunperson");
-                            $("<div class='pinglunword'></div>").html(arr[k]['srcText']).appendTo("#child"+arr[k]['paragraphIndex']);
-                            $("<div class='pinglunshu'></div>").html(arr[k]['comments_count']).appendTo("#child"+arr[k]['paragraphIndex']);
-                            $("<div class='pinglunmore'></div>").css("background-clip","content-box").appendTo("#child"+arr[k]['paragraphIndex']);
-                            $(".pinglunmore").click(function(){
-                                $(".zhezhao").css({"display":"block","height":ch});
-                            })
-                        }
+                        // for(var k=0;k<arr.length;k++) {
+                        //     $("<div class='cardChild'</div>").attr("id","child"+arr[k]['paragraphIndex']).appendTo("#card"+arr[k]['paragraphIndex']);//根据id，为相应的段落添加评论
+                        //     $("<div class='pinglunword'></div>").appendTo("#child"+arr[k]['paragraphIndex']);//添加评论，这里用k做测试，结果是第一段添加1，第二段添加0，1；想要结果是第一段添加1，第二段添加0，第二段不需要重复添加第一段已经加过的内容；
+                        //     $("<div class='pinglunperson'></div>").appendTo("#child"+arr[k]['paragraphIndex']);
+                        //     $("<img src="+arr[k]['userIcon']+">").css({"background-clip":"content-box",width:"100%"}).appendTo(".pinglunperson");
+                        //     $("<div class='pinglunword'></div>").html(arr[k]['srcText']).appendTo("#child"+arr[k]['paragraphIndex']);
+                        //     $("<div class='pinglunshu'></div>").html(arr[k]['comments_count']).appendTo("#child"+arr[k]['paragraphIndex']);
+                        //     $("<div class='pinglunmore'></div>").css("background-clip","content-box").appendTo("#child"+arr[k]['paragraphIndex']);
+                        //     $(".pinglunmore").click(function(){
+                        //         $(".zhezhao").css({"display":"block","height":ch});
+                        //     })
+                        // }
                     },
                     error: function () {alert("失败");}})
             }else if(url.match('url')=='url'){
@@ -162,18 +162,18 @@ $(function(){
                                 }
 
                             }}
-                        for(var k=0;k<arr.length;k++) {
-                            $("<div class='cardChild'</div>").attr("id","child"+arr[k]['paragraphIndex']).appendTo("#card"+arr[k]['paragraphIndex']);//根据id，为相应的段落添加评论
-                            $("<div class='pinglunword'></div>").appendTo("#child"+arr[k]['paragraphIndex']);//添加评论，这里用k做测试，结果是第一段添加1，第二段添加0，1；想要结果是第一段添加1，第二段添加0，第二段不需要重复添加第一段已经加过的内容；
-                            $("<div class='pinglunperson'></div>").appendTo("#child"+arr[k]['paragraphIndex']);
-                            $("<img src="+arr[k]['userIcon']+">").css({"background-clip":"content-box",width:"100%"}).appendTo(".pinglunperson");
-                            $("<div class='pinglunword'></div>").html(arr[k]['srcText']).appendTo("#child"+arr[k]['paragraphIndex']);
-                            $("<div class='pinglunshu'></div>").html(arr[k]['comments_count']).appendTo("#child"+arr[k]['paragraphIndex']);
-                            $("<div class='pinglunmore'></div>").css("background-clip","content-box").appendTo("#child"+arr[k]['paragraphIndex']);
-                            $(".pinglunmore").click(function(){
-                                $(".zhezhao").css({"display":"block","height":ch});
-                            })
-                        }
+                        // for(var k=0;k<arr.length;k++) {
+                        //     $("<div class='cardChild'</div>").attr("id","child"+arr[k]['paragraphIndex']).appendTo("#card"+arr[k]['paragraphIndex']);//根据id，为相应的段落添加评论
+                        //     $("<div class='pinglunword'></div>").appendTo("#child"+arr[k]['paragraphIndex']);//添加评论，这里用k做测试，结果是第一段添加1，第二段添加0，1；想要结果是第一段添加1，第二段添加0，第二段不需要重复添加第一段已经加过的内容；
+                        //     $("<div class='pinglunperson'></div>").appendTo("#child"+arr[k]['paragraphIndex']);
+                        //     $("<img src="+arr[k]['userIcon']+">").css({"background-clip":"content-box",width:"100%"}).appendTo(".pinglunperson");
+                        //     $("<div class='pinglunword'></div>").html(arr[k]['srcText']).appendTo("#child"+arr[k]['paragraphIndex']);
+                        //     $("<div class='pinglunshu'></div>").html(arr[k]['comments_count']).appendTo("#child"+arr[k]['paragraphIndex']);
+                        //     $("<div class='pinglunmore'></div>").css("background-clip","content-box").appendTo("#child"+arr[k]['paragraphIndex']);
+                        //     $(".pinglunmore").click(function(){
+                        //         $(".zhezhao").css({"display":"block","height":ch});
+                        //     })
+                        // }
                     },
                     error: function () {alert("失败");}})
             }
