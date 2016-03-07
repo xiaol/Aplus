@@ -5,6 +5,7 @@ $(function(){
         $(".sInput").focus();
         $(".sButton").click(function(){
             $(".errorBox").css("display","none");
+            $(".wait1").css("display","none");
             $("#test").css("display","block");
             $(".wait").css("display","block");
             $(".sMainbox").remove();
@@ -51,6 +52,9 @@ $(function(){
                     $(".phoneErrorword").css("display","none");
                     $(".sMainbox").css("border","1px solid #cfcfcf");
                     var searchItems=e["searchItems"];
+                    if(searchItems==""){
+                        $(".wait1").css("display","block");
+                    }
                     var length=searchItems.length;
                     var p=length%20;
                     if(length%20==0){
