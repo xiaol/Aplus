@@ -8,6 +8,7 @@ $(function(){
             $("#test").css("display","block");
             $(".wait").css("display","block");
             $(".sMainbox").remove();
+            $(".buttonBox").remove();
             $(".sMainbox").css("border","0px solid #cfcfcf");
             $(".sMainbox li").remove();
             var val;
