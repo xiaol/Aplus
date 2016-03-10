@@ -26,11 +26,14 @@ a{
 .logoBox2{
     width:240px;height:auto;margin-top:10px;
 }
+.logoBox2>span{
+    font-size: 15px;color:#888;font-weight: bold;
+}
 .logoBox2>img{
     width:100%;
 }
 .navBox{
-    width:60%;height:auto;float:right;overflow: hidden;margin-top:4%;
+    width:60%;width:calc(100% - 308px);height:auto;float:right;overflow: hidden;margin-top:4%;
 }
 .navBox>li>a{
     font-size:14px;color:#878787;float:right;margin-right:4.3%;
@@ -59,7 +62,10 @@ a{
 }
 .bannerBox>img{width:100%}
 .bannerWord1{
-    width:459px;height:auto;position: absolute;top:23%;left:50%;margin-left:-229px
+    width:459px;height:auto;position: absolute;top:35%;left:50%;margin-left:-229px;font-size: 26px;color:#fff;text-align: center;text-shadow: 0 1px 1px #000;
+}
+.bannerWord1>span{
+    font-size: 40px;
 }
 .bannerWord1>img{
     width: 100%;
@@ -108,7 +114,7 @@ a{
     width:28%;height:2px;margin:18px auto 14px auto;background:#6cc1fb ;
 }
 .mainWord{
-    width:100%;height:auto;margin:0 auto;font-size: 16px;color:#323232;text-indent: 2em;line-height: 26px;
+    width:100%;height:auto;margin:0 auto;font-size: 16px;color:#323232;text-indent: 2em;line-height: 26px;text-align: center;
 }
 .iconBox{
     width:100%;height:auto;margin:60px auto 0 auto;overflow: hidden;
