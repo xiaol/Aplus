@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+# Aplus
+=======
 ## Meteor Material Blog
 
 This is boilerplate Meteor Material blog designed for anyone to start their own blog. This is still in a work in progress and contributions are welcome. You can see an example at http://material-blog.meteor.com/
@@ -41,3 +44,4 @@ All users with *roles: 'author'* can create new posts and edit *their own* posts
 3. Widgets
 4. Pagination
 5. Distribute as Atmostphere package
+>>>>>>> b9c237a9a15f6bdf12e9098348e8169c4075b725

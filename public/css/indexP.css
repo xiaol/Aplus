@@ -62,7 +62,7 @@ a{
 }
 .bannerBox>img{width:100%}
 .bannerWord1{
-    width:459px;height:auto;position: absolute;top:35%;left:50%;margin-left:-229px;font-size: 26px;color:#fff;text-align: center;text-shadow: 0 1px 1px #000;
+    width:459px;height:auto;position: absolute;top:35%;left:50%;margin-left:-229px;font-size: 26px;color:#fff;text-align: center;
 }
 .bannerWord1>span{
     font-size: 40px;
@@ -557,7 +557,7 @@ footer{
     width: 100%;
 }
 .card9Jian{
-    width:40px;height:40px;background: url("../imgServe/write.png");background-size: cover;float: left;margin-top:20%;transform: rotate(-90deg);margin-left:4%;
+    width:40px;height:40px;background-size: cover;float: left;margin-top:20%;margin-left:4%;
 
 }
 .card92{
@@ -623,7 +623,7 @@ footer{
     width:45.3%;height:1px;background: #939393;margin:14px auto 0 auto;
 }
 .mainPword{
-    width:82%;height:auto;margin:14px auto 0 auto;font-size:22px;color:#323232;line-height: 24px;text-indent: 2em;
+    width:82%;height:auto;margin:14px auto 0 auto;font-size:22px;color:#323232;line-height: 24px;text-align: center;
 }
 /*联系我们页面*/
 .calltitle{
