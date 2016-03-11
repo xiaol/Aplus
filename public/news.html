@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name ="viewport" content ="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>奇点资讯</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/ex.js"></script>
+    <link rel="stylesheet" href="css/ex.css"/>
+</head>
+<script>
+    $(function(){
+       $('body').on("touchstart", function(e) {
+//        e.preventDefault();
+        startX = e.originalEvent.changedTouches[0].pageX,
+                startY = e.originalEvent.changedTouches[0].pageY;
+    });
+$("body").on("touchmove", function(e) {
+//    e.preventDefault();
+    moveEndX = e.originalEvent.changedTouches[0].pageX,
+            moveEndY = e.originalEvent.changedTouches[0].pageY,
+            X = moveEndX - startX,
+            Y = moveEndY - startY;
+    if ( Math.abs(Y) > Math.abs(X) && Y > 0) {
+        $(".footer").css("display","block")
+    }
+    else if( Math.abs(Y) > Math.abs(X) && Y < 0 ) {
+        $(".footer").css("display","none")
+    }
+})
+    })
+</script>
+<body>
+<div class="banner" style="top:25px">
+    <div class="yingdao">
+        <img src="img/tishi.png">
+    </div>
+    <div class="bannerzhe">
+        <span class="bannertitle"></span>
+        <div class="bannertime">
+            <span class="date"></span>
+            <span class="time"></span>
+        </div>
+    </div>
+</div>
+<!--banner end-->
+<div class="cardbox">
+</div>
+<div class="footer">
+    <div class="footertu">
+        <img src="img/logoS.png">
+    </div>
+    <div class="footerword">
+        <div class="bigword">奇点资讯</div>
+        <div class="sword">读奇点 阅天下</div>
+    </div>
+    <a href="" id="download">
+            <div class="download">
+            下载App
+            </div>
+        </a>
+</div>
+<div class="zhezhao">
+    <div class="zhezhaodownload">
+        <!--<span>请下载我们的应用立即体验</span>-->
+        <div class="logodownload">
+            <img src="img/lgo.png">
+        </div>
+        <div class="down">
+            <a href=""><img src="img/download.png"></a>
+        </div>
+        <div class="closeB">
+            <img src="img/closeB.png">
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+

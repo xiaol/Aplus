@@ -1,0 +1,114 @@
+{
+searchItems: [
+{
+url: "http://mil.sohu.com/20160129/n436266659.shtml",
+title: "中央军委办慰问老干部迎春演出 习近平出席",
+searchFrom: "Sm",
+rank: 1,
+sourceSite: "搜狐军事",
+updateTime: "2016-02-01 10:17:03",
+imgUrl: "",
+abs: "原标题：中央军委举行慰问驻京部队老干部迎新春文艺演出 习近平向全军老同志祝贺新春 原文配图：1月28日，..."
+},
+{
+url: "http://news.cntv.cn/2015/02/09/VIDE1423480323599835.shtml",
+title: "[视频]中央军委举行慰问驻京部队老干部迎 ...",
+searchFrom: "Bing",
+rank: 1,
+sourceSite: "头条百家",
+updateTime: "2015-2-9 00:00:00",
+imgUrl: "",
+abs: "[视频]中央军委举行慰问驻京部队老干部迎新春文艺演出 习近平向全军老同志祝贺新春 发布时间: 2015年02月09日 19:05 | 进入复兴论坛 | 来源 ..."
+},
+{
+url: "http://cpc.people.com.cn/n1/2016/0129/c64094-28094178.html",
+title: "中央军委举行慰问驻京部队老干部迎新春文艺演出 习近平向全军老同志祝贺新春",
+searchFrom: "Sm",
+rank: 2,
+sourceSite: "中国共产党新闻网",
+updateTime: "2016-02-01 10:17:03",
+imgUrl: "",
+abs: "1月28日，中央军委慰问驻京部队老干部迎新春文艺演出在北京举行。中共中央总书记、国家主席、中央军委主席..."
+},
+{
+url: "http://politics.people.com.cn/n/2014/1127/c1024-26100888.html",
+title: "习近平重视哪些“老干部”",
+searchFrom: "Bing",
+rank: 2,
+sourceSite: "头条百家",
+updateTime: "2014-11-27 00:00:00",
+imgUrl: "",
+abs: "人民网北京11月27日电人民日报微信公众账号今日关注《习近平重视哪些“老干部 ... 新年的祝福，向全国从事老年服务工作的同志们致以诚挚的慰问。 习近平 ..."
+},
+{
+url: "http://i.ifeng.com/news/dalu/news?aid=105740271&vt=2",
+title: "中央军委举行文艺演出 习近平向全军老同志祝贺新春",
+searchFrom: "Sm",
+rank: 4,
+sourceSite: "手机凤凰网",
+updateTime: "2016-02-01 10:17:03",
+imgUrl: "",
+abs: "中央军委慰问驻京部队老干部迎新春文艺演出在北京举行，中共中央总书记、国家主席、中央军委主席习近平出席..."
+},
+{
+url: "http://news.hexun.com/2015-02-09/173215298.html",
+title: "（时政）中央军委举行慰问驻京部队老干部迎新春文艺演出 习近平向全军老同志祝贺新春",
+searchFrom: "Sm",
+rank: 5,
+sourceSite: "和讯网",
+updateTime: "2016-02-15 10:17:03",
+imgUrl: "",
+abs: "新华社照片，北京，2015年2月9日 中央军委举行慰问驻京部队老干部迎新春文艺演出 习近平向全军老同志祝贺..."
+},
+{
+url: "http://cq.qq.com/a/20150209/071187.htm",
+title: "[视频]中央军委举行慰问驻京部队老干部迎新春文艺演出 习近平向全军老同志祝贺新春",
+searchFrom: "Sm",
+rank: 6,
+sourceSite: "腾讯网",
+updateTime: "2016-02-15 10:17:03",
+imgUrl: "",
+abs: "中央军委慰问驻京部队老干部迎新春文艺演出今天在京举行，中共中央总书记、国家主席、中央军委主席习近平..."
+},
+{
+url: "http://news.xinhuanet.com/photo/2015-02/09/c_127476308.htm",
+title: "习近平向全军老同志祝贺新春",
+searchFrom: "Bing",
+rank: 4,
+sourceSite: "头条百家",
+updateTime: "2015-2-9 00:00:00",
+imgUrl: "",
+abs: "2月9日，中央军委慰问驻京部队老干部迎新春文艺演出在北京举行。 ... 原标题：中央军委举行慰问驻京部队老干部迎新春文艺演出 习近平向全军老同志祝贺新春"
+},
+{
+url: "http://news.xinhuanet.com/politics/2014-11/27/c_127255094.htm",
+title: "习近平:认真做好新形势下老干部工作 传承党的光荣 ...",
+searchFrom: "Bing",
+rank: 7,
+sourceSite: "头条百家",
+updateTime: "2014-11-27 00:00:00",
+imgUrl: "",
+abs: "习近平:认真做好新形势下老干部工作 传承党的光荣传统和优良作风---习近平指出，要广泛宣传老同志的先进事迹，在全社会广泛形成尊重老同志、爱护老同志 ..."
+},
+{
+url: "http://politics.people.com.cn/n/2015/0210/c1001-26542271.html",
+title: "习近平“尊老”的10则小故事",
+searchFrom: "Bing",
+rank: 9,
+sourceSite: "头条百家",
+updateTime: "2015-2-10 00:00:00",
+imgUrl: "",
+abs: "2015年2月9日，习近平出席中央军委慰问驻京部队老干部迎新春文艺演出。（新华社发） 【编者按】2月9日，中央军委慰问驻京部队老干"
+},
+{
+url: "http://www.audit.gov.cn/n1992130/n1992150/n2729754/3443555.html",
+title: "习近平出席中央军委慰问驻京部队老干部迎新春文艺演出",
+searchFrom: "Bing",
+rank: 10,
+sourceSite: "头条百家",
+updateTime: "2014-1-21 00:00:00",
+imgUrl: "",
+abs: "1月20日，中央军委慰问驻京部队老干部迎新春文艺演出在北京举行。中共中央总书记、国家主席、中央军委主席习近平出席，向在座的军队老同志，向全军离退休 ..."
+}
+]
+}
