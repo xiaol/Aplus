@@ -5,7 +5,7 @@ a{text-decoration: none}
 .search{width:20px;height:auto;position: absolute;top:12px;right:4%}
 .title>img,.search>img{width:100%}
 .navBox{width:92%;height:auto;padding: 11px 4% 0 4%;position: fixed;top:44px;background: #fff}
-.navBox li{height:40px;float: left;padding: 0 5% 0 0;}
+.navBox li{height:30px;float: left;padding: 0 5% 0 0;}
 .navBox li a{display: block;font-size: 16px;color:#505050;line-height: 38px;text-align: center;float: left}
 .navBox li a:hover{cursor: pointer}
 .navBox .border a{display: block;font-size: 16px;color:#0091fa;line-height: 38px;text-align: center;float: left;border-bottom: 2px solid #0091fa}
