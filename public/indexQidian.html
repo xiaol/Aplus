@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name ="viewport" content ="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>奇点资讯</title>
+    <link rel="stylesheet" href="css/indexQidian.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/indexQidian.js"></script>
+    <script src="js/note.js"></script>
+    <script src="js/iscroll-probe.js"></script>
+</head>
+<script>
+    $(function(){
+        $("#wrapper1").css("margin-top",$(".navBox").height()+51);
+    })
+</script>
+<style>
+    #wrapper1{
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        bottom: 0px;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        /*height: auto;*/
+    }
+
+    #scroller1{
+        position: absolute;left: 0;top: 0;
+        z-index: 3;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        width: 100%;
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-text-size-adjust: none;
+        -moz-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+        -o-text-size-adjust: none;
+        text-size-adjust: none;
+    }
+</style>
+<script>
+    var is=0;
+    var myScroll1,bb, y,num;
+    $(function(){
+        if (myScroll1 == undefined || myScroll1 == '') {
+            myScroll1 = new IScroll('#wrapper1', {
+                scrollbars: true,
+                probeType: 3,//probeType属性，表明此插件，可以监听scroll事件
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,
+                preventDefault: false
+            });
+
+            var myScroll,
+                    upIcon = $("#up-icon"),
+                    downIcon = $("#down-icon");
+
+            myScroll1.on("scroll", function () {
+                //scroll事件，可以用来控制上拉和下拉之后显示的模块中，
+                //样式和内容展示的部分的改变。
+                y = this.y,
+                        maxY = this.maxScrollY - y,
+                        downHasClass = downIcon.hasClass("reverse_icon"),
+                        upHasClass = upIcon.hasClass("reverse_icon");
+                num=$(".num:first").html();
+                if (y >= 40) {
+//                    alert(">40")
+
+                    !downHasClass && downIcon.addClass("reverse_icon");
+                    return "";
+                } else if (y < 40 && y > -10) {
+//                    alert(2)
+
+                    downHasClass && downIcon.removeClass("reverse_icon");
+                    return "";
+                }
+//
+
+                if (maxY >= 40) {
+//alert(1)
+                    !upHasClass && upIcon.addClass("reverse_icon");
+                    return "";
+                } else if (maxY < 40 && maxY >= 0) {
+
+
+                    upHasClass && upIcon.removeClass("reverse_icon");
+                    return "";
+                }
+            });
+
+            myScroll1.on("slideDown", function () {
+
+                //当下拉，使得边界超出时，如果手指从屏幕移开，则会触发该事件
+                if (this.y > 40) {
+                    //获取内容于屏幕拉开的距离
+                    //可以在该部分中，修改样式，并且仅限ajax或者其他的一些操作
+                    //此时只是为了能演示该功能，只添加了一个alert功能。
+                    //并且，由于alert会阻塞后续的动画效果，所以，
+                    //添加了后面的一行代码，移除之前添加上的一个样式
+                    // alert("slideDown");
+                    upIcon.removeClass("reverse_icon");
+                }
+            });
+
+            myScroll1.on("slideUp", function () {
+                if (this.maxScrollY - this.y > 40) {
+                    var ids=$(".border").attr("id");
+                    var last=$(".last").html();
+                    $(".last").remove();
+                    var title,pubTime,pubName,urls,nowTime,imgLists;
+                    nowTime=getNowFormatDate();console.log(last)
+                    $.ajax({
+                        url:"http://api.deeporiginalx.com/bdp/news/load?cid="+ids+"&tstart="+transdate(last),
+                        type:"get",
+                        dataType:"json",
+                        success:function(e){
+                            console.log(e);
+                            var data=e['data'];
+                            $("<span class='last'></span>").css("display","none").html(data[data.length-1].pubTime).appendTo("body");
+                            for(var i=0;i<data.length;i++){
+                                is++;
+                                title=data[i].title;
+                                pubTime=data[i].pubTime;
+                                timeCha=timeDifference(nowTime,pubTime);
+                                pubName=data[i].pubName;
+                                urls=data[i].url;
+                                var aUrl=del_html_tags(base64encode(urls),"=","");
+                                if(!("imgList" in data[i])){
+                                    $("<a class='a'></a>").attr({"id":"ad"+is,"href":"http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface"}).insertAfter(".a:last()");
+                                    $("<li></li>").attr("id","lid"+is).appendTo("#ad"+is);
+                                    $("<p class='titleWord'></p>").html(title).appendTo("#lid"+is);
+                                    $("<div class='fromBox'></div>").attr("id","fromd"+is).appendTo("#lid"+is);
+                                    $("<div class='from'></div>").html(pubName).appendTo("#fromd"+is);
+                                    $("<div class='time'></div>").html(timeCha).appendTo("#fromd"+is);
+                                }else{
+                                    imgLists=data[i].imgList;
+                                    //alert(false)
+
+                                    if(imgLists.length==1){
+                                        $("<a class='a'></a>").attr({"id":"ad"+is,"href":"http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface"}).insertAfter(".a:last()");
+                                        $("<li></li>").attr("id","lid"+is).appendTo("#ad"+is);
+                                        $("<div class='imgbox'></div>").attr("id","imgd"+is).appendTo("#lid"+is);
+                                        $("<img src="+imgLists[0]+">").appendTo("#imgd"+is);
+                                        $("<div class='wordBox'></div>").attr("id","wordd"+is).appendTo("#lid"+is);
+                                        $("<p class='titleWord'></p>").html(title).appendTo("#wordd"+is);
+                                        $("<div class='fromBox'></div>").attr("id","fromd"+is).appendTo("#wordd"+is);
+                                        $("<div class='from'></div>").html(pubName).appendTo("#fromd"+is);
+                                        $("<div class='time'></div>").html(timeCha).appendTo("#fromd"+is);
+                                    }else if(imgLists.length>1){
+                                        //alert(1)
+                                        $("<a class='a'></a>").attr({"id":"ad"+is,"href":"http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface"}).insertAfter(".a:last()");
+                                        $("<li></li>").attr("id","lid"+is).appendTo("#ad"+is);
+                                        $("<p class='titleWord'></p>").html(title).appendTo("#lid"+is);
+                                        $("<div class='imgboxs'></div>").attr("id","tuboxd"+is).appendTo("#lid"+is);
+                                        for(var j=0;j<imgLists.length;j++){
+                                            //alert(imgList.length)
+                                            $("<div><img src="+imgLists[j]+"></div>").appendTo("#tuboxd"+is);
+                                        }
+                                        $("<div class='fromBox'></div>").attr("id","fromd"+is).appendTo("#lid"+is);
+                                        $("<div class='from'></div>").html(pubName).appendTo("#fromd"+is);
+                                        $("<div class='time'></div>").html(timeCha).appendTo("#fromd"+is);
+                                    }
+                                }
+
+                            }
+                            $("img").load(function(){
+                                setTimeout(function () {
+                                    myScroll1.refresh();
+                                }, 100);
+                            })
+
+                        }
+
+                    })
+                    upIcon.removeClass("reverse_icon")
+                }
+            });
+
+        } else {
+            setTimeout(function () {
+                myScroll1.refresh();
+            }, 100);
+        }
+        document.addEventListener('touchmove', function (e) {
+            e.preventDefault();
+        }, false);
+//        dates();
+        dates2();
+        $(".border").trigger("click");
+
+
+    })
+</script>
+<body>
+<div class="top">
+    <div class="title">
+        <img src="img/titleQidian.png">
+    </div>
+    <a href="search.html"><div class="search">
+        <img src="img/searchQidian.png">
+    </div></a>
+</div>
+<ul class="navBox">
+    <li class="border channel" id="1"><a>热点</a></li>
+    <li class="channel" id="4"><a>科技</a></li>
+    <li class="channel" id="26"><a>美女</a></li>
+    <li class="channel" id="24"><a >健康</a></li>
+    <li class="channel" id="16"><a >育儿</a></li>
+    <li class="channel" id="2"><a >社会</a></li>
+    <li class="channel" id="7"><a >财经</a></li>
+    <li class="channel" id="6"><a >体育</a></li>
+    <li class="channel" id="5"><a >汽车</a></li>
+    <li class="channel" id="9"><a >国际</a></li>
+    <li class="channel" id="10"><a >时尚</a></li>
+    <li class="channel" id="14"><a >探索</a></li>
+    <li class="channel" id="25"><a >科学</a></li>
+    <li class="channel" id="3"><a >娱乐</a></li>
+    <li class="channel" id="23"><a >趣图</a></li>
+    <li class="channel" id="21"><a >搞笑</a></li>
+    <li class="channel" id="17"><a >养生</a></li>
+    <li class="channel" id="11"><a >游戏</a></li>
+    <li class="channel" id="22"><a >互联网</a></li>
+    <li class="channel" id="20"><a >股票</a></li>
+    <li class="channel" id="8"><a >军事</a></li>
+    <li class="channel" id="13"><a >历史</a></li>
+    <li class="channel" id="18"><a >故事</a></li>
+    <li class="channel" id="12"><a >旅游</a></li>
+    <li class="channel" id="19"><a >美文</a></li>
+    <li class="channel" id="15"><a >美食</a></li>
+</ul>
+<div id="wrapper1">
+    <div id="scroller1">
+        <div id = "scroller-pullDown" style="position: fixed;top: -43px;left: 0;width: 100%">
+            <!--<span id = "up-icon" class = "icon-double-angle-up pull-up-icon">↑↑</span>-->
+            <span id = "pullDown-msg" class = "pull-up-msg" style="display:block;text-align: center;width: 100%;">下拉加载更多</span>
+        </div>
+        <ul class="mainBox">
+            <!--<a href=""><li>-->
+            <!--<div class="imgbox">-->
+            <!--<img src="">-->
+            <!--</div>-->
+            <!--<div class="wordBox">-->
+            <!--<p class="titleWord">这组图让你看清中国企业的真是实力</p>-->
+
+            <!--<div class="fromBox">-->
+            <!--<span class="from">摩尔金融</span>-->
+            <!--<span class="time">2小时前</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="wordBox">-->
+            <!--<p class="titleWord">这组图让你看清中国企业的真是实力</p>-->
+
+            <!--<div class="fromBox">-->
+            <!--<span class="from">摩尔金融</span>-->
+            <!--<span class="time">2小时前</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="wordBox">-->
+            <!--<p class="titleWord">这组图让你看清中国企业的真是实力</p>-->
+
+            <!--<div class="fromBox">-->
+            <!--<span class="from">摩尔金融</span>-->
+            <!--<span class="time">2小时前</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</li></a>-->
+            <!--<a href=""><li>-->
+            <!--<p class="titleWord">这组图让你看清中国企业的真是实力</p>-->
+
+            <!--<div class="fromBox">-->
+            <!--<span class="from">摩尔金融</span>-->
+            <!--<span class="time">2小时前</span>-->
+            <!--</div>-->
+            <!--</li></a>-->
+            <!--<a href=""><li>-->
+            <!--<p class="titleWord">这组图让你看清中国企业的真是实力</p>-->
+
+            <!--<div class="imgboxs">-->
+            <!--<div><img src=""></div>-->
+            <!--<div><img src=""></div>-->
+            <!--<div><img src=""></div>-->
+            <!--</div>-->
+
+            <!--<div class="fromBox">-->
+            <!--<span class="from">摩尔金融</span>-->
+            <!--<span class="time">2小时前</span>-->
+            <!--</div>-->
+            <!--</li></a>-->
+            <!--<a href=""><li>-->
+            <!--<p class="titleWord">这组图让你看清中国企业的真是实力</p>-->
+            <!--<div class="bigImg"><img src=""></div>-->
+            <!--<div class="fromBox">-->
+            <!--<span class="from">摩尔金融</span>-->
+            <!--<span class="time">2小时前</span>-->
+            <!--</div>-->
+            <!--</li></a>-->
+        </ul>
+        <div id = "scroller-pullUp" style="position: fixed;bottom: -43px;left: 0;width: 100%">
+            <!--<span id = "up-icon" class = "icon-double-angle-up pull-up-icon">↑↑</span>-->
+            <span id = "pullUp-msg" class = "pull-up-msg" style="display:block;text-align: center;width: 100%">上拉加载更多</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

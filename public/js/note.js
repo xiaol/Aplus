@@ -69,8 +69,14 @@ function transdate(endTime){
     date.setSeconds(endTime.substring(17,19));
     return date.getTime();;//时间戳精确到毫秒.parse(date)
 }
-console.log(transdate(dt1))
+// console.log(transdate(dt1))
 //    transdate()函数获取时间戳
+
+function del_html_tags(str,reallyDo,replaceWith) {
+    var e=new RegExp(reallyDo,"g");
+    words = str.replace(e, replaceWith);
+    return words;
+}
 
 var base64EncodeChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 var base64DecodeChars = new Array(-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
