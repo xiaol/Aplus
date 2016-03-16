@@ -13,6 +13,7 @@
 <script>
     $(function(){
         $("#wrapper1").css("margin-top",$(".navBox").height()+51);
+        $("#scroller-pullUp").css("top",$(".mainBox").height()+43);
     })
 </script>
 <style>
@@ -308,7 +309,7 @@
             <!--</div>-->
             <!--</li></a>-->
         </ul>
-        <div id = "scroller-pullUp" style="position: fixed;bottom: -13px;left: 0;width: 100%">
+        <div id = "scroller-pullUp" style="position: fixed;top: 0px;left: 0;width: 100%">
             <!--<span id = "up-icon" class = "icon-double-angle-up pull-up-icon">↑↑</span>-->
             <span id = "pullUp-msg" class = "pull-up-msg" style="display:block;text-align: center;width: 100%;">上拉加载更多</span>
         </div>
