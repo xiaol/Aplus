@@ -13,7 +13,7 @@
 <script>
     $(function(){
         $("#wrapper1").css("margin-top",$(".navBox").height()+51);
-        $("#scroller-pullUp").css("top",$(".mainBox").height()+43);
+
     })
 </script>
 <style>
@@ -118,6 +118,7 @@
 
             myScroll1.on("slideUp", function () {
                 if (this.maxScrollY - this.y > 40) {
+                     $("#scroller-pullUp").css("top",$(".mainBox").height()+43);
                     var ids=$(".border").attr("id");
                     var last=$(".last").html();
                     $(".last").remove();
