@@ -12,8 +12,36 @@
 </head>
 <script>
     $(function(){
+        var mm=true;
         $("#wrapper1").css("margin-top",$(".navBox").height()+51);
+        $(".jiantou").click(function(){
+            if(mm){
+                $(".navBox").css("height","auto");
+                mm=false;
+            }else{
+                $(".navBox").css("height","50px");
+                mm=true;
+            }
 
+        })
+        $('body').on("touchstart", function(e) {
+//        e.preventDefault();
+            startX = e.originalEvent.changedTouches[0].pageX,
+                    startY = e.originalEvent.changedTouches[0].pageY;
+        });
+        $("body").on("touchmove", function(e) {
+//    e.preventDefault();
+            moveEndX = e.originalEvent.changedTouches[0].pageX,
+                    moveEndY = e.originalEvent.changedTouches[0].pageY,
+                    X = moveEndX - startX,
+                    Y = moveEndY - startY;
+            if ( Math.abs(Y) > Math.abs(X) && Y > 0) {
+//                $(".footer").css("display","block")
+            }
+            else if( Math.abs(Y) > Math.abs(X) && Y < 0 ) {
+                $(".navBox").css("height","50px");
+            }
+        })
     })
 </script>
 <style>
@@ -216,6 +244,7 @@
     </div></a>
 </div>
 <ul class="navBox">
+    <div class="jiantou"><img src="img/qiDianjiantou.png"></div>
     <li class="border channel" id="1"><a>热点</a></li>
     <li class="channel" id="4"><a>科技</a></li>
     <li class="channel" id="26"><a>美女</a></li>
@@ -310,7 +339,7 @@
             <!--</div>-->
             <!--</li></a>-->
         </ul>
-        <div id = "scroller-pullUp" style="position: fixed;bottom: -43px;left: 0;width: 100%">
+        <div id = "scroller-pullUp" style="position: absolute;bottom: -43px;left: 0;width: 100%">
             <!--<span id = "up-icon" class = "icon-double-angle-up pull-up-icon">↑↑</span>-->
             <span id = "pullUp-msg" class = "pull-up-msg" style="display:block;text-align: center;width: 100%;">上拉加载更多</span>
         </div>

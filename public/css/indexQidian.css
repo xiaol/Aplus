@@ -4,7 +4,7 @@ a{text-decoration: none}
 .title{width:76px;height:auto;position: absolute;top:12px;left:4%}
 .search{width:20px;height:auto;position: absolute;top:12px;right:4%}
 .title>img,.search>img{width:100%}
-.navBox{width:92%;height:auto;padding: 11px 4% 0 4%;position: fixed;top:44px;background: #fff}
+.navBox{width:92%;height:auto;padding: 11px 4% 0 4%;position: fixed;top:44px;background: #fff;z-index: 99}
 .navBox li{height:40px;float: left;padding: 0 5% 0 0;}
 .navBox li a{display: block;font-size: 16px;color:#505050;line-height: 38px;text-align: center;float: left}
 .navBox li a:hover{cursor: pointer}
@@ -26,4 +26,6 @@ a{text-decoration: none}
 .bigImg>img{width:100%}
 @media screen and (max-width: 992px){
     .title{left:40%}
+     .navBox{height:50px;overflow:hidden}
+    .navBox li{padding: 0 6% 0 0}
 }
