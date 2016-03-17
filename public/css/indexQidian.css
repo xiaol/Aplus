@@ -24,6 +24,8 @@ a{text-decoration: none}
 .imgboxs>div:first-child{margin-left: 0}
 .bigImg{width: 100%;height:100px;margin-top:15px;}
 .bigImg>img{width:100%}
+.jiantou{width:15px;height:auto;position: absolute;right:4%;top:20px}
+.jiantou>img{width:100%}
 @media screen and (max-width: 992px){
     .title{left:40%}
      .navBox{height:50px;overflow:hidden}
