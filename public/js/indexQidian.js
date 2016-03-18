@@ -181,6 +181,8 @@ function dates2(){
                                 type:"get",
                                 dataType:"json",
                                 success:function(e){
+                                    $(".load").css("display","none");
+                                    $("#scroller-pullUp").css("display","block");
                                     $(".mainBox").html("");
                                     var data=e['data'];console.log(data);
                                     $("<span class='first'></span>").css("display","none").html(data[0].pubTime).appendTo("body");

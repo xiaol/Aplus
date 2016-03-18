@@ -26,6 +26,7 @@ a{text-decoration: none}
 .bigImg>img{width:100%}
 .jiantou{width:15px;height:auto;position: absolute;right:4%;top:20px;display: none}
 .jiantou>img{width:100%}
+.load{display:block;font-size: 16px;color: #9b9b9b;margin:60px auto;width: 100%;text-align: center}
 @media screen and (max-width: 992px){
     .title{left:40%}
     .jiantou{display: block;}
