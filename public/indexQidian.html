@@ -143,72 +143,76 @@
                     //并且，由于alert会阻塞后续的动画效果，所以，
                     //添加了后面的一行代码，移除之前添加上的一个样式
                     // alert("slideDown");
-                    upIcon.removeClass("reverse_icon");
-                }
-            });
-
-            myScroll1.on("slideUp", function () {
-                if (this.maxScrollY - this.y > 40) {
-                     // $("#scroller-pullUp").css("top",$(".mainBox").height()+43);
+                    $(".refresh").css("display","block");
                     var ids=$(".border").attr("id");
-                    var last=$(".last").html();
-                    $(".last").remove();
+                    var first=$(".first").html();
+                    $(".first").remove();
                     var title,pubTime,pubName,urls,nowTime,imgLists;
-                    nowTime=getNowFormatDate();console.log(last)
+                    nowTime=getNowFormatDate();
                     $.ajax({
-                        url:"http://api.deeporiginalx.com/bdp/news/load?cid="+ids+"&tstart="+transdate(last),
+                        url:"http://api.deeporiginalx.com/bdp/news/refresh?cid="+ids+"&tstart="+transdate(first),
                         type:"get",
                         dataType:"json",
                         success:function(e){
+                            $(".refresh").css("display","none");
                             console.log(e);
                             var data=e['data'];
-                            $("<span class='last'></span>").css("display","none").html(data[data.length-1].pubTime).appendTo("body");
-                            for(var i=0;i<data.length;i++){
-                                is++;
-                                title=data[i].title;
-                                pubTime=data[i].pubTime;
-                                timeCha=timeDifference(nowTime,pubTime);
-                                pubName=data[i].pubName;
-                                urls=data[i].url;
-                                var aUrl=del_html_tags(base64encode(urls),"=","");
-                                if(!("imgList" in data[i])){
-                                    $("<a class='a'></a>").attr({"id":"ad"+is,"href":"http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface"}).insertAfter(".a:last()");
-                                    $("<li></li>").attr("id","lid"+is).appendTo("#ad"+is);
-                                    $("<p class='titleWord'></p>").html(title).appendTo("#lid"+is);
-                                    $("<div class='fromBox'></div>").attr("id","fromd"+is).appendTo("#lid"+is);
-                                    $("<div class='from'></div>").html(pubName).appendTo("#fromd"+is);
-                                    $("<div class='time'></div>").html(timeCha).appendTo("#fromd"+is);
-                                }else{
-                                    imgLists=data[i].imgList;
-                                    //alert(false)
+                            var code=e['code'];
+                            if(code==1){
+                                $("<div id='tishi'></div>").css({width:"100%",height:"20px",fontSize:"16px",textAlign:"center",lineHeight:"20px",marginTop:"10px"}).html("已加载到最新").insertBefore(".a:first()");
+                                setTimeout(function(){
+                                    $("#tishi").remove();
+                                },3000)
+                            }else if(code==0){
+                                $("<span class='first'></span>").css("display","none").html(data[0].pubTime).appendTo("body");
+                                for(var i=data.length-1;i>=0;i--){
+                                    is++;
+                                    title=data[i].title;
+                                    pubTime=data[i].pubTime;
+                                    timeCha=timeDifference(nowTime,pubTime);
+                                    pubName=data[i].pubName;
+                                    urls=data[i].url;
+                                    var aUrl=del_html_tags(base64encode(urls),"=","");
+                                    if(!("imgList" in data[i])){
+                                        $("<a class='a'></a>").attr({"id":"au"+is,"href":"http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface"}).insertBefore(".a:first()");
+                                        $("<li></li>").attr("id","liu"+is).appendTo("#au"+is);
+                                        $("<p class='titleWord'></p>").html(title).appendTo("#liu"+is);
+                                        $("<div class='fromBox'></div>").attr("id","fromu"+is).appendTo("#liu"+is);
+                                        $("<div class='from'></div>").html(pubName).appendTo("#fromu"+is);
+                                        $("<div class='time'></div>").html(timeCha).appendTo("#fromu"+is);
+                                    }else{
+                                        imgLists=data[i].imgList;
+                                        //alert(false)
 
-                                    if(imgLists.length==1){
-                                        $("<a class='a'></a>").attr({"id":"ad"+is,"href":"http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface"}).insertAfter(".a:last()");
-                                        $("<li></li>").attr("id","lid"+is).appendTo("#ad"+is);
-                                        $("<div class='imgbox'></div>").attr("id","imgd"+is).appendTo("#lid"+is);
-                                        $("<img src="+imgLists[0]+">").appendTo("#imgd"+is);
-                                        $("<div class='wordBox'></div>").attr("id","wordd"+is).appendTo("#lid"+is);
-                                        $("<p class='titleWord'></p>").html(title).appendTo("#wordd"+is);
-                                        $("<div class='fromBox'></div>").attr("id","fromd"+is).appendTo("#wordd"+is);
-                                        $("<div class='from'></div>").html(pubName).appendTo("#fromd"+is);
-                                        $("<div class='time'></div>").html(timeCha).appendTo("#fromd"+is);
-                                    }else if(imgLists.length>1){
-                                        //alert(1)
-                                        $("<a class='a'></a>").attr({"id":"ad"+is,"href":"http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface"}).insertAfter(".a:last()");
-                                        $("<li></li>").attr("id","lid"+is).appendTo("#ad"+is);
-                                        $("<p class='titleWord'></p>").html(title).appendTo("#lid"+is);
-                                        $("<div class='imgboxs'></div>").attr("id","tuboxd"+is).appendTo("#lid"+is);
-                                        for(var j=0;j<imgLists.length;j++){
-                                            //alert(imgList.length)
-                                            $("<div><img src="+imgLists[j]+"></div>").appendTo("#tuboxd"+is);
+                                        if(imgLists.length==1){
+                                            $("<a class='a'></a>").attr({"id":"au"+is,"href":"http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface"}).insertBefore(".a:first()");
+                                            $("<li></li>").attr("id","liu"+is).appendTo("#au"+is);
+                                            $("<div class='imgbox'></div>").attr("id","imgu"+is).appendTo("#liu"+is);
+                                            $("<img src="+imgLists[0]+">").appendTo("#imgu"+is);
+                                            $("<div class='wordBox'></div>").attr("id","wordu"+is).appendTo("#liu"+is);
+                                            $("<p class='titleWord'></p>").html(title).appendTo("#wordu"+is);
+                                            $("<div class='fromBox'></div>").attr("id","fromu"+is).appendTo("#wordu"+is);
+                                            $("<div class='from'></div>").html(pubName).appendTo("#fromu"+is);
+                                            $("<div class='time'></div>").html(timeCha).appendTo("#fromu"+is);
+                                        }else if(imgLists.length>1){
+                                            //alert(1)
+                                            $("<a class='a'></a>").attr({"id":"au"+is,"href":"http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface"}).insertBefore(".a:first()");
+                                            $("<li></li>").attr("id","liu"+is).appendTo("#au"+is);
+                                            $("<p class='titleWord'></p>").html(title).appendTo("#liu"+is);
+                                            $("<div class='imgboxs'></div>").attr("id","tuboxu"+is).appendTo("#liu"+is);
+                                            for(var j=0;j<imgLists.length;j++){
+                                                //alert(imgList.length)
+                                                $("<div><img src="+imgLists[j]+"></div>").appendTo("#tuboxu"+is);
+                                            }
+                                            $("<div class='fromBox'></div>").attr("id","fromu"+is).appendTo("#liu"+is);
+                                            $("<div class='from'></div>").html(pubName).appendTo("#fromu"+is);
+                                            $("<div class='time'></div>").html(timeCha).appendTo("#fromu"+is);
                                         }
-                                        $("<div class='fromBox'></div>").attr("id","fromd"+is).appendTo("#lid"+is);
-                                        $("<div class='from'></div>").html(pubName).appendTo("#fromd"+is);
-                                        $("<div class='time'></div>").html(timeCha).appendTo("#fromd"+is);
                                     }
-                                }
 
+                                }
                             }
+
                             $("img").load(function(){
                                 setTimeout(function () {
                                     myScroll1.refresh();
@@ -218,9 +222,89 @@
                         }
 
                     })
+                    upIcon.removeClass("reverse_icon");
+                }
+            });
+
+            myScroll1.on("slideUp", function () {
+                if (this.maxScrollY - this.y > 40) {
+                     // $("#scroller-pullUp").css("top",$(".mainBox").height()+43);
+                   
                     upIcon.removeClass("reverse_icon")
                 }
             });
+            myScroll1.on("scrollEnd",function(){
+               if(this.maxScrollY - this.y ==0){
+                   var ids=$(".border").attr("id");
+                   var last=$(".last").html();
+                   $(".last").remove();
+                   var title,pubTime,pubName,urls,nowTime,imgLists;
+                   nowTime=getNowFormatDate();console.log(last)
+                   $.ajax({
+                       url:"http://api.deeporiginalx.com/bdp/news/load?cid="+ids+"&tstart="+transdate(last),
+                       type:"get",
+                       dataType:"json",
+                       success:function(e){
+                           console.log(e);
+                           var data=e['data'];
+                           $("<span class='last'></span>").css("display","none").html(data[data.length-1].pubTime).appendTo("body");
+                           for(var i=0;i<data.length;i++){
+                               is++;
+                               title=data[i].title;
+                               pubTime=data[i].pubTime;
+                               timeCha=timeDifference(nowTime,pubTime);
+                               pubName=data[i].pubName;
+                               urls=data[i].url;
+                               var aUrl=del_html_tags(base64encode(urls),"=","");
+                               if(!("imgList" in data[i])){
+                                   $("<a class='a'></a>").attr({"id":"ad"+is,"href":"http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface"}).insertAfter(".a:last()");
+                                   $("<li></li>").attr("id","lid"+is).appendTo("#ad"+is);
+                                   $("<p class='titleWord'></p>").html(title).appendTo("#lid"+is);
+                                   $("<div class='fromBox'></div>").attr("id","fromd"+is).appendTo("#lid"+is);
+                                   $("<div class='from'></div>").html(pubName).appendTo("#fromd"+is);
+                                   $("<div class='time'></div>").html(timeCha).appendTo("#fromd"+is);
+                               }else{
+                                   imgLists=data[i].imgList;
+                                   //alert(false)
+
+                                   if(imgLists.length==1){
+                                       $("<a class='a'></a>").attr({"id":"ad"+is,"href":"http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface"}).insertAfter(".a:last()");
+                                       $("<li></li>").attr("id","lid"+is).appendTo("#ad"+is);
+                                       $("<div class='imgbox'></div>").attr("id","imgd"+is).appendTo("#lid"+is);
+                                       $("<img src="+imgLists[0]+">").appendTo("#imgd"+is);
+                                       $("<div class='wordBox'></div>").attr("id","wordd"+is).appendTo("#lid"+is);
+                                       $("<p class='titleWord'></p>").html(title).appendTo("#wordd"+is);
+                                       $("<div class='fromBox'></div>").attr("id","fromd"+is).appendTo("#wordd"+is);
+                                       $("<div class='from'></div>").html(pubName).appendTo("#fromd"+is);
+                                       $("<div class='time'></div>").html(timeCha).appendTo("#fromd"+is);
+                                   }else if(imgLists.length>1){
+                                       //alert(1)
+                                       $("<a class='a'></a>").attr({"id":"ad"+is,"href":"http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface"}).insertAfter(".a:last()");
+                                       $("<li></li>").attr("id","lid"+is).appendTo("#ad"+is);
+                                       $("<p class='titleWord'></p>").html(title).appendTo("#lid"+is);
+                                       $("<div class='imgboxs'></div>").attr("id","tuboxd"+is).appendTo("#lid"+is);
+                                       for(var j=0;j<imgLists.length;j++){
+                                           //alert(imgList.length)
+                                           $("<div><img src="+imgLists[j]+"></div>").appendTo("#tuboxd"+is);
+                                       }
+                                       $("<div class='fromBox'></div>").attr("id","fromd"+is).appendTo("#lid"+is);
+                                       $("<div class='from'></div>").html(pubName).appendTo("#fromd"+is);
+                                       $("<div class='time'></div>").html(timeCha).appendTo("#fromd"+is);
+                                   }
+                               }
+
+                           }
+                           $("img").load(function(){
+                               setTimeout(function () {
+                                   myScroll1.refresh();
+                               }, 100);
+                           })
+
+                       }
+
+                   })
+               }
+           })
 
         } else {
             setTimeout(function () {
@@ -280,6 +364,10 @@
         <div id = "scroller-pullDown" style="position: fixed;top: -43px;left: 0;width: 100%">
             <!--<span id = "up-icon" class = "icon-double-angle-up pull-up-icon">↑↑</span>-->
             <span id = "pullDown-msg" class = "pull-up-msg" style="display:block;text-align: center;width: 100%;">下拉加载更多</span>
+        </div>
+        <div class="refresh">
+            <img src="img/load.gif">
+            <span>正在刷新更多数据...</span>
         </div>
         <ul class="mainBox">
             <span class="load">正在加载...</span>
@@ -343,9 +431,10 @@
             <!--</div>-->
             <!--</li></a>-->
         </ul>
+        <div class="loadMord">正在加载更多新闻...</div>
         <div id = "scroller-pullUp" style="position: absolute;bottom: -43px;left: 0;width: 100%">
             <!--<span id = "up-icon" class = "icon-double-angle-up pull-up-icon">↑↑</span>-->
-            <span id = "pullUp-msg" class = "pull-up-msg" style="display:block;text-align: center;width: 100%;">上拉加载更多</span>
+            <!-- <span id = "pullUp-msg" class = "pull-up-msg" style="display:block;text-align: center;width: 100%;">上拉加载更多</span> -->
         </div>
     </div>
 </div>

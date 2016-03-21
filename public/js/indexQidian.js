@@ -181,6 +181,7 @@ function dates2(){
                                 type:"get",
                                 dataType:"json",
                                 success:function(e){
+                                    $(".loadMore").css("display","block");
                                     $(".load").css("display","none");
                                     $("#scroller-pullUp").css("display","block");
                                     $(".mainBox").html("");

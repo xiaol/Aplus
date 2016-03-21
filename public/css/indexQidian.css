@@ -5,11 +5,11 @@ a{text-decoration: none}
 .search{width:20px;height:auto;position: absolute;top:12px;right:4%}
 .title>img,.search>img{width:100%}
 .navBox{width:92%;height:auto;padding: 11px 4% 0 4%;position: fixed;top:44px;background: #fff;z-index: 99}
-.navBox li{height:40px;float: left;padding: 0 5% 0 0;}
+.navBox li{height:40px;padding: 0 5% 0 0;display: inline-block;}
 .navBox li a{display: block;font-size: 16px;color:#505050;line-height: 38px;text-align: center;float: left}
 .navBox li a:hover{cursor: pointer}
 .navBox .border a{display: block;font-size: 16px;color:#0091fa;line-height: 38px;text-align: center;float: left;border-bottom: 2px solid #0091fa}
-.mainBox{width:92%;height:auto;margin:11px auto 0 auto;padding: 0 4%;}
+.mainBox{width:92%;height:auto;margin:0px auto 43px auto;padding: 0 4%;}
 .mainBox a li{width:100%;height:auto;overflow: hidden;padding: 15px 0;border-bottom: 1px solid #dcdcdc}
 .imgbox{width: 110px;height:auto;float: left;margin-right:3%}
 .imgbox img{width: 100%}
@@ -24,11 +24,18 @@ a{text-decoration: none}
 .imgboxs>div:first-child{margin-left: 0}
 .bigImg{width: 100%;height:100px;margin-top:15px;}
 .bigImg>img{width:100%}
-.jiantou{width:15px;height:auto;position: absolute;right:4%;top:20px;display: none}
+.jiantou{width:15px;height:15px;position: absolute;right:4%;top:20px;border-radius: 50%;border:3px solid red;}
 .jiantou>img{width:100%}
 .load{display:block;font-size: 16px;color: #9b9b9b;margin:60px auto;width: 100%;text-align: center}
+.loadMord{width: 92%;height:44px;margin: -30px auto 0 auto;background: #f5f5f5;font-size:14px;color:#9b9b9b;text-align: center;line-height: 44px;display: none}
+.refresh{width: 92%;height:20px;margin: 0 auto;padding: 7px;display: none}
+.refresh>img{width: 20px;height:20px;
+    float: left;margin-left: 25%}
+.refresh>span{display: inline-block;font-size: 14px;float: left;margin-left: 10px;}
 @media screen and (max-width: 992px){
     .title{left:40%}
-    .jiantou{display: block;}
-     .navBox{height:50px;overflow:hidden}
+    .jiantou{display: block}
+    /*.navBox li{width: 13%}*/
+    .navBox{height:50px;overflow:hidden}
+    .navBox li{padding: 0 5% 0 0}
 }
