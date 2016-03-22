@@ -31,11 +31,12 @@ img{display: block;}
 .loadMord{width: 92%;height:44px;margin: -30px auto 0 auto;background: #f5f5f5;font-size:14px;color:#9b9b9b;text-align: center;line-height: 44px;display: none}
 .refresh{width: 92%;height:20px;margin: 0 auto;padding: 7px;display: none}
 .refresh>img{width: 20px;height:20px;
-    float: left;margin-left: 25%}
+    float: left;margin-left: 45%}
 .refresh>span{display: inline-block;font-size: 14px;float: left;margin-left: 10px;}
 @media screen and (max-width: 992px){
     .title{left:40%}
     .jiantou{display: block}
+    .refresh>img{margin-left: 27%}
     /*.navBox li{width: 13%}*/
     .navBox{height:50px;overflow:hidden}
     .navBox li{padding: 0 5% 0 0}
