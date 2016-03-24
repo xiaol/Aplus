@@ -7,8 +7,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <title>奇点资讯</title>
     <script src="js/jquery.min.js"></script>
-    <script src="js/ex.js"></script>
     <link rel="stylesheet" href="css/ex.css"/>
+    <link rel="stylesheet" href="css/news.css"/>
+    <script src="js/iscroll-probe.js"></script>
+    <script src="js/ex1.js"></script>
 </head>
 <script>
     $(function(){
@@ -30,9 +32,68 @@ $("body").on("touchmove", function(e) {
         $(".footer").css("display","none")
     }
 })
+    });
+
+</script>
+<style>
+    #wrapper1{
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        bottom: 0px;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        /*height: auto;*/
+    }
+
+    #scroller1{
+        position: absolute;left: 0;top: 0;
+        z-index: 3;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        width: 100%;
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-text-size-adjust: none;
+        -moz-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+        -o-text-size-adjust: none;
+        text-size-adjust: none;
+    }
+    #scroller-pullUp1{
+        position: absolute;
+        bottom: -43px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        background-color: balck;
+    }
+    body{
+        background-color: #f6f6f6;
+    }
+</style>
+<script>
+
+    $(function(){
+    
     })
 </script>
 <body>
+
+<div id="wrapper1">
+    <div id="scroller1">
+        <!-- <div id = "scroller-pullDown" style="position: fixed;top: -43px;left: 0;width: 100%">
+            <span id = "up-icon" class = "icon-double-angle-up pull-up-icon">↑↑</span>
+            <span id = "pullDown-msg" class = "pull-up-msg" style="display:block;text-align: center;width: 100%;">下拉加载更多</span>
+        </div> -->
 <div class="banner" style="top:25px">
     <div class="yingdao">
         <img src="img/tishi.png">
@@ -45,8 +106,115 @@ $("body").on("touchmove", function(e) {
         </div>
     </div>
 </div>
+
 <!--banner end-->
-<div class="cardbox">
+<div class="cardbox" style="padding-top: 30px;">
+</div>
+<!-- 精选评论 start -->
+<!-- <div class="elte-comments">
+    <div class="comments-title">精选评论</div>
+    <div class="comments">
+        <div class="comment clearfix">
+            <div class="comment-img"> <img src="http://photocdn.sohu.com/20160315/mp63444225_1457989131470_1.jpeg"> </div>
+            <div class="comment-info">
+                <div class="user-info clearfix">
+                    <div class="floatL">
+                        <div class="user-name">火星网友</div>
+                        <div class="user-time">2016-12-12 12:12:00</div>
+                    </div>
+                    <div class="floatR">
+                        <img src="branch/icon/heart_k.jpg"> 1276赞
+                    </div>
+                </div>
+                <div class="comment-text">
+                    蔡依林做手表蛋糕让妈妈开心，网友大赞蔡依林为。
+                </div>
+            </div>
+        </div>
+        <div class="comment clearfix">
+            <div class="comment-img"> <img src="http://photocdn.sohu.com/20160315/mp63444225_1457989131470_1.jpeg"> </div>
+            <div class="comment-info">
+                <div class="user-info clearfix">
+                    <div class="floatL">
+                        <div class="user-name">火星网友</div>
+                        <div class="user-time">2016-12-12 12:12:00</div>
+                    </div>
+                    <div class="floatR">
+                        <img src="branch/icon/heart_s.jpg"> 1276赞
+                    </div>
+                </div>
+                <div class="comment-text">
+                    蔡依林做手表蛋糕让妈妈开心，网友大赞蔡依林为。
+                </div>
+            </div>
+        </div>
+        <div class="comment clearfix">
+            <div class="comment-img"> <img src="http://photocdn.sohu.com/20160315/mp63444225_1457989131470_1.jpeg"> </div>
+            <div class="comment-info">
+                <div class="user-info clearfix">
+                    <div class="floatL">
+                        <div class="user-name">火星网友</div>
+                        <div class="user-time">2016-12-12 12:12:00</div>
+                    </div>
+                    <div class="floatR">
+                        <img src="branch/icon/heart_k.jpg"> 1276赞
+                    </div>
+                </div>
+                <div class="comment-text">
+                    蔡依林做手表蛋糕让妈妈开心，网友大赞蔡依林为。
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="comments-more">查看更多评论</div> 
+</div> -->
+<!-- 精选评论 end -->
+<!-- 相关观点 start -->
+<div class="related-idea">
+    <div class="idea-title">相关观点</div>
+    <div class="idea-infos">
+        <div class="idea-info">
+            <div class="info-time">88/88</div>
+            <div class="info-icon">
+                <div class="info-line"></div>
+            </div>
+            <div class="info-text">
+                <div class="text-word"></div>
+            </div>
+        </div>
+        <!-- <div class="idea-info">
+            <div class="info-time">08/88</div>
+            <div class="info-icon"></div>
+            <div class="info-text clearfix">
+                <div class="text-word-img">蔡依林做手表蛋糕让妈妈开心</div>
+                <div class="text-img">
+                    <img src="img/timeline.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="idea-info">
+            <div class="info-time">08/88</div>
+            <div class="info-icon"></div>
+            <div class="info-text clearfix">
+                <div class="text-word">蔡依林做手表蛋糕让妈妈开心</div>
+            </div>
+        </div>
+        <div class="idea-info">
+            <div class="info-time">08/88</div>
+            <div class="info-icon"></div>
+            <div class="info-text">
+                <div class="text-word">蔡依林做手表蛋糕让妈妈开心，网友大赞蔡依林为。</div>
+            </div>
+        </div>
+         -->
+    </div>
+</div>
+<!-- 相关观点 end -->
+        <div id = "scroller-pullUp1">
+            <!--<span id = "up-icon" class = "icon-double-angle-up pull-up-icon">↑↑</span>-->
+            <span id = "pullUp-msg" class = "pull-up-msg">上拉加载更多</span>
+        </div>
+    </div>
 </div>
 <div class="footer">
     <div class="footertu">
@@ -76,6 +244,8 @@ $("body").on("touchmove", function(e) {
         </div>
     </div>
 </div>
+<script type="text/javascript" src="branch/js/public.js"></script>
+<script type="text/javascript" src="js/note.js"></script>
 </body>
 </html>
 
