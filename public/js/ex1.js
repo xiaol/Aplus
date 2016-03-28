@@ -217,6 +217,7 @@ $(function() {
                             $("#bannerImg").attr("src",img);
                         }
                         var title=data['title'];
+                        $("meta[name='description']").attr("content",title);
                         $(".bannertitle").html(title);
                         var arr = uniqeByKeys(point,['paragraphIndex']);console.log(arr);alert(1)
                         for(var i=0;i<cons.length;i++){
@@ -269,6 +270,7 @@ $(function() {
                         var time=e['data']['pubTime'];
                         var from=e['data']['pubName'];
                         var title=e['data']['title'];
+                        $("meta[name='description']").attr("content",title);
                         $(".bannertitle").html(title);
                         document.title=title;
                         $(".date").html(time);
@@ -364,6 +366,7 @@ $(function() {
                         //    $("#bannerImg").attr("src",img);
                         //}
                         var title=e['title'];
+                        $("meta[name='description']").attr("content",title);
                         if(title==null||""){
                             return;
                         }else{
