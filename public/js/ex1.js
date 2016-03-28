@@ -150,6 +150,7 @@ $(function() {
                         //    $("#bannerImg").attr("src",img);
                         //}
                         var title=data['title'];
+                        $("meta[name='description']").attr("content",title);
                         var form=data['sourceSiteName'];
                         $(".bannertitle").html(title);
                         $(".time").html(form);
