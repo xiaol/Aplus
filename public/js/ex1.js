@@ -42,8 +42,8 @@ $(function() {
                 return "";
             }
         });
-        myScroll1.on("slideUp", function () {
-            if (this.maxScrollY - this.y > 40) {
+        myScroll1.on("scrollEnd", function () {
+            if (this.maxScrollY - this.y == 0) {
                 beginNum += 3;
                 endNum += 3;
                 getRelate (backdata,beginNum,endNum,equiptype);
@@ -453,6 +453,7 @@ $(function() {
                 end = relates.length;
             }
             if(begin>end){
+                $(".loadMord").css("display","none");
                 return "";
             }
             do{
@@ -478,6 +479,7 @@ $(function() {
                     }
                     relateDiv += '</div></a></div>';
                     $(".related-idea").show();
+                    $(".loadMord").css("display","block");
                 }
                 i++;
             }while(flag<=3);
@@ -486,6 +488,7 @@ $(function() {
             myScroll1.refresh();
         }else{
             $(".related-idea").hide();
+            $(".loadMord").css("display","none");
         }
     }
 });
