@@ -95,7 +95,7 @@ $(function(){
                                 $("<div class='sTitle'></div>").html(title).appendTo("#a"+k+i);
                                 $("<div class='sText'></div>").html(abs).appendTo("#a"+k+i);
                                 $("<div class='sMore'></div>").attr("id","more"+k+i).appendTo("#a"+k+i);
-                                $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more"+k+i);
+                                // $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more"+k+i);
                                 $("<div class='sFrom'></div>").html(sourceSite).appendTo("#more"+k+i);
                                 $("<div class='sTime'></div>").html(updateTime).appendTo("#more"+k+i);
                             }else{
@@ -108,7 +108,7 @@ $(function(){
                                 $("<div class='imgWord'>").attr("id","word"+k+i).appendTo("#imgbox"+k+i);
                                 $("<div class='sText' style='margin-top:0'>").html(abs).appendTo("#word"+k+i);
                                 $("<div class='sMore'></div>").attr("id","more"+k+i).appendTo("#word"+k+i);
-                                $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more"+k+i);
+                                // $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more"+k+i);
                                 $("<div class='sFrom'></div>").html(sourceSite).appendTo("#more"+k+i);
                                 $("<div class='sTime'></div>").html(updateTime).appendTo("#more"+k+i);
                             }
@@ -256,7 +256,7 @@ $(function(){
                                 $("<div class='sTitle'></div>").html(title).appendTo("#a" + i);
                                 $("<div class='sText'></div>").html(abs).appendTo("#a" + i);
                                 $("<div class='sMore'></div>").attr("id", "more" + i).appendTo("#a" + i);
-                                $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more" + i);
+                                // $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more" + i);
                                 $("<div class='sFrom'></div>").html(sourceSite).appendTo("#more" + i);
                                 $("<div class='sTime'></div>").html(updateTime).appendTo("#more" + i);
                             } else {
@@ -269,7 +269,7 @@ $(function(){
                                 $("<div class='imgWord'>").attr("id", "word" + i).appendTo("#imgbox" + i);
                                 $("<div class='sText' style='margin-top:0'>").html(abs).appendTo("#word" + i);
                                 $("<div class='sMore'></div>").attr("id", "more" + i).appendTo("#word" + i);
-                                $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more" + i);
+                                // $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more" + i);
                                 $("<div class='sFrom'></div>").html(sourceSite).appendTo("#more" + i);
                                 $("<div class='sTime'></div>").html(updateTime).appendTo("#more" + i);
                             }
