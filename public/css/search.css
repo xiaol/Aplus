@@ -308,7 +308,10 @@
     .searchClose > img {
         width: 40%;
     }
-    .sFrom,.sTime{
+    .sFrom{
+        margin-left: 0;
+    }
+    .sTime{
         margin-left: 20px;
     }
     .phoneErroricon{
