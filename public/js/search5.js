@@ -53,7 +53,7 @@ $(function(){
                             }
                         }
                     }
-                    var $a = ar;console.log($a)
+                    var $a = ar;
                     for(var k=0;k<p;k++){
                         $("<ul class='sMainbox'></ul>").attr("id","sMainbox"+k).appendTo(".mainOutbox");
 
@@ -71,7 +71,7 @@ $(function(){
                                 $("<div class='sTitle'></div>").html(title).appendTo("#a"+k+i);
                                 $("<div class='sText'></div>").html(abs).appendTo("#a"+k+i);
                                 $("<div class='sMore'></div>").attr("id","more"+k+i).appendTo("#a"+k+i);
-                                $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more"+k+i);
+                                // $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more"+k+i);
                                 $("<div class='sFrom'></div>").html(sourceSite).appendTo("#more"+k+i);
                                 $("<div class='sTime'></div>").html(updateTime).appendTo("#more"+k+i);
                             }else{
@@ -84,7 +84,7 @@ $(function(){
                                 $("<div class='imgWord'>").attr("id","word"+k+i).appendTo("#imgbox"+k+i);
                                 $("<div class='sText' style='margin-top:0'>").html(abs).appendTo("#word"+k+i);
                                 $("<div class='sMore'></div>").attr("id","more"+k+i).appendTo("#word"+k+i);
-                                $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more"+k+i);
+                                // $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more"+k+i);
                                 $("<div class='sFrom'></div>").html(sourceSite).appendTo("#more"+k+i);
                                 $("<div class='sTime'></div>").html(updateTime).appendTo("#more"+k+i);
                             }
@@ -95,23 +95,22 @@ $(function(){
                     //        $($(".sMainbox")[j]).css("z-Index",j);
                     //    }
 
-                    $("<div class='buttonBox'></div>").insertAfter(".mainOutbox");alert(1);
+                    $("<div class='buttonBox'></div>").insertAfter(".mainOutbox");
                     $(".buttonBox").css("margin-top",$("#sMainbox0").height()+50);
                     for(var i=1;i<$(".sMainbox").length+1;i++){
 
                         $("<div class='buttonNum'></div>").html(i).appendTo(".buttonBox");
                     }
                     $("<div class='next'></div>").html("下一页>").appendTo(".buttonBox");
-                    var d;
-                    $(".buttonNum").each(function(d,obj){
+                    $(".buttonNum").each(function(i,obj){
                         $(obj).click(function(){
                             for(var k=0;k<$(".sMainbox").length;k++){
                                 $($(".sMainbox")[k]).css("display","none");
                                 $($(".buttonNum")[k]).css("border","1px solid #ccc")
                             }
-                            $(".buttonBox").css("margin-top",$("#sMainbox"+d).height()+50);
+                            $(".buttonBox").css("margin-top",$("#sMainbox"+i).height()+50);
                             $(this).css("border","0px");
-                            $($(".sMainbox")[d]).css("display","block");
+                            $($(".sMainbox")[i]).css("display","block");
                         })
                     })
                     var bNum=0;
@@ -125,7 +124,6 @@ $(function(){
                             $($(".sMainbox")[bNum]).css("display","block");
                             $($(".buttonNum")[bNum]).css("border","0px");
                             $(".buttonBox").css("margin-top",$("#sMainbox"+bNum).height()+50);
-                            bNum=d;
                         }else if(bNum==$(".sMainbox").length){
                             $($(".sMainbox")[0]).css("display","block");
                             $($(".buttonNum")[0]).css("border","0px");
@@ -140,7 +138,6 @@ $(function(){
                     $("#test").css("display","none");
                     $(".wait").css("display","none");
                     $('.errorBox').css("display","block");
-                    //$(".phoneErrorword").css("display","block");
                 }
             })
             }else{
@@ -150,7 +147,7 @@ $(function(){
                 $(".sMainbox").remove();
                 $(".sMainbox").css("border", "0px solid #cfcfcf");
                 $(".sMainbox li").remove();
-                $.ajax({
+                 $.ajax({
                     url: "http://fusion.deeporiginalx.com:8088/search?key=" + sw,
                     type: "get",
                     dataType: "json",
@@ -177,7 +174,7 @@ $(function(){
                                 $("<div class='sTitle'></div>").html(title).appendTo("#a" + i);
                                 $("<div class='sText'></div>").html(abs).appendTo("#a" + i);
                                 $("<div class='sMore'></div>").attr("id", "more" + i).appendTo("#a" + i);
-                                $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more" + i);
+                                // $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more" + i);
                                 $("<div class='sFrom'></div>").html(sourceSite).appendTo("#more" + i);
                                 $("<div class='sTime'></div>").html(updateTime).appendTo("#more" + i);
                             } else {
@@ -190,7 +187,7 @@ $(function(){
                                 $("<div class='imgWord'>").attr("id", "word" + i).appendTo("#imgbox" + i);
                                 $("<div class='sText' style='margin-top:0'>").html(abs).appendTo("#word" + i);
                                 $("<div class='sMore'></div>").attr("id", "more" + i).appendTo("#word" + i);
-                                $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more" + i);
+                                // $("<div class='sWeb'></div>").html(searchFrom).appendTo("#more" + i);
                                 $("<div class='sFrom'></div>").html(sourceSite).appendTo("#more" + i);
                                 $("<div class='sTime'></div>").html(updateTime).appendTo("#more" + i);
                             }
