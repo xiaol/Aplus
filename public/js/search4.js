@@ -1,5 +1,17 @@
 $(function(){
     var explorer =navigator.userAgent ;
+    var url=location.hash;
+    if(url!=''){
+        var hash=decodeURIComponent(url);
+            var hashs=hash.split("=");
+            mm[hashs[0]]=hashs[1];
+            var sw=mm['#sw'];
+            if($(window).width()>992){
+               $(".sInput").val(sw);
+            }else{
+               $(".searchInput").val(sw); 
+            }
+     }
     if($(window).width()>992){
         var mm=new Object();
         $(".sInput").focus();
