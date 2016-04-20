@@ -1,6 +1,7 @@
 $(function(){
     var explorer =navigator.userAgent ;
     var url=location.hash;
+    var mm=new Object();
     if(url!=''){
         var hash=decodeURIComponent(url);
             var hashs=hash.split("=");
