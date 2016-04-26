@@ -250,19 +250,19 @@
 	line-height:2.5rem;
 }
 .infoBox{
-	width:94%;height:auto;margin:0px auto 0 auto;border-left: 1px dashed #b3b3b3;padding-left: 7px;padding-top: 1px;
+	width:94%;height:auto;margin:0px auto 0 auto;border-left: 1px dashed #b3b3b3;padding-left: 8px;padding-top: 1px;
 }
 .infoInnerbox{
 	width:100%;height:auto;border-bottom: 1px solid #e5e5e5;
 }
 .infoDatas{
-	width:100%;height:16px;margin-left: -3px;margin-top:10px
+	width:100%;height:16px;margin-left: -8px;margin-top:10px
 }
 .infoBox:first-child>a>.infoDatas{
 	margin-top: -4px;
 }
 .infoCircle{
-	width:8px;height:8px;border:1px solid #b3b3b3;border-radius: 50%;display: inline-block;line-height: 14px;float: left;margin-top: 3px;margin-left: -8px;background: #f6f6f6;
+	width:8px;height:8px;border:1px solid #b3b3b3;border-radius: 50%;display: inline-block;line-height: 14px;float: left;margin-top: 3px;margin-left: -4px;background: #f6f6f6;
 }
 .infoData{
 	width:auto;height:100%;padding: 2px;font-size: 12px;color: #fff;background: #0091fa;float: left;
