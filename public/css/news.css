@@ -182,19 +182,19 @@ a{text-decoration: none}
 	/*background: red;*/
 }
 .qidianMore{
-	width:7%;height:auto;display: inline-block;
+	width:7%;height:auto;display: inline-block;vertical-align: middle;
 }
 .qidianMore>img{
-	width:100%;vertical-align: middle;
+	width:100%;
 }
 .reping{
 	width:auto;font-size: 1.5rem;color: #ffffff;line-height: 18px;display: inline-block;
 }
 .qidianGo{
-	width:3%;height:auto;display: inline-block;
+	width:3%;height:auto;display: inline-block;vertical-align: middle;
 }
 .qidianGo>img{
-	width:100%;vertical-align: middle;
+	width:100%;
 }
 .comment{
 	width: 94%;
