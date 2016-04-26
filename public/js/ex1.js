@@ -270,6 +270,8 @@ $(function() {
                         var time=e['data']['pubTime'];
                         var from=e['data']['pubName'];
                         var title=e['data']['title'];
+                        var docid=e['data']['docid'];
+                        $("<div id='docid' style='display: none'></div>").html(docid).appendTo("body");
                         $("meta[name='description']").attr("content",title);
                         $(".bannertitle").html(title);
                         document.title=title;
@@ -292,8 +294,47 @@ $(function() {
                                             myScroll1.refresh();
                                         }, 100);
                         })
+
+                        $.ajax({
+                            url:"http://api.deeporiginalx.com/bdp/news/comment/ydzx?docid="+encodeURIComponent(docid),
+                            type:"get",
+                            cache:"false",
+                            async:"false",
+                            datatype:"jsonp",
+                            jsonp: "callbackparam",
+                            jsonpCallback:"jsonpCallback1",
+                            contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                            success:function(e){
+                                var dt1 = getNowFormatDate();
+                                var mainData='';
+                                var data=e['data'];
+                                var code=e['code'];console.log(code);
+                                if(code){
+                                    $(".elte-comments").css("display","block");
+                                }else{
+                                    $(".elte-comments").css("display","block");
+                                }
+                                for(var i in data){
+                                    if(i<3){
+                                        var profile=data[i]['profile'];
+                                        var content=data[i]['content'];
+                                        var creatTime=data[i]['create_time'];
+                                        var nickname=data[i]['nickname'];
+                                        var love=data[i]['love'];
+                                        mainData+="<div class='comment clearfix'><div class='comment-img'> <img src="+profile+"> </div>";
+                                        mainData+='<div class="comment-info"><div class="user-info clearfix">';
+                                        mainData+='<div class="floatL"><div class="user-name">'+nickname+'</div></div>';
+                                        mainData+='<div class="floatR">' +timeDifference(dt1,creatTime)+'</div></div>';
+                                        mainData+='<div class="comment-text">'+content+'</div></div></div>';
+                                    }
+
+                                }
+                                $(".comments").append(mainData);
+                            }
+                        })
                     }
                 });
+
                 $.ajax({
                     url:"http://api.deeporiginalx.com/bdp/news/related?url="+str,//del_html_tags(base64encode(str),"=",""),
                     type:"get",
@@ -317,6 +358,7 @@ $(function() {
                     //     alert("数据请求失败");
                     // }
                 });
+
                 // $.ajax({
                 //     url:"http://api.deeporiginalx.com/bdp/news/related?url="+str,//del_html_tags(base64encode(str),"=",""),
                 //     type:"get",
@@ -413,6 +455,7 @@ $(function() {
             }
 
         }
+
     $(".closeB img").click(function(){$(".zhezhao").css("display","none")})
     $(".close").click(function(){$(".footer").css("display","none");})
     function isWeiXin(){
@@ -467,28 +510,37 @@ $(function() {
                     if(time_mouth.length==1){time_mouth = "0" + time_mouth}
                     if(time_day.length==1){time_day = "0" + time_day}
                     flag++;
-                    relateDiv += '<div class="idea-info"><a href="'+ relateO.url +'">';
-                    relateDiv += '<div class="info-time">'+ time_mouth + "/" + time_day +'</div>';
-                    relateDiv += '<div class="info-icon"></div>';
-                    relateDiv += '<div class="info-text">';
+                    //relateDiv += '<div class="idea-info"><a href="'+ relateO.url +'">';
+                    //relateDiv += '<div class="info-time">'+ time_mouth + "/" + time_day +'</div>';
+                    //relateDiv += '<div class="info-icon"></div>';
+                    //relateDiv += '<div class="info-text">';
+                    relateDiv+='<div class="infoBox"><a href="'+relateO.url+'">';
+                    relateDiv+='<div class="infoDatas"><div class="infoCircle"></div><div class="infoData">'+time_mouth + "/" + time_day+'</div></div>'
                     if(relateO.imgUrl&&relateO.imgUrl!=""||relateO.img&&relateO.img!=""){
-                        relateDiv += '<div class="text-word-img">' + relateO.title + '</div>';
-                        relateDiv += '<div class="text-img"><img src='+ (type=="IOS"?relateO.imgUrl:relateO.img) +'></div>';
-                    }else{
-                        relateDiv += '<div class="text-word">' + relateO.title + '</div>';
+                        //relateDiv += '<div class="text-word-img">' + relateO.title + '</div>';
+                        //relateDiv += '<div class="text-img"><img src='+ (type=="IOS"?relateO.imgUrl:relateO.img) +'></div>';
+                        relateDiv+='<div class="infoInnerbox"><div class="infoInnerL"><div class="infoTitle">'+relateO.title+'</div>';
+                        relateDiv+='<div class="infoForm">'+relateO.sourceSite+'</div></div>';
+                        relateDiv+='<div class="infoInnerR"><img src="'+(type=="IOS"?relateO.imgUrl:relateO.img)+'"></div>';
+                    }else {
+                        //relateDiv += '<div class="text-word">' + relateO.title + '</div>';
+                        relateDiv += '<div class="infoInnerbox"><div class="infoTitle">' + relateO.title + '</div><div class="infoForm">' + relateO.sourceSite + '</div>'
                     }
-                    relateDiv += '</div></a></div>';
+                        relateDiv += '</div></a></div>';
                     $(".related-idea").show();
-                    $(".loadMord").css("display","block");
+                    $(".loadMord").show();
                 }
                 i++;
             }while(flag<=3);
+            //alert(1);
             $(".idea-infos").append(relateDiv);
-            $(".info-line").css("height",(end-1)*69);
+            //relateDiv.appendTo()
+            //$(".info-line").css("height",(end-1)*69);
             myScroll1.refresh();
         }else{
             $(".related-idea").hide();
-            $(".loadMord").css("display","none");
+            $(".loadMord").hide();
         }
     }
+    setTimeout(scrollTo,0,0,0);
 });
