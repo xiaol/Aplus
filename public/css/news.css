@@ -35,6 +35,7 @@
 	font-size: 17px;
 	color: #000;
 	padding-left: 2%;
+	line-height: 19px;
 	/*height: 40px;*/
 	/*line-height: 40px;*/
 	/*border-bottom:1px solid #e9e9e9;*/
@@ -183,7 +184,7 @@
 	width:7%;height:auto;display: inline-block;
 }
 .qidianMore>img{
-	width:100%
+	width:100%;vertical-align: middle;
 }
 .reping{
 	width:auto;font-size: 1.5rem;color: #ffffff;line-height: 18px;display: inline-block;
@@ -192,7 +193,7 @@
 	width:3%;height:auto;display: inline-block;
 }
 .qidianGo>img{
-	width:100%;
+	width:100%;vertical-align: middle;
 }
 .comment{
 	width: 94%;
@@ -225,7 +226,7 @@
 }
 .user-info .user-name{
 	font-size: 1.4rem;
-	color: #47494c;
+	color: #47404c;
 	line-height: 18px;
 }
 .user-info .user-time{
@@ -277,7 +278,7 @@
 	width:100%;height:auto;font-size: 16px;color:#1a1a1a;line-height: 22px;
 }
 .infoForm{
-	width: 100%;height:auto;font-size: 10px;color:#999;margin-top: 8px;
+	width: 100%;height:auto;font-size: 14px;color:#999;margin-top: 8px;
 }
 .year{
 	font-size: 13px;color:#0091fa;background:#f6f6f6 ;padding: 0;
