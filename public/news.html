@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name ="viewport" content ="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
+    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black" /> -->
+    <meta name="description" content='aaa'>
+    <!-- <meta itemprop="image" content="img/logoS.png"> -->
     <title>奇点资讯</title>
     <script src="js/jquery.min.js"></script>
     <link rel="stylesheet" href="css/ex.css"/>
     <link rel="stylesheet" href="css/news.css"/>
+    <script src="js/note.js"></script>
     <script src="js/iscroll-probe.js"></script>
-    <script src="js/ex1.js"></script>
+    <script src="js/ex2.js"></script>
 </head>
 <script>
     $(function(){
        $('body').on("touchstart", function(e) {
 //        e.preventDefault();
-        startX = e.originalEvent.changedTouches[0].pageX,
+        startX = e.originalEvent.changedTouches[0].pageX;
                 startY = e.originalEvent.changedTouches[0].pageY;
     });
 $("body").on("touchmove", function(e) {
 //    e.preventDefault();
-    moveEndX = e.originalEvent.changedTouches[0].pageX,
-            moveEndY = e.originalEvent.changedTouches[0].pageY,
-            X = moveEndX - startX,
+    moveEndX = e.originalEvent.changedTouches[0].pageX;
+            moveEndY = e.originalEvent.changedTouches[0].pageY;
+            X = moveEndX - startX;
             Y = moveEndY - startY;
     if ( Math.abs(Y) > Math.abs(X) && Y > 0) {
         $(".footer").css("display","block")
@@ -94,6 +97,11 @@ $("body").on("touchmove", function(e) {
             <span id = "up-icon" class = "icon-double-angle-up pull-up-icon">↑↑</span>
             <span id = "pullDown-msg" class = "pull-up-msg" style="display:block;text-align: center;width: 100%;">下拉加载更多</span>
         </div> -->
+        <div class="qidianTop">
+            <div class="qidianlogo"><img src="img/qiDian.png"></div>
+            <div class="qidianCirle"><div></div></div>
+            <div class="qidianWord">读奇点 阅天下</div>
+        </div>
 <div class="banner" style="top:25px">
     <div class="yingdao">
         <img src="img/tishi.png">
@@ -108,128 +116,159 @@ $("body").on("touchmove", function(e) {
 </div>
 
 <!--banner end-->
-<div class="cardbox" style="padding-top: 30px;">
+<div class="cardbox" style="padding-top: 20px;">
 </div>
 <!-- 精选评论 start -->
-<!-- <div class="elte-comments">
+ <div class="elte-comments">
     <div class="comments-title">精选评论</div>
     <div class="comments">
-        <div class="comment clearfix">
-            <div class="comment-img"> <img src="http://photocdn.sohu.com/20160315/mp63444225_1457989131470_1.jpeg"> </div>
-            <div class="comment-info">
-                <div class="user-info clearfix">
-                    <div class="floatL">
-                        <div class="user-name">火星网友</div>
-                        <div class="user-time">2016-12-12 12:12:00</div>
-                    </div>
-                    <div class="floatR">
-                        <img src="branch/icon/heart_k.jpg"> 1276赞
-                    </div>
-                </div>
-                <div class="comment-text">
-                    蔡依林做手表蛋糕让妈妈开心，网友大赞蔡依林为。
-                </div>
-            </div>
-        </div>
-        <div class="comment clearfix">
-            <div class="comment-img"> <img src="http://photocdn.sohu.com/20160315/mp63444225_1457989131470_1.jpeg"> </div>
-            <div class="comment-info">
-                <div class="user-info clearfix">
-                    <div class="floatL">
-                        <div class="user-name">火星网友</div>
-                        <div class="user-time">2016-12-12 12:12:00</div>
-                    </div>
-                    <div class="floatR">
-                        <img src="branch/icon/heart_s.jpg"> 1276赞
-                    </div>
-                </div>
-                <div class="comment-text">
-                    蔡依林做手表蛋糕让妈妈开心，网友大赞蔡依林为。
-                </div>
-            </div>
-        </div>
-        <div class="comment clearfix">
-            <div class="comment-img"> <img src="http://photocdn.sohu.com/20160315/mp63444225_1457989131470_1.jpeg"> </div>
-            <div class="comment-info">
-                <div class="user-info clearfix">
-                    <div class="floatL">
-                        <div class="user-name">火星网友</div>
-                        <div class="user-time">2016-12-12 12:12:00</div>
-                    </div>
-                    <div class="floatR">
-                        <img src="branch/icon/heart_k.jpg"> 1276赞
-                    </div>
-                </div>
-                <div class="comment-text">
-                    蔡依林做手表蛋糕让妈妈开心，网友大赞蔡依林为。
-                </div>
-            </div>
-        </div>
+        <!--<div class="comment clearfix">-->
+            <!--<div class="comment-img"> <img src="http://photocdn.sohu.com/20160315/mp63444225_1457989131470_1.jpeg"> </div>-->
+            <!--<div class="comment-info">-->
+                <!--<div class="user-info clearfix">-->
+                    <!--<div class="floatL">-->
+                        <!--<div class="user-name">火星网友</div>-->
+                        <!--&lt;!&ndash;<div class="user-time">2016-12-12 12:12:00</div>&ndash;&gt;-->
+                    <!--</div>-->
+                    <!--<div class="floatR">回复-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="comment-text">-->
+                    <!--蔡依林做手表蛋糕让妈妈开心，网友大赞蔡依林为。-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="comment clearfix">-->
+            <!--<div class="comment-img"> <img src="http://photocdn.sohu.com/20160315/mp63444225_1457989131470_1.jpeg"> </div>-->
+            <!--<div class="comment-info">-->
+                <!--<div class="user-info clearfix">-->
+                    <!--<div class="floatL">-->
+                        <!--<div class="user-name">火星网友</div>-->
+                        <!--<div class="user-time">2016-12-12 12:12:00</div>-->
+                    <!--</div>-->
+                    <!--<div class="floatR">-->
+                        <!--<img src="branch/icon/heart_s.jpg"> 1276赞-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="comment-text">-->
+                    <!--蔡依林做手表蛋糕让妈妈开心，网友大赞蔡依林为。-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="comment clearfix">-->
+            <!--<div class="comment-img"> <img src="http://photocdn.sohu.com/20160315/mp63444225_1457989131470_1.jpeg"> </div>-->
+            <!--<div class="comment-info">-->
+                <!--<div class="user-info clearfix">-->
+                    <!--<div class="floatL">-->
+                        <!--<div class="user-name">火星网友</div>-->
+                        <!--<div class="user-time">2016-12-12 12:12:00</div>-->
+                    <!--</div>-->
+                    <!--<div class="floatR">-->
+                        <!--<img src="branch/icon/heart_k.jpg"> 1276赞-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="comment-text">-->
+                    <!--蔡依林做手表蛋糕让妈妈开心，网友大赞蔡依林为。-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
     </div>
-    <div class="comments-more">查看更多评论</div> 
-</div> -->
+     <a href="" id="download">
+    <div class="comments-more" style="text-align: center">
+        <!--<div style="width: auto;height:auto;display: inline-block;overflow: hidden">-->
+        <div class="qidianMore"><img src="img/qidianMore.png"></div>
+        <div class="reping">打开奇点资讯，看全部热评</div>
+        <div class="qidianGo"><img src="img/qidianGo.png"></div>
+    <!--</div>-->
+    </div>
+     </a>
+</div>
 <!-- 精选评论 end -->
 <!-- 相关观点 start -->
 <div class="related-idea">
     <div class="idea-title">相关观点</div>
+    <!-- 关键字-->
+    <!--<div class="idea-tabs">-->
+        <!--<div class="idea-tab">气质搭配</div>-->
+        <!--<div class="idea-tab">气质搭</div>-->
+        <!--<div class="idea-tab">气质</div>-->
+    <!--</div>-->
     <div class="idea-infos">
-        <div class="idea-info">
-            <div class="info-time">88/88</div>
-            <div class="info-icon">
-                <div class="info-line"></div>
-            </div>
-            <div class="info-text">
-                <div class="text-word"></div>
-            </div>
-        </div>
-        <!-- <div class="idea-info">
-            <div class="info-time">08/88</div>
-            <div class="info-icon"></div>
-            <div class="info-text clearfix">
-                <div class="text-word-img">蔡依林做手表蛋糕让妈妈开心</div>
-                <div class="text-img">
-                    <img src="img/timeline.jpg">
-                </div>
-            </div>
-        </div>
-        <div class="idea-info">
-            <div class="info-time">08/88</div>
-            <div class="info-icon"></div>
-            <div class="info-text clearfix">
-                <div class="text-word">蔡依林做手表蛋糕让妈妈开心</div>
-            </div>
-        </div>
-        <div class="idea-info">
-            <div class="info-time">08/88</div>
-            <div class="info-icon"></div>
-            <div class="info-text">
-                <div class="text-word">蔡依林做手表蛋糕让妈妈开心，网友大赞蔡依林为。</div>
-            </div>
-        </div>
-         -->
+        <!--<div class="idea-info">-->
+            <!--<div class="info-time">88/88</div>-->
+            <!--<div class="info-icon">-->
+                <!--<div class="info-line"></div>-->
+            <!--</div>-->
+            <!--<div class="info-text">-->
+                <!--<div class="text-word"></div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="infoBox">-->
+
+            <!--<div class="infoDatas">-->
+                <!--<div class="infoCircle"></div>-->
+                <!--<div class="infoData">08/12</div>-->
+            <!--</div>-->
+            <!--<div class="infoInnerbox">-->
+                <!--<div class="infoTitle">腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技</div>-->
+                <!--<div class="infoForm">腾讯科技</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="infoBox">-->
+            <!--<a href="">-->
+            <!--<div class="infoDatas">-->
+                <!--<div class="infoCircle"></div>-->
+                <!--<div class="infoData">08/12</div>-->
+            <!--</div>-->
+            <!--<div class="infoInnerbox">-->
+                <!--<div class="infoInnerL">-->
+                <!--<div class="infoTitle">腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技</div>-->
+                <!--<div class="infoForm">腾讯科技</div>-->
+                <!--</div>-->
+                <!--<div class="infoInnerR"><img src=""></div>-->
+            <!--</div>-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--<div class="infoBox">-->
+            <!--<div class="infoDatas">-->
+                <!--<div class="infoCircle"></div>-->
+                <!--<div class="infoData year">2016</div>-->
+            <!--</div>-->
+            <!--<div class="infoDatas">-->
+                <!--<div class="infoCircle"></div>-->
+                <!--<div class="infoData">08/12</div>-->
+            <!--</div>-->
+            <!--<div class="infoInnerbox">-->
+                <!--<div class="infoTitle">腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技</div>-->
+                <!--<div class="infoForm">腾讯科技</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
     </div>
+    <div class="loadMord">正在加载更多新闻...</div>
 </div>
+
 <!-- 相关观点 end -->
         <div id = "scroller-pullUp1">
             <!--<span id = "up-icon" class = "icon-double-angle-up pull-up-icon">↑↑</span>-->
-            <span id = "pullUp-msg" class = "pull-up-msg">上拉加载更多</span>
+            <!--<span id = "pullUp-msg" class = "pull-up-msg">上拉加载更多</span>-->
         </div>
     </div>
 </div>
-<div class="footer">
-    <div class="footertu">
-        <img src="img/logoS.png">
-    </div>
-    <div class="footerword">
-        <div class="bigword">奇点资讯</div>
-        <div class="sword">读奇点 阅天下</div>
-    </div>
-    <a href="" id="download">
-            <div class="download">
-            下载App
-            </div>
-        </a>
-</div>
+<!--<div class="footer">-->
+    <!--<div class="footertu">-->
+        <!--<img src="img/logoS.png">-->
+    <!--</div>-->
+    <!--<div class="footerword">-->
+        <!--<div class="bigword">奇点资讯</div>-->
+        <!--<div class="sword">读奇点 阅天下</div>-->
+    <!--</div>-->
+    <!--<a href="" id="download">-->
+            <!--<div class="download">-->
+            <!--下载App-->
+            <!--</div>-->
+        <!--</a>-->
+<!--</div>-->
 <div class="zhezhao">
     <div class="zhezhaodownload">
         <!--<span>请下载我们的应用立即体验</span>-->

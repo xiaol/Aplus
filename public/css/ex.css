@@ -16,6 +16,24 @@ html{
 .circle{
     width: 10px;height: 10px;background: #fff;border-radius: 50%;margin-top:5px;margin-left:5px
 }
+.qidianTop{
+    width:94%;height:45px;margin:0 auto;border-bottom: 1px solid #c6c6c6;overflow: hidden;
+}
+.qidianlogo{
+    width: 45px;height:auto;float: left;padding: 15px 0;
+}
+.qidianlogo>img{
+    width:100%;
+}
+.qidianCirle{
+    width: auto;height:100%;float: left;margin-left: 6px;padding: 23px 0;
+}
+.qidianCirle>div{
+    width:4px;height:4px;background:#999 ;border-radius: 50%;
+}
+.qidianWord{
+    width: auto;height: 100%;line-height: 50px;font-size: 16px;color:#999;float: left;margin-left: 10px;
+}
 .banner{
     width: 100%;height: auto;position: relative;
 }
@@ -30,17 +48,17 @@ html{
 }
 .yingdao img{width: 100%}
 .bannertitle{
-    display:block;width: 90%;height:auto;font-size: 22px;margin-top:3%;margin-left:3%;
-    line-height: 26px;color:#060606;font-weight: bold;
+    display:block;width: 90%;height:auto;font-size: 22px;margin-left:3%;
+    line-height: 33px;color:#060606;font-weight: bold;
 }
 .bannertime{
     width: 90%;height:16px;margin-left:3%;margin-top:21px;
 }
 .date{
-    display: block;float:left;font-size: 16px;color:#808080;
+    display: block;float:left;font-size: 14px;color:#aaa;
 }
 .time{
-    display: block;float:left;font-size: 14px;color:#808080;margin-left:22px ;
+    display: block;float:left;font-size: 14px;color:#aaa;margin-left:22px ;
 }
 .wendu{
     display: block;float:left;font-size: 14px;color:#fff;margin-left:36px;
@@ -56,10 +74,10 @@ html{
     position: relative;z-index: 1;line-height:30px ;
 }
 .card2{
-    width: 94%;height:auto;font-size:2rem;margin:0 auto;background:#f6f6f6;margin-top:26px;  line-height: 30px;
+    width: 94%;height:auto;font-size:2rem;margin:0 auto;background:#f6f6f6;margin-top:26px;  line-height: 35px;color:#000
 }
 img[class=card2]{
-    display:block;width: 100%;height:auto;font-size:16px;margin:0 auto;background:#fff;line-height: 25px;
+    display:block;width: 100%;height:auto;font-size:16px;margin:-5px auto;background:#fff;line-height: 25px;
 }
 .cardChild{
     width: 100%;height:auto;margin-top:10px;font-size:16px;color:#35a6fb;line-height:25px;overflow:hidden;border:1px solid red;padding:0 5px 5px 5px;

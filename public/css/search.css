@@ -127,11 +127,11 @@
 .sMore{
     width: 100%;height: auto;overflow: hidden;margin-top:14px
 }
-.sWeb{
+/*.sWeb{
     width:auto;height:auto;font-size: 12px;color:#297c29;float: left;
-}
+}*/
 .sFrom{
-    width:auto;height:auto;font-size: 12px;color:#297c29;float: left;margin-left: 40px;
+    width:auto;height:auto;font-size: 12px;color:#297c29;float: left;
 
 }
 .sTime{
@@ -308,7 +308,10 @@
     .searchClose > img {
         width: 40%;
     }
-    .sFrom,.sTime{
+    .sFrom{
+        margin-left: 0;
+    }
+    .sTime{
         margin-left: 20px;
     }
     .phoneErroricon{

@@ -185,11 +185,12 @@
                                     }
                                 }
                             }}
-
-                            setTimeout(function () {
+                            $("img").load(function(){
+                                 setTimeout(function () {
                                 myScroll1.refresh();
                             }, 100);
-                        }
+                            })
+                             }
 
                     })
 
@@ -256,10 +257,11 @@
                                 }
 
                             }
-
-                            setTimeout(function () {
+                            $("img").load(function(){
+                                setTimeout(function () {
                                 myScroll1.refresh();
                             }, 100);
+                            })
                         }
 
                     })
@@ -299,7 +301,7 @@
             <span id = "pullDown-msg" class = "pull-up-msg" style="display:block;text-align: center;width: 100%;">下拉加载更多</span>
         </div>
         <ul id="thelist"></ul>
-        <div id = "scroller-pullUp" style="position: fixed;bottom: -43px;left: 0;width: 100%">
+        <div id = "scroller-pullUp" style="position: absolute;bottom: -43px;left: 0;width: 100%">
             <!--<span id = "up-icon" class = "icon-double-angle-up pull-up-icon">↑↑</span>-->
             <span id = "pullUp-msg" class = "pull-up-msg" style="display:block;text-align: center;width: 100%">上拉加载更多</span>
         </div>
