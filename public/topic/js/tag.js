@@ -44,7 +44,7 @@ $(function() {
 	
 	//点击标签
 	$(".tag-list").on("click",".tag",function(){
-		window.open("http://localhost:8080/datashow/article.html?topic="+$(this).text());
+		window.open("article.html?topic="+$(this).text());
 	});
 	$(".tag-list").on("click",".close",function(){
 		tagLists.remove($(this).prev(".tag").text());
