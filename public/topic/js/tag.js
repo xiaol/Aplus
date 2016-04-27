@@ -6,11 +6,13 @@ $(function() {
 		//读取本地数据库
 		tagLists = JSON.parse(storage.getItem("tags"));
 	}
+	console.log(tagLists);
 	$(".search-btn").click(function(){
 		var new_tag = $(".search-input").val();
 		if(storage){
 			//读取本地数据库
 			tagLists = JSON.parse(storage.getItem("tags"));
+			tagLists = tagLists?tagLists:[];
 		}
 		if(new_tag==""){
 			$(".search-input").addClass("error");
@@ -18,7 +20,7 @@ $(function() {
 		}else{
 			$(".search-input").removeClass("error");
 		}
-		if(tagLists.indexOf(new_tag)>-1){
+		if(tagLists&&tagLists.indexOf(new_tag)>-1){
 			alert("该标签已经存在");
 		}else{
 			tagLists.push(new_tag);
@@ -32,7 +34,7 @@ $(function() {
 		$(".search-input").removeClass("error")
 	});
 	//查找数据库   显示标签
-	if(tagLists.length>0){
+	if(tagLists&&tagLists.length>0){
 		for(var t = 0;t<tagLists.length;t++){
 			$(".tag-list").append("<span><a class='tag'>"+ tagLists[t] +"</a><a class='close'>X</a></span>");
 		}
