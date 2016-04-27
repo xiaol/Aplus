@@ -1,0 +1,308 @@
+.index-body{
+    background-color: #161616;
+}
+.data-show{
+    width: 100%;
+    height: 785px;
+}
+.news-hull{
+    width:-moz-calc(25% - 5px);
+    width:-webkit-calc(25% - 5px);
+    width: calc(25% - 5px);
+    height: 100%;
+    overflow: hidden;
+}
+.news-container{
+    width:-moz-calc(100% + 15px);
+    width:-webkit-calc(100% + 15px);
+    width: calc(100% + 15px);
+    height: 100%;
+    overflow-y: scroll;
+}
+.data-info{
+    width: 75%;
+    height: 100%;
+}
+.data-info-top{
+    height: 60%;
+    width: 100%;
+    color: #fff;
+}
+.data-info-bottom{
+    height: 40%;
+    width: 100%;
+}
+.charting-con{
+    width: 60%;
+    height: 100%;
+}
+.pie-data{
+    width: 100%;
+    height: 50%;
+    position: relative;
+    overflow: hidden;
+    font-size: 12px !important;
+}
+#chartdiv{
+	position: absolute;
+	width: 400px;
+	height: 300px;
+	left: -30px;
+	top: -30px;
+}
+#chartdiv2{
+	position: absolute;
+	width: 400px;
+	height: 300px;
+	top: -30px;
+	left: 270px;
+}
+.charting{
+    width: 100%;
+    height: 50%;
+}
+.topic-cloum{
+    width: 40%;
+    height: 100%;
+}
+.table-hull{
+    width: 65%;
+    height: 100%;
+    overflow: hidden;
+}
+.data-list{
+    width:-moz-calc(100% + 15px);
+    width:-webkit-calc(100% + 15px);
+    width: calc(100% + 15px);
+    height: 100%;
+}
+.data-map{
+    width: 35%;
+    height: 100%;
+    background-color: #213cab
+}
+.new-title{
+    position: relative;
+    color: #fff;
+    padding: 10px 10px 0px 10px;
+}
+.user-info{
+    display: inline-block;
+}
+.news-date{
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    line-height: 42px;
+}
+.user-img{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.new-text{
+    color: #fff;
+    padding: 10px;
+    line-height: 20px;
+}
+.new-text:last-child{
+    padding-bottom: 0px;
+}
+.new-text img{
+    display: block;
+    margin:10px auto 5px auto;
+    max-width: 100%;
+    max-height: 100%
+}
+.new-text img:last-child{
+    margin-bottom:0px;
+}
+/*  **************************** chart **********************************  */
+.amcharts-graph-g1 .amcharts-graph-stroke {
+    stroke-dasharray: 3px 3px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    -webkit-animation: am-moving-dashes 1s linear infinite;
+    animation: am-moving-dashes 1s linear infinite;
+}
+
+@-webkit-keyframes am-moving-dashes {
+    100% {
+        stroke-dashoffset: -30px;
+    }
+}
+@keyframes am-moving-dashes {
+    100% {
+        stroke-dashoffset: -30px;
+    }
+}
+
+
+.lastBullet {
+    -webkit-animation: am-pulsating 1s ease-out infinite;
+    animation: am-pulsating 1s ease-out infinite;
+}
+@-webkit-keyframes am-pulsating {
+    0% {
+        stroke-opacity: 1;
+        stroke-width: 0px;
+    }
+    100% {
+        stroke-opacity: 0;
+        stroke-width: 50px;
+    }
+}
+@keyframes am-pulsating {
+    0% {
+        stroke-opacity: 1;
+        stroke-width: 0px;
+    }
+    100% {
+        stroke-opacity: 0;
+        stroke-width: 50px;
+    }
+}
+
+.amcharts-graph-column-front {
+    -webkit-transition: all .3s .3s ease-out;
+    transition: all .3s .3s ease-out;
+}
+.amcharts-graph-column-front:hover {
+    fill: #496375;
+    stroke: #496375;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+
+.amcharts-graph-g2 {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: 500%;
+  stroke-dasharray: 0 \0/;    /* fixes IE prob */
+  stroke-dashoffset: 0 \0/;   /* fixes IE prob */
+  -webkit-animation: am-draw 40s;
+  animation: am-draw 40s;
+}
+@-webkit-keyframes am-draw {
+    0% {
+        stroke-dashoffset: 500%;
+    }
+    100% {
+        stroke-dashoffset: 0px;
+    }
+}
+@keyframes am-draw {
+    0% {
+        stroke-dashoffset: 500%;
+    }
+    100% {
+        stroke-dashoffset: 0px;
+    }
+}
+#chartdiv3{
+	width: 100%;
+	height: 235px;
+	background-color: #161616;
+	overflow-y: hidden;
+}
+.amChartsLegend{
+	display: none
+}
+.data-list{
+    height: 100%;
+    overflow-y: scroll;
+}
+.data-list table{
+	width: 32.3%;
+	float: left;
+	line-height: 25px;
+	color: #fff;
+	border-collapse: none;
+	border:1px solid #fff;
+    margin-right: 1%;
+}
+.data-list td{
+	border:1px solid #fff;
+	padding-left: 10px;
+}
+tr td:first-child{
+	width: 20px;
+}
+/************************  地图 *******************************/
+#mymap{
+    width: 100%;
+    height: 100%;
+}
+/* ************************************* 标签页 ************************************************** */
+.search-input{
+    border:1px solid #cdcdcd;
+    border-radius: 3px;
+    padding:5px 0px 5px 10px;
+    text-align: left;
+    letter-spacing: 1px;
+}
+.search-btn{
+    border:0px;
+    border-radius: 3px;
+    background-color: #cccccc;
+    text-align: center;
+    color: #000;
+}
+
+.add-tag{
+    margin-top: 180px;
+    text-align: center;
+}
+.add-tag .error{
+    box-shadow: 0px 0px 10px 1px red;
+}
+.add-tag input{
+    width: 30%;
+    height: 30px;
+}
+.add-tag button{
+    width: 10%;
+    height: 40px;
+}
+.show-tags{
+    width: 50%;
+    margin:20px auto 0px auto;
+    border:1px solid #eaeaea;
+    background-color: #fff;
+    border-radius: 1px;
+}
+.tag-title{
+    width: 100%;
+    height: 40px;
+    border-bottom:1px solid #eaeaea;
+    line-height: 40px;
+    text-align: center;
+}
+.tag-list a{
+    margin: 5px 0px 5px 5px;
+    display: inline-block;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+    background-color: #cdcdcd;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    font-size: 16px
+}
+.tag-list span{
+    display: inline-block;
+}
+.tag-list .close{
+    border-radius: 0px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: #333333;
+    color: #D4D2D2;
+    margin-left: 0px;
+}
+.tag-list .blank{
+    background-color: #fff;
+    color: #7d7d7d;
+}

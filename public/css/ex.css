@@ -48,8 +48,13 @@ html{
 }
 .yingdao img{width: 100%}
 .bannertitle{
+<<<<<<< HEAD
     display:block;width: 90%;height:auto;font-size: 22px;margin-left:3%;
     line-height: 33px;color:#060606;font-weight: bold;
+=======
+    display:block;width: 90%;height:auto;font-size: 22px;margin-top:3%;margin-left:3%;
+    line-height: 26px;color:#060606;font-weight: bold;
+>>>>>>> a6d40698f4bee273d44c5816074feec94a8e2c22
 }
 .bannertime{
     width: 90%;height:16px;margin-left:3%;margin-top:21px;
@@ -74,7 +79,11 @@ html{
     position: relative;z-index: 1;line-height:30px ;
 }
 .card2{
+<<<<<<< HEAD
     width: 94%;height:auto;font-size:2rem;margin:0 auto;background:#f6f6f6;margin-top:26px;  line-height: 35px;color:#000
+=======
+    width: 94%;height:auto;font-size:2rem;margin:0 auto;background:#f6f6f6;margin-top:26px;  line-height: 30px;
+>>>>>>> a6d40698f4bee273d44c5816074feec94a8e2c22
 }
 img[class=card2]{
     display:block;width: 100%;height:auto;font-size:16px;margin:-5px auto;background:#fff;line-height: 25px;

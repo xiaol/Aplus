@@ -42,8 +42,13 @@ $(function() {
                 return "";
             }
         });
+<<<<<<< HEAD
         myScroll1.on("scrollEnd", function () {
             if (this.maxScrollY - this.y == 0) {
+=======
+        myScroll1.on("slideUp", function () {
+            if (this.maxScrollY - this.y > 40) {
+>>>>>>> a6d40698f4bee273d44c5816074feec94a8e2c22
                 beginNum += 3;
                 endNum += 3;
                 getRelate (backdata,beginNum,endNum,equiptype);
@@ -150,7 +155,10 @@ $(function() {
                         //    $("#bannerImg").attr("src",img);
                         //}
                         var title=data['title'];
+<<<<<<< HEAD
                         $("meta[name='description']").attr("content",title);
+=======
+>>>>>>> a6d40698f4bee273d44c5816074feec94a8e2c22
                         var form=data['sourceSiteName'];
                         $(".bannertitle").html(title);
                         $(".time").html(form);
@@ -217,7 +225,10 @@ $(function() {
                             $("#bannerImg").attr("src",img);
                         }
                         var title=data['title'];
+<<<<<<< HEAD
                         $("meta[name='description']").attr("content",title);
+=======
+>>>>>>> a6d40698f4bee273d44c5816074feec94a8e2c22
                         $(".bannertitle").html(title);
                         var arr = uniqeByKeys(point,['paragraphIndex']);console.log(arr);alert(1)
                         for(var i=0;i<cons.length;i++){
@@ -270,9 +281,12 @@ $(function() {
                         var time=e['data']['pubTime'];
                         var from=e['data']['pubName'];
                         var title=e['data']['title'];
+<<<<<<< HEAD
                         var docid=e['data']['docid'];
                         $("<div id='docid' style='display: none'></div>").html(docid).appendTo("body");
                         $("meta[name='description']").attr("content",title);
+=======
+>>>>>>> a6d40698f4bee273d44c5816074feec94a8e2c22
                         $(".bannertitle").html(title);
                         document.title=title;
                         $(".date").html(time);
@@ -294,6 +308,7 @@ $(function() {
                                             myScroll1.refresh();
                                         }, 100);
                         })
+<<<<<<< HEAD
 
                         $.ajax({
                             url:"http://api.deeporiginalx.com/bdp/news/comment/ydzx?docid="+encodeURIComponent(docid),
@@ -335,6 +350,10 @@ $(function() {
                     }
                 });
 
+=======
+                    }
+                });
+>>>>>>> a6d40698f4bee273d44c5816074feec94a8e2c22
                 $.ajax({
                     url:"http://api.deeporiginalx.com/bdp/news/related?url="+str,//del_html_tags(base64encode(str),"=",""),
                     type:"get",
@@ -358,7 +377,10 @@ $(function() {
                     //     alert("数据请求失败");
                     // }
                 });
+<<<<<<< HEAD
 
+=======
+>>>>>>> a6d40698f4bee273d44c5816074feec94a8e2c22
                 // $.ajax({
                 //     url:"http://api.deeporiginalx.com/bdp/news/related?url="+str,//del_html_tags(base64encode(str),"=",""),
                 //     type:"get",
@@ -408,7 +430,10 @@ $(function() {
                         //    $("#bannerImg").attr("src",img);
                         //}
                         var title=e['title'];
+<<<<<<< HEAD
                         $("meta[name='description']").attr("content",title);
+=======
+>>>>>>> a6d40698f4bee273d44c5816074feec94a8e2c22
                         if(title==null||""){
                             return;
                         }else{
@@ -455,7 +480,10 @@ $(function() {
             }
 
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> a6d40698f4bee273d44c5816074feec94a8e2c22
     $(".closeB img").click(function(){$(".zhezhao").css("display","none")})
     $(".close").click(function(){$(".footer").css("display","none");})
     function isWeiXin(){
@@ -496,7 +524,10 @@ $(function() {
                 end = relates.length;
             }
             if(begin>end){
+<<<<<<< HEAD
                 $(".loadMord").css("display","none");
+=======
+>>>>>>> a6d40698f4bee273d44c5816074feec94a8e2c22
                 return "";
             }
             do{
@@ -510,6 +541,7 @@ $(function() {
                     if(time_mouth.length==1){time_mouth = "0" + time_mouth}
                     if(time_day.length==1){time_day = "0" + time_day}
                     flag++;
+<<<<<<< HEAD
                     //relateDiv += '<div class="idea-info"><a href="'+ relateO.url +'">';
                     //relateDiv += '<div class="info-time">'+ time_mouth + "/" + time_day +'</div>';
                     //relateDiv += '<div class="info-icon"></div>';
@@ -543,4 +575,28 @@ $(function() {
         }
     }
     setTimeout(scrollTo,0,0,0);
+=======
+                    relateDiv += '<div class="idea-info"><a href="'+ relateO.url +'">';
+                    relateDiv += '<div class="info-time">'+ time_mouth + "/" + time_day +'</div>';
+                    relateDiv += '<div class="info-icon"></div>';
+                    relateDiv += '<div class="info-text">';
+                    if(relateO.imgUrl&&relateO.imgUrl!=""||relateO.img&&relateO.img!=""){
+                        relateDiv += '<div class="text-word-img">' + relateO.title + '</div>';
+                        relateDiv += '<div class="text-img"><img src='+ (type=="IOS"?relateO.imgUrl:relateO.img) +'></div>';
+                    }else{
+                        relateDiv += '<div class="text-word">' + relateO.title + '</div>';
+                    }
+                    relateDiv += '</div></a></div>';
+                    $(".related-idea").show();
+                }
+                i++;
+            }while(flag<=3);
+            $(".idea-infos").append(relateDiv);
+            $(".info-line").css("height",(end-1)*74);
+            myScroll1.refresh();
+        }else{
+            $(".related-idea").hide();
+        }
+    }
+>>>>>>> a6d40698f4bee273d44c5816074feec94a8e2c22
 });
