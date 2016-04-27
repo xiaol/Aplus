@@ -185,11 +185,12 @@
                                     }
                                 }
                             }}
-
-                            setTimeout(function () {
+                            $("img").load(function(){
+                                 setTimeout(function () {
                                 myScroll1.refresh();
                             }, 100);
-                        }
+                            })
+                             }
 
                     })
 
@@ -256,10 +257,11 @@
                                 }
 
                             }
-
-                            setTimeout(function () {
+                            $("img").load(function(){
+                                setTimeout(function () {
                                 myScroll1.refresh();
                             }, 100);
+                            })
                         }
 
                     })

@@ -56,9 +56,12 @@ function dates(){
                     }
                 }
             }
-            setTimeout(function () {
+            $("img").load(function(){
+                setTimeout(function () {
                 myScroll1.refresh();
             }, 100);
+            })
+            
         }
     })
 }
