@@ -104,7 +104,12 @@ $(function() {
 		$(".article header").html(showArticle.title);
 		$(".article div").html(showArticle.text);
 		//设置文章位置
-		if(offset.top+$(".article").height()>windowH){
+		if($(".article").height()>windowH){
+			$(".article").css({
+				"left": offset.left,
+				"top": 10
+			});
+		}else if(offset.top+$(".article").height()>windowH){
 			$(".article").css({
 				"left": offset.left,
 				"top": windowH - $(".article").height()-80
