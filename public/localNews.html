@@ -45,6 +45,14 @@
     }
 </style>
 <script>
+function getUrlParam(name){
+    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r!=null)
+        return r[2];
+    return null;
+}
+var province=getUrlParam('province');
     var is=0;
     var myScroll1,bb;
     $(function(){
@@ -147,11 +155,14 @@
                                 timeCha=timeDifference(nowTime,pubTime);
                                 pubName=data[i].pubName;
                                 urls=data[i].url;
-                                if(!("imgList" in data[i])){
+                                provinces=data[i].province;
+                                var aUrl=del_html_tags(base64encode(urls),"=","");
+                                if(provinces==decodeURI(province)){
+                                    if(!("imgList" in data[i])){
                                     //alert(true)
                                     //return;
                                     $("<li class='yindaoMain'></li>").attr("id","main"+i).insertBefore("li:first()");
-                                    $("<a></a>").attr("href",urls).attr("id","a"+i).appendTo("#main"+i);
+                                    $("<a></a>").attr("href","http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface").attr("id","a"+i).appendTo("#main"+i);
                                     $("<div class='yindaoTitle'></div>").html(title).appendTo("#a"+i);
                                     $("<div class='yindaoForm'></div>").attr("id","form"+i).appendTo("#a"+i);
                                     $("<div class='yindaoForminner' style='margin-left: 0'></div>").html(pubName).appendTo("#form"+i);
@@ -160,7 +171,7 @@
                                     imgLists=data[i].imgList;
                                     if(imgLists.length==1){
                                         $("<li class='yindaoMain'></li>").attr("id","main"+i).insertBefore("li:first()");
-                                        $("<a></a>").attr("href",urls).attr("id","a"+i).appendTo("#main"+i);
+                                        $("<a></a>").attr("href","http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface").attr("id","a"+i).appendTo("#main"+i);
                                         $("<div class='yindaoLeft'></div>").attr("id","left"+i).appendTo("#a"+i);
                                         $("<img src="+imgLists[0]+">").appendTo("#left"+i);
                                         $("<div class='yindaoRight'></div>").attr("id","right"+i).appendTo("#a"+i);
@@ -172,7 +183,7 @@
                                     }else if(imgLists.length>1){
                                         //alert(1)
                                         $("<li class='yindaoMain'></li>").attr("id","main"+i).insertBefore("li:first()");
-                                        $("<a></a>").attr("href",urls).attr("id","a"+i).appendTo("#main"+i);
+                                        $("<a></a>").attr("href","http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface").attr("id","a"+i).appendTo("#main"+i);
                                         $("<div class='yindaoTitle'></div>").html(title).attr("id","title"+i).appendTo("#a"+i);
                                         $("<div class='yindaoTubox'></div>").attr("id","tubox"+i).appendTo("#a"+i);
                                         for(var j=0;j<imgLists.length;j++){
@@ -184,6 +195,8 @@
                                         $("<div class='yindaoForminner'></div>").html(timeCha).appendTo("#form"+i);
                                     }
                                 }
+                                }
+                                
                             }}
                             $("img").load(function(){
                                  setTimeout(function () {
@@ -219,11 +232,14 @@
                                 timeCha=timeDifference(nowTime,pubTime);
                                 pubName=data[i].pubName;
                                 urls=data[i].url;
-                                if(!("imgList" in data[i])){
+                                provinces=data[i].province;
+                                var aUrl=del_html_tags(base64encode(urls),"=","");
+                                if(provinces==decodeURI(province)){
+                                    if(!("imgList" in data[i])){
                                     //alert(true)
                                     //return;
                                     $("<li class='yindaoMain'></li>").attr("id","maind"+is).insertAfter("li:last()");
-                                    $("<a></a>").attr("href",urls).attr("id","ad"+is).appendTo("#maind"+is);
+                                    $("<a></a>").attr("href","http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface").attr("id","ad"+is).appendTo("#maind"+is);
                                     $("<div class='yindaoTitle'></div>").html(title).appendTo("#ad"+is);
                                     $("<div class='yindaoForm'></div>").attr("id","formd"+is).appendTo("#ad"+is);
                                     $("<div class='yindaoForminner' style='margin-left: 0'></div>").html(pubName).appendTo("#formd"+is);
@@ -232,7 +248,7 @@
                                     imgLists=data[i].imgList;
                                     if(imgLists.length==1){
                                         $("<li class='yindaoMain'></li>").attr("id","maind"+is).insertAfter("li:last()");
-                                        $("<a></a>").attr("href",urls).attr("id","ad"+is).appendTo("#maind"+is);
+                                        $("<a></a>").attr("href","http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface").attr("id","ad"+is).appendTo("#maind"+is);
                                         $("<div class='yindaoLeft'></div>").attr("id","leftd"+is).appendTo("#ad"+is);
                                         $("<img src="+imgLists[0]+">").appendTo("#leftd"+is);
                                         $("<div class='yindaoRight'></div>").attr("id","rightd"+is).appendTo("#ad"+is);
@@ -244,7 +260,7 @@
                                     }else if(imgLists.length>1){
                                         //alert(1)
                                         $("<li class='yindaoMain'></li>").attr("id","maind"+is).insertAfter("li:last()");
-                                        $("<a></a>").attr("href",urls).attr("id","ad"+is).appendTo("#maind"+is);
+                                        $("<a></a>").attr("href","http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface").attr("id","ad"+is).appendTo("#maind"+is);
                                         $("<div class='yindaoTitle'></div>").html(title).attr("id","titled"+is).appendTo("#ad"+is);
                                         $("<div class='yindaoTubox'></div>").attr("id","tuboxd"+is).appendTo("#ad"+is);
                                         for(var j=0;j<imgLists.length;j++){
@@ -255,6 +271,8 @@
                                         $("<div class='yindaoForminner'></div>").html(timeCha).appendTo("#formd"+is);
                                     }
                                 }
+                                }
+                                
 
                             }
                             $("img").load(function(){
