@@ -539,6 +539,12 @@ $(function() {
                     $(".loadMord").show();
                 }
                 i++;
+                var rank=relateO.rank;
+                if(rank){
+                    $('.infoData').css('background','#0091fa');
+                }else{
+                    $('.infoData').css('background','#aaa');
+                }
             }while(flag<=3);
             //alert(1);
             $(".idea-infos").append(relateDiv);
