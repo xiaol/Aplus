@@ -27,7 +27,7 @@ function dates(){
                 urls=data[i].url;
                 provinces=data[i].province;
                 var aUrl=del_html_tags(base64encode(urls),"=","");
-                if(provinces==decodeURI(province)){
+                // if(provinces==decodeURI(province)){
                     if(!("imgList" in data[i])){
 
                         $("<li class='yindaoMain'></li>").attr("id","main"+i).appendTo("#thelist");
@@ -66,9 +66,9 @@ function dates(){
                             $("<div class='yindaoForminner'></div>").html(timeCha).appendTo("#form"+i);
                         }
                     }
-                }else{
-                    console.log(provinces)
-                }
+                // }else{
+                //     console.log(provinces)
+                // }
 
             }
             $("img").load(function(){
