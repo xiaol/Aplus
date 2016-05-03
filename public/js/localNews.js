@@ -59,7 +59,8 @@ function dates(){
                             $("<div class='yindaoTubox'></div>").attr("id","tubox"+i).appendTo("#a"+i);
                             for(var j=0;j<imgLists.length;j++){
                                 //alert(imgList.length)
-                                $("<div class='yindaoTu'>").attr("id","tu"+j).css({"background":"url("+imgLists[j]+")","background-size":"cover"}).appendTo("#tubox"+i);
+                                $("<div class='yindaoTu'><img src="+imgLists[j]+"></div>").appendTo("#tubox"+i);
+                                // $("<div class='yindaoTu'>").attr("id","tu"+j).css({"background":"url("+imgLists[j]+")","background-size":"cover"}).appendTo("#tubox"+i);
                             }
                             $("<div class='yindaoForm'></div>").attr("id","form"+i).appendTo("#a"+i);
                             $("<div class='yindaoForminner' style='margin-left: 0'></div>").html(pubName).appendTo("#form"+i);
