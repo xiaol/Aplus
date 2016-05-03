@@ -35,7 +35,7 @@ a{
     width: 100%;height: auto;overflow: hidden;margin-top:16px
 }
 .yindaoTu{
-    width: 32%;height: 90px;float: left;margin-left: 0.87%;
+    width: 32%;height: auto;float: left;margin-left: 0.87%;
 }
 .yindaoTu:nth-child(1){
     margin-left: 0;
