@@ -490,6 +490,7 @@ $(function() {
     if(isAndroid){if(qq){$(".down a").attr("href","http://koudaiv.com/static/file/app-official.apk");}else{$(".down a").attr("href","http://koudaiv.com/static/file/app-official.apk");};}else if(isiOS||webApp){$(".down a").attr("href","https://itunes.apple.com/cn/app/tou-tiao-bai-jia/id987333155?mt=8");}else{$(".down a").attr("href","http://deeporiginalx.com/");}
     $(".swiper-container").css("height",$(window).height());
     //获取相关观点
+    var year='';
     function getRelate (data,begin,end,type) {
         var relates = data.relate,relateO = {},relateDiv = "";
         var newstime = "";
@@ -514,6 +515,7 @@ $(function() {
                 if(daterule.test(newstime)){
                     var timeArry = newstime.split("-");
                     var time_mouth = timeArry[1];
+                    var time_year=timeArry[0]
                     var time_day = timeArry[2].split(" ")[0];
                     if(time_mouth.length==1){time_mouth = "0" + time_mouth}
                     if(time_day.length==1){time_day = "0" + time_day}
@@ -523,6 +525,10 @@ $(function() {
                     //relateDiv += '<div class="info-icon"></div>';
                     //relateDiv += '<div class="info-text">';
                     relateDiv+='<div class="infoBox"><a href="'+relateO.url+'">';
+                    if(time_year!=year){
+                        year=time_year;
+                        relateDiv+='<div class="infoDatas"><div class="infoCircle"></div><div class="year">'+year+'</div></div>';
+                    }
                     relateDiv+='<div class="infoDatas"><div class="infoCircle"></div><div class="infoData">'+time_mouth + "/" + time_day+'</div></div>'
                     if(relateO.imgUrl&&relateO.imgUrl!=""||relateO.img&&relateO.img!=""){
                         //relateDiv += '<div class="text-word-img">' + relateO.title + '</div>';

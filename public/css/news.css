@@ -258,6 +258,9 @@ a{text-decoration: none}
 .infoDatas{
 	width:100%;height:16px;margin-left: -3px;margin-top:10px
 }
+.infoBox:first-child>a>.infoDatas:first-child{
+	display: none;
+}
 .infoBox:first-child>a>.infoDatas{
 	margin-top: -4px;
 }
@@ -282,6 +285,8 @@ a{text-decoration: none}
 }
 .year{
 	font-size: 13px;color:#0091fa;background:#f6f6f6 ;padding: 0;
+	width:auto;height:100%;float: left;
+	margin-left: 7px;line-height: 14px;
 }
 .infoInnerL{
 	width:calc(100% - 100px);height:auto;float: left;
