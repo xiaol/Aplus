@@ -40,8 +40,8 @@ function timeDifference(dt1,dt2){
     var leave2=leave1%(3600*1000)        //计算小时数后剩余的毫秒数
     var minutes=Math.floor(leave2/(60*1000))
     //计算相差秒数
-    //    var leave3=leave2%(60*1000)      //计算分钟数后剩余的毫秒数
-    //    var seconds=Math.round(leave3/1000)
+     var leave3=leave2%(60*1000)      //计算分钟数后剩余的毫秒数
+    var seconds=Math.round(leave3/1000)
 
     if(hours>0){
         if (minutes>0) {
@@ -50,7 +50,17 @@ function timeDifference(dt1,dt2){
             time=hours+"小时前";
         }
     }else{
-        time=minutes+" 分钟前";
+        if(minutes>0){
+            time=minutes+" 分钟前";
+        }else{
+            if(seconds>0){
+                time=seconds+'秒前';
+            }else{
+                time='1秒前';
+            }
+
+        }
+
     }
     return time;
 }
