@@ -1,6 +1,9 @@
 *{
     margin:0;padding:0;list-style: none;font-weight: normal;box-sizing: border-box;
 }
+strong{
+    font-weight: bold;
+}
 html{
     font-size: 62.5%;
 }
