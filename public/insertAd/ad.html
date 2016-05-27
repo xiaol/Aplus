@@ -1,5 +1,7 @@
 <link rel="stylesheet" type="text/css" href="news.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 <script src="jquery-2.1.4.min.js"></script>
+<script src="base64.js"></script>
 <style type="text/css">
 	body {
         background: #fff;
@@ -15,15 +17,13 @@
     }
     .swiper-container {
         width: 100%;
-        height: 500px;
         margin: 0px auto 0px auto;
         position: relative;
-        /*display: none;*/
+        display: none;
     }
     .swiper-slide {
-        text-align: center;
         font-size: 18px;
-        background: #f7f7f7;
+        background: #efefef;
         width: 60%;
 
         /* Center slide text vertically */
@@ -55,7 +55,7 @@
 		background-color: #000;
 		padding-left: 24px;
 		padding-right: 24px;
-		font-size: 24px;
+		font-size: 32px;
 		position: absolute;
 		top:0px;
 		left: 0px;
@@ -74,30 +74,37 @@
 	    width:-webkit-calc(100% - 60px);
 	    width: calc(100% - 60px);
 		overflow: hidden;
-		font-size: 29px;
-		line-height: 40px;
+		font-size: 42px;
+		line-height: 50px;
 		color: #404040;
-		height: 435px;
+		height:-moz-calc(100% - 75px);
+        height:-webkit-calc(100% - 75px);
+        height: calc(100% - 75px);
 		position: relative;
 		top:50px;
+        text-align: center;
 	}
-	.news-info img{
-		max-width: 100%;
-		max-height: 300px;
+    .news-img{
+        width: 100%;
+        height: 65%;
+        overflow: hidden;
+    }
+	.news-img img{
+		width: 100%;
 	}
 	.news-info .news-text{
 		text-align: left;
 		margin-top: 10px;
-		max-height: 87px;
+		max-height: 100px;
 		overflow: hidden;
 	}
 	.news-info .news-foot{
-		font-size: 23px;
+		font-size: 26px;
 		color: #999999;
 		text-align: left;
 		line-height: normal;
 		position: absolute;
-		bottom: 25px;
+		bottom: 1%;
 		width: 100%
 	}
 	.news-pl{
@@ -131,7 +138,7 @@
 	        case 'y' :return new Date((dtTmp.getFullYear() + Number), dtTmp.getMonth(), dtTmp.getDate(), dtTmp.getHours(), dtTmp.getMinutes(), dtTmp.getSeconds());  
 	    }  
 	} 
-    function dataConn (url, requestData, responseFn,type){
+    function dataConn (url, requestData, responseFn,type,ifinit){
         $.ajax({
             type: (type != undefined ? type : "post"),
             url: url,
@@ -154,7 +161,7 @@
                     // }
                     if (responseFn != undefined && typeof(responseFn) == "function") {
                        // try {
-                            responseFn(data, textStatus,xhr);
+                            responseFn(data,ifinit);
                         //} catch (e) {
                           //  console.log("[PARSE ERROR] name : " + e.name + ", message: " + e.msg);
 
@@ -173,38 +180,67 @@
         })
     }
     //游客注册
-    var newListUrl = "http://bdp.deeporiginalx.com/v2/ns/src/l?sid=2&tcr=",
-		newListType = "get";
-	var newDate = new Date();
-	var mydate = Date.parse(newDate.DateAdd("d",-1));
-	newListUrl += mydate;
-    dataConn(newListUrl,"",showNews,newListType);
-    function showNews(data){
-    	if(data.code!=2000){ $("#newInfo").html("数据请求错误~"); return false;}
+    var refeshUrl  = "http://bdp.deeporiginalx.com/v2/au/sin/g",
+        refeshType = "post",
+        newListUrl = "http://api.deeporiginalx.com/bdp/news/load?cid=1&tstart=",
+        newListType = "get",
+        lastTime = "";
+    var newDate = new Date();
+    var mydate = Date.parse(newDate);
+    $(".swiper-container").css("height",$(document).height()+"px");
+    dataConn(newListUrl+mydate,"",showNews,newListType,true);
+    var swiper ; 
+    function showNews(data,ifinit){
+    	if(data.code!=0){ $("#newInfo").html("数据请求错误~"); return false;}
     	var backdata = data.data;
     	var aryLen = backdata.length;
     	if(aryLen>0){
+            $(".swiper-container").show();
+            if(ifinit){
+                initSwiper();
+            }
     		for(var a=0;a<aryLen;a++){
-    			if(backdata[a].imgs&&backdata[a].imgs.length>0){
-	    			$("#newInfo").append('<div class="swiper-slide"><div class="news-info"><a target="_blank" href="'+ backdata[a].url +'"><img src="'+backdata[a].imgs[0]+'"><div class="news-text">'+ backdata[a].title +'</div></a><div class="news-foot">'+ backdata[a].pname + '&emsp;&emsp;'+ backdata[a].ptime + ' <div class="news-pl">'+(backdata[a].comment>0?(backdata[a].comment+'评'):"") +'</div></div></div></div>');
+    			if(backdata[a].imgList&&backdata[a].imgList.length>0){
+	    			swiper.appendSlide('<div class="swiper-slide"><div class="news-info"><a target="_blank" href="http://deeporiginalx.com/news.html?type=0&url='+ encode64(backdata[a].url) +'&interface"><div class="news-img"><img src="'+backdata[a].imgList[0]+'"></div><div class="news-text">'+ backdata[a].title +'</div></a><div class="news-foot">'+ backdata[a].pubName + '&emsp;&emsp;'+ backdata[a].pubTime + ' <div class="news-pl">'+(backdata[a].comment>0?(backdata[a].comment+'评'):"") +'</div></div></div></div>');
 
     			}else{
-    				$("#newInfo").append('<div class="swiper-slide"><div class="news-info"><a target="_blank" href="'+ backdata[a].url +'"><div class="news-text">'+ backdata[a].title +'</div></a><div class="news-foot">'+ backdata[a].pname +'&emsp;&emsp;'+ backdata[a].ptime +' <div class="news-pl">'+ backdata[a].comment>0?(backdata[a].comment+'评'):"" +'</div> </div></div></div>');
+    				swiper.appendSlide('<div class="swiper-slide"><div class="news-info"><a target="_blank" href="'+ encode64(backdata[a].url) +'"><div class="news-text">'+ backdata[a].title +'</div></a><div class="news-foot">'+ backdata[a].pubName +'&emsp;&emsp;'+ backdata[a].pubTime +' <div class="news-pl">'+ backdata[a].comment>0?(backdata[a].comment+'评'):"" +'</div> </div></div></div>');
     			}
+                if(a==(aryLen-1)){
+                    lastTime = transdate(backdata[a].pubTime);
+                }
     		}
-    		var swiper = new Swiper('.swiper-container', {
-		        pagination: '.swiper-pagination',
-		        slidesPerView: 1.5,
-		        slidesOffsetBefore : (window.innerWidth*(1.5-1)-30)/(1.5*1.8),
-		        centeredSlides: false,
-		        paginationClickable: true,
-		        spaceBetween: 30,
-		        grabCursor: true
-		     //    onInit: function(swiper){
-				   //  $(".swiper-container").show();
-			    // }
-		    });
+            if(ifinit){
+                swiper.slideNext();
+            }
     	}
+    }
+    function initSwiper(){
+        swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            slidesPerView: 1.5,
+            slidesOffsetBefore : (window.innerWidth*(1.5-1)-30)/(1.5*1.8),
+            centeredSlides: false,
+            paginationClickable: true,
+            spaceBetween: 30,
+            grabCursor: true,
+            onSlideNextStart: function(swiper){
+                var flag = $("#newInfo .swiper-slide").eq(-2).hasClass("swiper-slide-active");
+                if(flag){
+                    dataConn(newListUrl+lastTime,"",showNews,newListType,false);
+                }
+            }
+        });
+    }
+    function transdate(endTime){
+        var date=new Date();
+        date.setFullYear(endTime.substring(0,4));
+        date.setMonth(endTime.substring(5,7)-1);
+        date.setDate(endTime.substring(8,10));
+        date.setHours(endTime.substring(11,13));
+        date.setMinutes(endTime.substring(14,16));
+        date.setSeconds(endTime.substring(17,19));
+        return date.getTime();;//时间戳精确到毫秒.parse(date)
     }
     $(".news-close").click(function(){
     	$(".swiper-container").hide();
