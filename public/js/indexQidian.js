@@ -59,7 +59,7 @@ function dates2(){
                     console.log(response);
                 },
                 success:function(data,status,xhr){
-                    console.log(xhr.getAllResponseHeaders());
+                    console.log(xhr.getResponseHeader('Authorization'));
                 }
             })
 
