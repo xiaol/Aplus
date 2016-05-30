@@ -46,6 +46,31 @@ function dates2(){
         //for(var i=0;i< mm.length;i++){
         //if(mm[i]['cname']==val){
         //    var ids=mm[i]['id'];
+
+        var datas={"utype":2,"platform":3,"province":"北京市","city":"北京市","district":"东城区"}
+            $.ajax({
+                url:'http://bdp.deeporiginalx.com/v2/au/sin/g',
+                type:'post',
+                datatype:"json",
+                data:JSON.stringify (datas),
+                contentType:'application/json',
+                success:function(e){
+                    function getContentType(url, callback) {
+                        var xhr = new XMLHttpRequest();
+                        xhr.onreadystatechange = function() {
+                            if( xhr.readyState === 4 && xhr.status === 200 ) {
+                                callback( xhr.getAllResponseHeaders());
+                            }
+                        }
+                        xhr.open("HEAD", url, true);
+                        xhr.send();
+                    }
+                    getContentType("http://deeporiginalx.com/indexQidian.html", function(type) {
+                        console.log(type)
+                    });
+                }
+            })
+
         var ids=$(obj).attr("id");
         var title,pubTime,pubName,urls,nowTime,imgLists,timeCha;
         nowTime=getNowFormatDate();
