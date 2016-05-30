@@ -55,11 +55,11 @@ function dates2(){
                 data:JSON.stringify (datas),
                 contentType:'application/json',
                 beforeSend:function(request,response,xhr){
-                    console.log(response.getAllResponseHeaders());
+                    
                     console.log(response);
                 },
-                success:function(e){
-                    
+                success:function(data,status,xhr){
+                    console.log(xhr.getAllResponseHeaders());
                 }
             })
 
