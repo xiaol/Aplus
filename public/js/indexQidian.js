@@ -54,20 +54,11 @@ function dates2(){
                 datatype:"json",
                 data:JSON.stringify (datas),
                 contentType:'application/json',
+                beforeSend:function(xhr){
+                    console.log(xhr.getAllResponseHeaders());
+                },
                 success:function(e){
-                    function getContentType(url, callback) {
-                        var xhr = new XMLHttpRequest();
-                        xhr.onreadystatechange = function() {
-                            if( xhr.readyState === 4 && xhr.status === 200 ) {
-                                callback( xhr.getAllResponseHeaders());
-                            }
-                        }
-                        xhr.open("HEAD", url, true);
-                        xhr.send();
-                    }
-                    getContentType("http://deeporiginalx.com/indexQidian.html", function(type) {
-                        console.log(type)
-                    });
+                    
                 }
             })
 
