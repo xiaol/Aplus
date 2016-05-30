@@ -491,7 +491,7 @@ $(function() {
                     success:function(data){
                         backdata = data;
                         equiptype = "IOS";
-                        getRelate (backdata,beginNum,endNum,"IOS");
+                        getRelates (backdata,beginNum,endNum,"IOS");
 
                         //$(".year").each(function(i){
                         //    //$($(this).html()).push(yearArr);
@@ -542,7 +542,7 @@ $(function() {
     $(".swiper-container").css("height",$(window).height());
     //获取相关观点
     var year='';
-    function getRelate (data,begin,end,type) {
+    function getRelates (data,begin,end,type) {
         var relates = data.relate,relateO = {},relateDiv = "";
         var newstime = "";
         var flag = 1;
@@ -607,6 +607,78 @@ $(function() {
 
             }while(flag<=3);
 
+            //alert(1);
+            $(".idea-infos").append(relateDiv);
+            //relateDiv.appendTo()
+            //$(".info-line").css("height",(end-1)*69);
+            myScroll1.refresh();
+        }else{
+            $(".related-idea").hide();
+            $(".loadMord").hide();
+        }
+    }
+
+    function getRelate (data,begin,end,type) {
+        var relates = data.relate,relateO = {},relateDiv = "";
+        var newstime = "";
+        var flag = 1;
+        var i = begin;
+        var daterule=/\d{4}-\d{1,2}-\d{1,2} \d{2}:\d{2}:\d{2}/; 
+        if(type=="IOS"){
+            relates = data.data.searchItems;
+        }
+        if(relates&&relates.length>0){
+            if(end>relates.length){
+                end = relates.length;
+            }
+            if(begin>end){
+                $(".loadMord").css("display","none");
+                return "";
+            }
+            do{
+                relateO = relates[i-1];
+                if(!relateO){break}
+                newstime = relateO.updateTime;
+                if(daterule.test(newstime)){
+                    var timeArry = newstime.split("-");
+                    var time_mouth = timeArry[1];
+                    var time_year=timeArry[0]
+                    var time_day = timeArry[2].split(" ")[0];
+                    if(time_mouth.length==1){time_mouth = "0" + time_mouth}
+                    if(time_day.length==1){time_day = "0" + time_day}
+                    flag++;
+                    //relateDiv += '<div class="idea-info"><a href="'+ relateO.url +'">';
+                    //relateDiv += '<div class="info-time">'+ time_mouth + "/" + time_day +'</div>';
+                    //relateDiv += '<div class="info-icon"></div>';
+                    //relateDiv += '<div class="info-text">';
+                    relateDiv+='<div class="infoBox"><a href="'+relateO.url+'">';
+                    if(time_year!=year){
+                        year=time_year;
+                        relateDiv+='<div class="infoDatas"><div class="infoCircle"></div><div class="year">'+year+'</div></div>';
+                    }
+                    relateDiv+='<div class="infoDatas"><div class="infoCircle"></div><div class="infoData">'+time_mouth + "/" + time_day+'</div></div>'
+                    if(relateO.imgUrl&&relateO.imgUrl!=""||relateO.img&&relateO.img!=""){
+                        //relateDiv += '<div class="text-word-img">' + relateO.title + '</div>';
+                        //relateDiv += '<div class="text-img"><img src='+ (type=="IOS"?relateO.imgUrl:relateO.img) +'></div>';
+                        relateDiv+='<div class="infoInnerbox"><div class="infoInnerL"><div class="infoTitle">'+relateO.title+'</div>';
+                        relateDiv+='<div class="infoForm">'+relateO.sourceSite+'</div></div>';
+                        relateDiv+='<div class="infoInnerR"><img src="'+(type=="IOS"?relateO.imgUrl:relateO.img)+'"></div>';
+                    }else {
+                        //relateDiv += '<div class="text-word">' + relateO.title + '</div>';
+                        relateDiv += '<div class="infoInnerbox"><div class="infoTitle">' + relateO.title + '</div><div class="infoForm">' + relateO.sourceSite + '</div>'
+                    }
+                        relateDiv += '</div></a></div>';
+                    $(".related-idea").show();
+                    $(".loadMord").show();
+                }
+                i++;
+                var rank=relateO.rank;
+                if(rank){
+                    $('.infoData').css('background','#0091fa');
+                }else{
+                    $('.infoData').css('background','#aaa');
+                }
+            }while(flag<=3);
             //alert(1);
             $(".idea-infos").append(relateDiv);
             //relateDiv.appendTo()
