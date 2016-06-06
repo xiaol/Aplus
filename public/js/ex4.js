@@ -570,7 +570,7 @@ $(function() {
                         relateDiv+='<div class="infoInnerR"><img src="'+relateO.img+'"></div>';
                     }else {
                         //relateDiv += '<div class="text-word">' + relateO.title + '</div>';
-                        relateDiv += '<div class="infoInnerbox"><div class="infoTitle">' + relateO.title + '</div><div class="infoForm">' + relateO.sourceSite + '</div>'
+                        relateDiv += '<div class="infoInnerbox"><div class="infoTitle">' + relateO.title + '</div><div class="infoForm">' + relateO.pname + '</div>'
                     }
                         relateDiv += '</div></a></div>';
                     $(".related-idea").show();
