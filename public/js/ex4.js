@@ -5,6 +5,32 @@ $(function() {
     var endNum = 3;// 结束条数
     var equiptype = "";//设备类型
     var myScroll1,bb, y,num;
+     var num;
+        var url;
+        function GetRequest() {
+            url =decodeURIComponent(location.search);//获取url中"?"符后的字串
+            console.log(url);
+            if(url.match('id=')=='id='){
+                num=url.substr(url.indexOf("id=")+2,5);
+            }else{
+                num="";
+            }
+
+            //url = "http://deeporiginalx.com/news.html?type=1&newsid=3774fcbf55929622d58e5336c51e67ad&collection=NewsItem";
+            if(url==''){
+                $(".bannerzhe").css("display","none");
+            }
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for(var i = 0; i < strs.length; i ++) {
+                    theRequest[strs[i].split("=")[0]]=strs[i].split("=")[1];
+                }return theRequest;
+            }else{
+                location.href="error.html";
+            }
+        }
     if (myScroll1 == undefined || myScroll1 == '') {
         myScroll1 = new IScroll('#wrapper1', {
             scrollbars: true,
@@ -46,7 +72,12 @@ $(function() {
             if (this.maxScrollY - this.y == 0) {
                 beginNum += 3;
                 endNum += 3;
-                getRelates(backdata,beginNum,endNum,equiptype);
+                if(url.match('nid')){
+                    getRelates(backdata,beginNum,endNum,equiptype);
+                }else if(url.match('url')){
+                    getRelate(backdata,beginNum,endNum,equiptype);
+                }
+                
                 upIcon.removeClass("reverse_icon");
             }
         });
@@ -86,32 +117,7 @@ $(function() {
     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端;
     var qq =u.indexOf('MQQBrowser') > -1;
     var webApp = u.indexOf('Safari') == -1;
-        var num;
-        var url;
-        function GetRequest() {
-            url =decodeURIComponent(location.search);//获取url中"?"符后的字串
-            console.log(url);
-            if(url.match('id=')=='id='){
-                num=url.substr(url.indexOf("id=")+2,5);
-            }else{
-                num="";
-            }
-
-            //url = "http://deeporiginalx.com/news.html?type=1&newsid=3774fcbf55929622d58e5336c51e67ad&collection=NewsItem";
-            if(url==''){
-                $(".bannerzhe").css("display","none");
-            }
-            var theRequest = new Object();
-            if (url.indexOf("?") != -1) {
-                var str = url.substr(1);
-                strs = str.split("&");
-                for(var i = 0; i < strs.length; i ++) {
-                    theRequest[strs[i].split("=")[0]]=strs[i].split("=")[1];
-                }return theRequest;
-            }else{
-                location.href="error.html";
-            }
-        }
+       
         var Request = new Object();
         Request =GetRequest();
         if(url.match('newsid')=='newsid'){
