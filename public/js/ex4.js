@@ -46,7 +46,7 @@ $(function() {
             if (this.maxScrollY - this.y == 0) {
                 beginNum += 3;
                 endNum += 3;
-                getRelate (backdata,beginNum,endNum,equiptype);
+                getRelates(backdata,beginNum,endNum,equiptype);
                 upIcon.removeClass("reverse_icon");
             }
         });
@@ -368,27 +368,6 @@ $(function() {
                     //     alert("数据请求失败");
                     // }
                 });
-
-                // $.ajax({
-                //     url:"http://api.deeporiginalx.com/bdp/news/related?url="+str,//del_html_tags(base64encode(str),"=",""),
-                //     type:"get",
-                //     cache:"false",
-                //     async:"false",
-                //     datatype:"jsonp",
-                //     jsonp: "callbackparam",
-                //     jsonpCallback:"jsonpCallback1",
-                //     contentType: "application/x-www-form-urlencoded; charset=utf-8",
-                //     success:function(data){
-                //         backdata = data;
-                //         equiptype = "IOS";
-                //         getRelate (backdata,beginNum,endNum,"IOS");
-                //         $("img").load(function(){
-                //             setTimeout(function () {
-                //                 myScroll1.refresh();
-                //             }, 100);
-                //         })
-                //     }
-                // });
             }else{
                 //安卓get
                 $.ajax({
