@@ -411,7 +411,7 @@ $(function() {
                                      var vWidth=$('.card2').width();
                                     var vWidths=cons[i][k].substr(cons[i][k].indexOf("width=")+6,3);
                                     var vHeights=cons[i][k].substr(cons[i][k].indexOf("height=")+7,3);
-                                    var vids=cons[i][k].replace(new RegExp(vWidths, 'g'),vWidth).replace(new RegExp(vHeights, 'g'),Math.ceil(vWidth*vHeights/vWidths));
+                                    var vids=cons[i][k].replace(new RegExp(vWidths, 'g'),vWidth).replace(new RegExp(vHeights, 'g'),Math.ceil(vWidth*vHeights/vWidths)).replace(new RegExp('preview.html','g'),'player.html');
                                     $("<div class='card2'></div>").attr("id","card"+i).html(vids).appendTo(".cardbox");
                                 }
                                 //}
