@@ -408,9 +408,14 @@ $(function() {
                                 }else if(k=="txt"){
                                     $("<div class='card2'></div>").attr("id","card"+i).html(cons[i][k]).appendTo(".cardbox");
                                 }else if(k=='vid'){
+                                    var vHeights;
                                      var vWidth=$('.card2').width();
                                     var vWidths=cons[i][k].substr(cons[i][k].indexOf("width=")+6,3);
-                                    var vHeights=cons[i][k].substr(cons[i][k].indexOf("height=")+7,3);
+                                    if(cons[i][k].match('data-src')=='data-src'){
+                                         vHeights=cons[i][k].substr(cons[i][k].indexOf("height=")+7,3)
+                                    }else{
+                                         vHeights=cons[i][k].substr(cons[i][k].indexOf("height=")+8,3);
+                                    }
                                     var vids=cons[i][k].replace(new RegExp(vWidths, 'g'),vWidth).replace(new RegExp(vHeights, 'g'),Math.ceil(vWidth*vHeights/vWidths)).replace(new RegExp('preview.html','g'),'player.html');
                                     $("<div class='card2'></div>").attr("id","card"+i).html(vids).appendTo(".cardbox");
                                     $("iframe").attr('height',Math.ceil(vWidth*vHeights/vWidths));
