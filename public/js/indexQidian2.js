@@ -37,6 +37,9 @@ function dates2(){
         var title,pubTime,pubName,urls,nowTime,imgLists,timeCha,nid,Authorizations,urlA;
         nowTime=getNowFormatDate();console.log(nowTime);
     var datas={"utype":2,"platform":3,"province":"北京市","city":"北京市","district":"东城区"};
+     $.ajaxSetup({
+            async: false
+        });
             $.ajax({
         url:'http://bdp.deeporiginalx.com/v2/au/sin/g',
         type:'post',
