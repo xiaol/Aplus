@@ -176,6 +176,7 @@ $(function(){
             dataType:'json',
             async:'false',
             success:function(e){
+            if(e.code==2000){
                 $("<ul class='mainBox'></ul>").insertAfter('.mainOutbox');
                 $("html,body").animate({scrollTop:0},100);
                 if($(window).width()>992){
@@ -211,11 +212,11 @@ $(function(){
                     //timeCha=data[i],pubTime;
                     pubName=data[i].pname;
                     urls=data[i].purl;
-                    //nid=data[i].nid;
+                    nid=data[i].nid;
                     //console.log(encodeURI(data[i].docid));
                     //var aUrl=del_html_tags(base64encode(urls),"=","");console.log(aUrl);
                     if(!("imgs" in data[i])){
-                        $("<a class='a' target='_blank'></a>").attr({"id":"a"+i,"href":urls}).appendTo(".mainBox");
+                        $("<a class='a' target='_blank'></a>").attr({"id":"a"+i,"href":'http://deeporiginalx.com/news.html?type=0&nid='+nid}).appendTo(".mainBox");
                         $("<li></li>").attr("id","li"+i).appendTo("#a"+i);
                         $("<p class='titleWord'></p>").html(title).appendTo("#li"+i);
                         $("<div class='fromBox'></div>").attr("id","from"+i).appendTo("#li"+i);
@@ -225,7 +226,7 @@ $(function(){
                         imgLists=data[i].imgs;
                         //alert(false)
                         if(imgLists.length==1){
-                            $("<a class='a' target='_blank'></a>").attr({"id":"a"+i,"href":urls}).appendTo(".mainBox");
+                            $("<a class='a' target='_blank'></a>").attr({"id":"a"+i,"href":'http://deeporiginalx.com/news.html?type=0&nid='+nid}).appendTo(".mainBox");
                             $("<li></li>").attr("id","li"+i).appendTo("#a"+i);
                             $("<div class='imgbox'></div>").attr("id","img"+i).appendTo("#li"+i);
                             $("<img src="+imgLists[0]+">").appendTo("#img"+i);
@@ -236,7 +237,7 @@ $(function(){
                             $("<div class='time'></div>").html(pubTime).appendTo("#from"+i);
                         }else if(imgLists.length>1){
                             //alert(1)
-                            $("<a class='a' target='_blank'></a>").attr({"id":"a"+i,"href":urls}).appendTo(".mainBox");
+                            $("<a class='a' target='_blank'></a>").attr({"id":"a"+i,"href":'http://deeporiginalx.com/news.html?type=0&nid='+nid}).appendTo(".mainBox");
                             $("<li></li>").attr("id","li"+i).appendTo("#a"+i);
                             $("<p class='titleWord'></p>").html(title).appendTo("#li"+i);
                             $("<div class='imgboxs'></div>").attr("id","tubox"+i).appendTo("#li"+i);
@@ -261,6 +262,21 @@ $(function(){
                     //alert($('.mainBox').height()+30+' auto 50px auto');
 
                 })
+            }else{
+                if($(window).width() > 992){
+                        $(".errorTitle span").html($('.sInput').val());
+                        $("#test").css("display","none");
+                        $(".wait").css("display","none");
+                        $('.errorBox').css("display","block");
+                        $(".buttonBox").css('display','none');
+                    }else{
+                        $(".phoneTest").css("display","none");
+                        $(".phoneWait").css("display","none");
+                        $('.phoneErroricon').css("display","block");
+                        $(".phoneErrorword").css("display","block");
+                        $(".buttonBox").css('display','none');
+                    }
+            }
 
             },
             error:function(){
