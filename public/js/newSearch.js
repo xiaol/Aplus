@@ -9,7 +9,7 @@ $(function(){
             $(".wait1").css("display","none");
             $("#test").css("display","block");
             $(".wait").css("display","block");
-            //$('.mainBox').remove();
+            $('.mainBox').remove();
             //$(".mainBox").remove();
             //$(".buttonBox").remove();
             //$(".buttonBox").css('display','none');
@@ -98,9 +98,9 @@ $(function(){
                 $(".phoneErrorword").css("display","none");
                 $(".phoneTest").css("display","block");
                 $(".phoneWait").css("display","block");
-                //$('.mainBox').remove();
+                $('.mainBox').remove();
                 //$(".sMainbox").css("border", "0px solid #cfcfcf");
-                $(".sMainbox li").remove();
+                // $(".sMainbox li").remove();
                 var val;
                 if (explorer.indexOf("MSIE") >= 0) {
                     val=$('.searchInput').val();
