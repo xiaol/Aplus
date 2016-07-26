@@ -115,7 +115,7 @@
 .sMainbox:first-child{
     z-index: 95;display: block;
 }
-.sMainbox>li{
+.mainBox>li{
     width: 100%;height:auto;padding: 18px 25px;border-bottom: 1px solid #cfcfcf;
 }
 .sTitle{
