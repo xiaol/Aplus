@@ -313,7 +313,7 @@ $(function(){
                     $("<div class='sTitle'></div>").html(title).appendTo("#ad" + i);
                     $("<div class='sText'></div>").html(abs).appendTo("#ad" + i);
                     $("<div class='sMore'></div>").attr("id", "mored" + i).appendTo("#ad" + i);
-                    $("<div class='sWeb'></div>").html(searchFrom).appendTo("#mored" + i);
+                    // $("<div class='sWeb'></div>").html(searchFrom).appendTo("#mored" + i);
                     $("<div class='sFrom'></div>").html(sourceSite).appendTo("#mored" + i);
                     $("<div class='sTime'></div>").html(updateTime).appendTo("#mored" + i);
                 } else {
@@ -326,7 +326,7 @@ $(function(){
                     $("<div class='imgWord'>").attr("id", "wordd" + i).appendTo("#imgboxd" + i);
                     $("<div class='sText' style='margin-top:0'>").html(abs).appendTo("#wordd" + i);
                     $("<div class='sMore'></div>").attr("id", "mored" + i).appendTo("#wordd" + i);
-                    $("<div class='sWeb'></div>").html(searchFrom).appendTo("#mored" + i);
+                    // $("<div class='sWeb'></div>").html(searchFrom).appendTo("#mored" + i);
                     $("<div class='sFrom'></div>").html(sourceSite).appendTo("#mored" + i);
                     $("<div class='sTime'></div>").html(updateTime).appendTo("#mored" + i);
                 }
