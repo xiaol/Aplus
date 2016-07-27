@@ -1,8 +1,95 @@
 $(function(){
     var explorer =navigator.userAgent ;
     var sw,total,totals,searchItems;
+    var url=location.hash;
+    var mm=new Object();
+    if(url!=''){
+        var hash=decodeURIComponent(url);
+        var hashs=hash.split("=");
+        mm[hashs[0]]=hashs[1];
+        sw=mm['#sw'];
+        if($(window).width()>992){
+            $(".sInput").val(sw);
+            $(".errorBox").css("display","none");
+            $("#test").css("display","block");
+            $(".wait").css("display","block");
+            $(".wait1").css("display","none");
+            //$(".buttonBox").remove();
+            $(".mainBox").remove();
+            //$(".sMainbox").css("border","0px solid #cfcfcf");
+            //$(".sMainbox li").remove();
+            getAjax('http://bdp.deeporiginalx.com/v2/ns/es/s?keywords='+sw+'&p=1');
+            $.ajax({
+                url:"http://fusion.deeporiginalx.com:8088/search?key="+sw,
+                type:"get",
+                dataType:"json",
+                success:function(e){
+                    searchItems=e["searchItems"];
+                }
+            })
+            $(".pagination").pagy({
+                currentPage: 1,
+                totalPages: $.cookie('totals'),
+                innerWindow: 2,
+                outerWindow: 0,
+                first: '',
+                prev: '上一页',
+                next: '下一页',
+                last: '',
+                gap: '..',
+                truncate: false,
+                page: function(page) {
+                    $(".mainBox").remove();
+                    getAjax('http://bdp.deeporiginalx.com/v2/ns/es/s?keywords='+sw+'&p='+page);
+                    setTimeout(function(){
+                        //    $('img').load(function(){
+                        getMore(searchItems,page);
+                        //})
+
+                    },8000)
+                    return true;
+                }
+            });
+        }else{
+            $(".searchInput").val(sw);
+            $(".phoneTest").css("display","block");
+            $(".phoneWait").css("display","block");
+            $(".mainBox").remove();
+            //$(".sMainbox").css("border", "0px solid #cfcfcf");
+            //$(".sMainbox li").remove();
+            getAjax('http://bdp.deeporiginalx.com/v2/ns/es/s?keywords='+sw+'&p=1');
+            $.ajax({
+                url:"http://fusion.deeporiginalx.com:8088/search?key="+sw,
+                type:"get",
+                dataType:"json",
+                success:function(e){
+                    searchItems=e["searchItems"];
+                }
+            })
+            $(".pagination").pagy({
+                currentPage: 1,
+                totalPages: $.cookie('totals'),
+                innerWindow: 0,
+                outerWindow: 1,
+                first: '',
+                prev: '<',
+                next: '>',
+                last: '',
+                gap: '..',
+                truncate: false,
+                page: function(page) {
+                    $(".mainBox").remove();
+                    getAjax('http://bdp.deeporiginalx.com/v2/ns/es/s?keywords='+sw+'&p='+page);
+                    setTimeout(function(){
+                        getMore(searchItems,page);
+                    },2000)
+                    return true;
+                }
+            });
+        }
+    }
     if($(window).width()>992){ //pc search
-        var mm=new Object();
+        // var mm=new Object();
         $(".sInput").focus();
         $(".sButton").click(function(){
             $(".errorBox").css("display","none");
@@ -83,7 +170,7 @@ $(function(){
 
         });
     }else{  //phone search
-        var mm=new Object();
+        // var mm=new Object();
         $(".searchInput").focus();
         $(".searchClose").click(function(){
             $('.searchInput').val("");
