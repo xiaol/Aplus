@@ -2,14 +2,14 @@ $(function(){
     var explorer =navigator.userAgent ;
     var url=location.hash;
     var mm=new Object();
-    if(url!=''){
+    if(url!='') {
         var hash=decodeURIComponent(url);
             var hashs=hash.split("=");
             mm[hashs[0]]=hashs[1];
             var sw=mm['#sw'];
-            if($(window).width()>992){
-               $(".sInput").val(sw);
-               $(".errorBox").css("display","none");
+        if($(window).width()>992){
+            $(".sInput").val(sw);
+            $(".errorBox").css("display","none");
             $("#test").css("display","block");
             $(".wait").css("display","block");
             $(".wait1").css("display","none");
@@ -147,7 +147,7 @@ $(function(){
                 $(".sMainbox").remove();
                 $(".sMainbox").css("border", "0px solid #cfcfcf");
                 $(".sMainbox li").remove();
-                 $.ajax({
+                $.ajax({
                     url: "http://fusion.deeporiginalx.com:8088/search?key=" + sw,
                     type: "get",
                     dataType: "json",

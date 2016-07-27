@@ -376,6 +376,7 @@ $(function(){
         })
     }
     function getMore(searchItems,page) {
+       var pages=$('.active a').html();
         if (searchItems != undefined) {
         var length = searchItems.length;
         var p = length % 3;
@@ -400,7 +401,7 @@ $(function(){
             }
         }
         var $a = ar;
-        if (page <= $a.length) {
+        if (page <= $a.length&&page==pages) {
             for (var i = 0; i < $a[page - 1].length; i++) {
                 var getId = Math.floor(Math.random() * 20);
                 var title = $a[page - 1][i]['title'];
@@ -413,7 +414,7 @@ $(function(){
                 if (imgs == "") {
                     $("<li></li>").attr("id", "s" + i).insertBefore("#a" + getId);
                     $("<a target='_blank'></a>").attr({"href": url, "id": "ad" + i}).appendTo("#s" + i);
-                    $("<div class='sTitle'></div>").html(title).appendTo("#ad" + i);
+                    $("<div class='sTitle'></div>").css('color','#0091fa').html(title).appendTo("#ad" + i);
                     $("<div class='sText'></div>").html(abs).appendTo("#ad" + i);
                     $("<div class='sMore'></div>").attr("id", "mored" + i).appendTo("#ad" + i);
                     // $("<div class='sWeb'></div>").html(searchFrom).appendTo("#mored" + i);
@@ -422,7 +423,7 @@ $(function(){
                 } else {
                     $("<li></li>").attr("id", "s" + i).insertBefore("#a" + getId);
                     $("<a target='_blank'></a>").attr({"href": url, "id": "ad" + i}).appendTo("#s" + i);
-                    $("<div class='sTitle'></div>").html(title).appendTo("#ad" + i);
+                    $("<div class='sTitle'></div>").css('color','#0091fa').html(title).appendTo("#ad" + i);
                     $("<div class='sImgbox'></div>").attr("id", "imgboxd" + i).appendTo("#ad" + i);
                     $("<div class='sImg'></div>").attr("id", "imgd" + i).appendTo("#imgboxd" + i);
                     $("<img src=" + imgs + ">").appendTo("#imgd" + i);
