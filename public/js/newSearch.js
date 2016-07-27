@@ -156,7 +156,7 @@ $(function(){
                             getAjax('http://bdp.deeporiginalx.com/v2/ns/es/s?keywords='+sw+'&p='+page);
                             setTimeout(function(){
                                 getMore(searchItems,page);
-                            },2000)
+                            },30)
                             return true;
                         }
                     });
@@ -249,7 +249,7 @@ $(function(){
                         getAjax('http://bdp.deeporiginalx.com/v2/ns/es/s?keywords='+sw+'&p='+page);
                         setTimeout(function(){
                             getMore(searchItems,page);
-                        },2000)
+                        },30)
                         return true;
                     }
                 });
