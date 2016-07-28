@@ -41,12 +41,12 @@ $(function(){
                 page: function(page) {
                     $(".mainBox").remove();
                     getAjax('http://bdp.deeporiginalx.com/v2/ns/es/s?keywords='+sw+'&p='+page);
-                    setTimeout(function(){
-                        //    $('img').load(function(){
-                        getMore(searchItems,page);
-                        //})
+                    // setTimeout(function(){
+                    //     //    $('img').load(function(){
+                    //     getMore(searchItems,page);
+                    //     //})
 
-                    },8000)
+                    // },8000)
                     return true;
                 }
             });
@@ -80,9 +80,9 @@ $(function(){
                 page: function(page) {
                     $(".mainBox").remove();
                     getAjax('http://bdp.deeporiginalx.com/v2/ns/es/s?keywords='+sw+'&p='+page);
-                    setTimeout(function(){
-                        getMore(searchItems,page);
-                    },2000)
+                    // setTimeout(function(){
+                    //     getMore(searchItems,page);
+                    // },2000)
                     return true;
                 }
             });
@@ -154,9 +154,9 @@ $(function(){
                         page: function(page) {
                             $(".mainBox").remove();
                             getAjax('http://bdp.deeporiginalx.com/v2/ns/es/s?keywords='+sw+'&p='+page);
-                            setTimeout(function(){
-                                getMore(searchItems,page);
-                            },30)
+                            // setTimeout(function(){
+                            //     getMore(searchItems,page);
+                            // },30)
                             return true;
                         }
                     });
@@ -247,9 +247,9 @@ $(function(){
                     page: function(page) {
                         $(".mainBox").remove();
                         getAjax('http://bdp.deeporiginalx.com/v2/ns/es/s?keywords='+sw+'&p='+page);
-                        setTimeout(function(){
-                            getMore(searchItems,page);
-                        },30)
+                        // setTimeout(function(){
+                        //     getMore(searchItems,page);
+                        // },30)
                         return true;
                     }
                 });
@@ -364,7 +364,7 @@ $(function(){
                         $(".buttonBox").css('display','none');
                     }
             }
-
+               searchItems?getMore(searchItems):'';
             },
             error:function(){
                 $(".errorTitle span").html($('.sInput').val());
@@ -375,7 +375,7 @@ $(function(){
             }
         })
     }
-    function getMore(searchItems,page) {
+    function getMore(searchItems) {
        var pages=$('.active a').html();
         if (searchItems != undefined) {
         var length = searchItems.length;
@@ -401,18 +401,18 @@ $(function(){
             }
         }
         var $a = ar;
-        if (page <= $a.length&&page==pages) {
-            for (var i = 0; i < $a[page - 1].length; i++) {
-                var getId = Math.floor(Math.random() * 20);
-                var title = $a[page - 1][i]['title'];
-                var url = $a[page - 1][i]['url'];
-                var abs = $a[page - 1][i]['abs'];
-                var sourceSite = $a[page - 1][i]['sourceSite'];
-                var updateTime = $a[page - 1][i]['updateTime'];
-                var searchFrom = $a[page - 1][i]['searchFrom'];
-                var imgs = $a[page - 1][i]['imgUrl'];
+        if (pages <= $a.length) {
+            for (var i = 0; i < $a[pages - 1].length; i++) {
+                // var getId = Math.floor(Math.random() * 20);
+                var title = $a[pages - 1][i]['title'];
+                var url = $a[pages - 1][i]['url'];
+                var abs = $a[pages - 1][i]['abs'];
+                var sourceSite = $a[pages - 1][i]['sourceSite'];
+                var updateTime = $a[pages - 1][i]['updateTime'];
+                var searchFrom = $a[pages - 1][i]['searchFrom'];
+                var imgs = $a[pages - 1][i]['imgUrl'];
                 if (imgs == "") {
-                    $("<li></li>").attr("id", "s" + i).insertBefore("#a" + getId);
+                    $("<li></li>").attr("id", "s" + i).insertBefore("#a" + 0);
                     $("<a target='_blank'></a>").attr({"href": url, "id": "ad" + i}).appendTo("#s" + i);
                     $("<div class='sTitle'></div>").css('color','#0091fa').html(title).appendTo("#ad" + i);
                     $("<div class='sText'></div>").html(abs).appendTo("#ad" + i);
@@ -421,7 +421,7 @@ $(function(){
                     $("<div class='sFrom'></div>").html(sourceSite).appendTo("#mored" + i);
                     $("<div class='sTime'></div>").html(updateTime).appendTo("#mored" + i);
                 } else {
-                    $("<li></li>").attr("id", "s" + i).insertBefore("#a" + getId);
+                    $("<li></li>").attr("id", "s" + i).insertBefore("#a" + 0);
                     $("<a target='_blank'></a>").attr({"href": url, "id": "ad" + i}).appendTo("#s" + i);
                     $("<div class='sTitle'></div>").css('color','#0091fa').html(title).appendTo("#ad" + i);
                     $("<div class='sImgbox'></div>").attr("id", "imgboxd" + i).appendTo("#ad" + i);
