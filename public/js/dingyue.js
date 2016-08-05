@@ -30,15 +30,15 @@ var getData='',pname,transdates;
                 var title=news[i].title;
                 var pnames=news[i].pname;
                 if(!('imgs' in news[i])){
-                    getData+=' <a href=""><li><p class="titleWord">'+title+'</p>';
+                    getData+=' <a href="http://deeporiginalx.com/news.html?type=0&nid='+nid+'"><li><p class="titleWord">'+title+'</p>';
                     getData+='<div class="fromBox"><span class="from">'+pnames+'</span></div></li></a>';
                 }else{
                     var images=news[i].imgs;
                     if(images.length==1){
-                        getData+='<a href=""><li><div class="imgbox"><img src='+images+'></div>';
+                        getData+='<a href="http://deeporiginalx.com/news.html?type=0&nid='+nid+'"><li><div class="imgbox"><img src='+images+'></div>';
                         getData+='<div class="wordBox"><p class="titleWord">'+title+'</p><div class="fromBox"><span class="from">'+pname+'</span></div></div></li></a>';
                     }else{
-                        getData+='<a href=""><li><p class="titleWord">'+title+'</p><div class="imgboxs">';
+                        getData+='<a href="http://deeporiginalx.com/news.html?type=0&nid='+nid+'"><li><p class="titleWord">'+title+'</p><div class="imgboxs">';
                         for(var j=0;j<images.length;j++){
                             getData+='<div><img src='+images[j]+'></div>';
                         }
