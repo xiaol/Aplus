@@ -33,3 +33,7 @@
 #download{
     width:67px;height:25px;border:1px solid #1a1a1a;border-radius:5px;font-size: 14px;color:#1a1a1a;text-align: center;line-height: 25px;float: right;margin-right:34px;
 }
+.yingdao{
+    width: 40%;height: auto;position: fixed;top:0px;right:5%;display:none;z-index: 99;
+}
+.yingdao img{width: 100%}
