@@ -131,6 +131,7 @@ $(function(){
             var hashs=hash.split("=");
             mm[hashs[0]]=hashs[1];
            sw=mm['#sw'];
+           searchItems='';
             getAjax('http://bdp.deeporiginalx.com/v2/ns/es/s?keywords='+sw+'&p=1');
             $.ajax({
                 url:"http://fusion.deeporiginalx.com:8088/search?key="+sw,
@@ -224,6 +225,7 @@ $(function(){
                 var hashs = hash.split("=");
                 mm[hashs[0]] = hashs[1];
                 sw =mm['#sw'];
+                searchItems='';
                 getAjax('http://bdp.deeporiginalx.com/v2/ns/es/s?keywords='+sw+'&p=1');
                 $.ajax({
                     url:"http://fusion.deeporiginalx.com:8088/search?key="+sw,
