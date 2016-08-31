@@ -4,7 +4,7 @@ $(function(){
     $('.particles').css({'width':'100%','height':window.innerHeight});
     if(window.innerWidth<992){
         $('#brain canvas').remove();
-        $('<img src="img/people-phone.png">').appendTo('#brain');
+        $('<img src="three-learn1/img/people-phone.png">').appendTo('#brain');
         $("#brain").css({'margin-left':'0','left':'0'});
     }
     var num=Math.ceil($('.particles').height()/200);
