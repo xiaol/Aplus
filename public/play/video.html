@@ -15,8 +15,15 @@
         var src=url.substring(5);
         // var win=$(window).width();
         var hei=$(window).height();
+        var vHeights;
+        var vWidth=$(window).width();
+        var vWidths=src.substr(src.indexOf("width=")+6,3);
+        vHeights=src.substr(src.indexOf("height=")+7,3);
+        var vids=src.replace(new RegExp(vWidths, 'g'),vWidth).replace(new RegExp(vHeights, 'g'),Math.ceil(vWidth*vHeights/vWidths)).replace(new RegExp('preview.html','g'),'player.html');
+        $(".iframes").attr('height',Math.ceil(vWidth*vHeights/vWidths));
+        $(".iframes").attr('width',vWidth);
         if(src.match('.html')=='.html'){
-            $(".iframes").attr({'src':src,'height':hei}).css({'display':'block','margin':'auto'});
+            $(".iframes").attr({'src':vids}).css({'display':'block','margin':'auto'});
             $(".zy_media").css("display",'none');
         }else{
             $(".sources").attr('src',src);
