@@ -13,10 +13,10 @@
             url =decodeURIComponent(location.search);//获取url中"?"符后的字串
 //            alert(url.substring(5));
         var src=url.substring(5);
-        var win=$(window).width();
+        // var win=$(window).width();
         var hei=$(window).height();
         if(src.match('.html')=='.html'){
-            $(".iframes").attr({'src':src,'height':hei,'width':win}).css({'display':'block','margin':'auto'});
+            $(".iframes").attr({'src':src,'height':hei}).css({'display':'block','margin':'auto'});
             $(".zy_media").css("display",'none');
         }else{
             $(".sources").attr('src',src);
