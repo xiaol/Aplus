@@ -408,17 +408,22 @@ $(function() {
                                 }else if(k=="txt"){
                                     $("<div class='card2'></div>").attr("id","card"+i).html(cons[i][k]).appendTo(".cardbox");
                                 }else if(k=='vid'){
-                                    var vHeights;
+                                    var vHeights,vids;
                                      var vWidth=$('.cardbox').width()*0.94;
-                                    var vWidths=cons[i][k].substr(cons[i][k].indexOf("width=")+6,3);
+                                    // var vWidths=cons[i][k].substr(cons[i][k].indexOf("width=")+6,3);
                                     if(cons[i][k].match('data-src')=='data-src'){
                                          vHeights=cons[i][k].substr(cons[i][k].indexOf("height=")+7,3)
                                     }else{
                                          vHeights=cons[i][k].substr(cons[i][k].indexOf("height=")+8,3);
                                     }
-                                    var vids=cons[i][k].replace(new RegExp(vWidths, 'g'),vWidth).replace(new RegExp(vHeights, 'g'),Math.ceil(vWidth*vHeights/vWidths)).replace(new RegExp('preview.html','g'),'player.html');
+                                    if(cons[i][k].indexOf("width=")>0){
+                                        var vWidths=cons[i][k].substr(cons[i][k].indexOf("width=")+6,3);
+                                         vids=cons[i][k].replace(new RegExp(vWidths, 'g'),vWidth).replace(new RegExp(vHeights, 'g'),Math.ceil(vWidth*vHeights/vWidths)).replace(new RegExp('preview.html','g'),'player.html');
+                                        $("iframe").attr('height',Math.ceil(vWidth*vHeights/vWidths));
+                                    }else{
+                                         vids=cons[i][k];
+                                    }
                                     $("<div class='card2'></div>").attr("id","card"+i).html(vids).appendTo(".cardbox");
-                                    $("iframe").attr('height',Math.ceil(vWidth*vHeights/vWidths));
                                     $("iframe").attr('width',vWidth);
                                 }
                                 //}
