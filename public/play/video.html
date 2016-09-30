@@ -38,7 +38,7 @@
 <!--http://video.jiecao.fm/9/9/%E5%8D%97/%E5%88%9B%E6%84%8F%E7%94%BB.mp4-->
 <!--http://v.qq.com/iframe/player.html?vid=p0327a7pt4p&width=290&height=217.5&auto=0-->
 <div class="zy_media">
-    <video poster="" data-config='{"mediaTitle": "点击播放"}'>
+    <video poster="" data-config='{"mediaTitle": ""}'>
         <source src="" type="video/mp4" class="sources">
         您的浏览器不支持HTML5视频
     </video>
@@ -47,7 +47,7 @@
 <script src="js/zy.media.min.js"></script>
 <script>
 
-    zymedia('video',{preload:'auto'});
+    zymedia('video',{preload:'auto',autoplay:true,videoHeight:$(window).height()}});
 
 </script>
 
