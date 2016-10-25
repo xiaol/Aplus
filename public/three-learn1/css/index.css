@@ -12,6 +12,9 @@ a{
 .fonts{
     font-family: Arial;
 }
+.marginRight{
+    margin-right:5%;
+}
 .page-one-nav{
     width:62.5%;height:auto;position: absolute;top:38px;left:50%;margin-left:-31.25%;z-index: 101;overflow: hidden;
 }
@@ -22,7 +25,7 @@ a{
     display: inline-block;font-size: 16px;color:rgba(255,255,255,0.7);float: right;margin-top:6px
 }
 .span-first>a{
-    display: inline-block;font-size: 16px;color:rgba(255,255,255,1);float: right;margin-top:6px;margin-right:5%;
+    display: inline-block;font-size: 16px;color:rgba(255,255,255,1);float: right;margin-top:6px;
 }
 .present{
     width:100%;height:auto;position: absolute;top:60%;
