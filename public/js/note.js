@@ -32,7 +32,7 @@ function timeDifference(dt1,dt2){
     var date3=date2-date1  //时间差的毫秒数
     var time;
     //计算出相差天数
-    //    var days=Math.floor(date3/(24*3600*1000))
+       var days=Math.floor(date3/(24*3600*1000))
     //计算出小时数
     var leave1=date3%(24*3600*1000)    //计算天数后剩余的毫秒数
     var hours=Math.floor(date3/(3600*1000))
@@ -44,11 +44,16 @@ function timeDifference(dt1,dt2){
     var seconds=Math.round(leave3/1000)
 
     if(hours>0){
-        if (minutes>0) {
+        if(hours<=72){
+            if (minutes>0) {
             time=hours+"小时 "+minutes+" 分钟前";
         }else{
             time=hours+"小时前";
         }
+    }else{
+        time=days+'天前';
+    }
+        
     }else{
         if(minutes>0){
             time=minutes+" 分钟前";

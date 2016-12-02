@@ -466,10 +466,10 @@ $(function() {
                                             var creatTime=data[i]['ctime'];
                                             var nickname=data[i]['uname'];
                                             //var love=data[i]['love'];
-                                            mainData+="<div class='comment clearfix'><div class='comment-img'> <img src="+profile+"> </div>";
+                                            mainData+="<div class='comment clearfix'><div class='comment-img'> <img src="+(profile?profile:'img/touxiangNews.png')+"> </div>";
                                             mainData+='<div class="comment-info"><div class="user-info clearfix">';
                                             mainData+='<div class="floatL"><div class="user-name">'+nickname+'</div></div>';
-                                            mainData+='<div class="floatR">' +timeDifference(dt1,creatTime)+'</div></div>';
+                                            mainData+='<div class="floatR">' +creatTime+'</div></div>';
                                             mainData+='<div class="comment-text">'+content+'</div></div></div>';
                                         }
 
