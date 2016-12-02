@@ -31,7 +31,7 @@ a{text-decoration: none}
 .idea-title{
 	width:100%;
 	height:19px;
-	border-left: 4px solid #0091fa;
+	border-left: 4px solid #fb7a12;
 	/*margin-left: 3%;*/
 	font-size: 17px;
 	color: #000;
@@ -160,7 +160,7 @@ a{text-decoration: none}
 .comments-title{
 	width:100%;
 	height: 19px;
-	border-left:4px solid #0091fa;
+	border-left:4px solid #fb7a12;
 	line-height: 19px;
 	font-size: 1.8rem;
 	color:#1a1a1a;
@@ -268,7 +268,7 @@ a{text-decoration: none}
 	width:8px;height:8px;border:1px solid #b3b3b3;border-radius: 50%;display: inline-block;line-height: 14px;float: left;margin-top: 3px;margin-left: -8px;background: #f6f6f6;
 }
 .infoData{
-	width:auto;height:100%;padding: 2px;font-size: 12px;color: #fff;background: #0091fa;float: left;
+	width:auto;height:100%;padding: 2px;font-size: 12px;color: #fff;background: #aaa;float: left;
 	margin-left: 7px;line-height: 14px;;
 }
 /*.infoDatas:first-child{*/
@@ -284,7 +284,7 @@ a{text-decoration: none}
 	width: 100%;height:auto;font-size: 10px;color:#999;margin-top: 8px;
 }
 .year{
-	font-size: 13px;color:#0091fa;background:#f6f6f6 ;padding: 0;
+	font-size: 13px;color:#fb7a12;background:#f6f6f6 ;padding: 0;
 	width:auto;height:100%;float: left;
 	margin-left: 7px;line-height: 14px;
 }

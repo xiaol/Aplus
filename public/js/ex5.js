@@ -754,7 +754,7 @@ $(function() {
                 i++;
                 var rank=relateO.rank;
                 if(rank){
-                    $('.infoData').css('background','#0091fa');
+                    $('.infoData').css('background','#aaa');
                 }else{
                     $('.infoData').css('background','#aaa');
                 }
