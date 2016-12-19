@@ -67,6 +67,7 @@ $(function() {
                 upHasClass && upIcon.removeClass("reverse_icon");
                 return "";
             }
+
         });
         myScroll1.on("scrollEnd", function () {
             if (this.maxScrollY - this.y == 0) {
@@ -79,12 +80,14 @@ $(function() {
                 // }
                 
                 upIcon.removeClass("reverse_icon");
+
             }
         });
 
     } else {
         setTimeout(function () {
             myScroll1.refresh();
+
         }, 100);
     }
     document.addEventListener('touchmove', function (e) {
@@ -436,7 +439,9 @@ $(function() {
                             setTimeout(function () {
                                             myScroll1.refresh();
                                         }, 100);
-                        })
+                        });
+                        //获取document.body.offsetHeight值
+                        $('body').height($('#scroller1').height());
                         if(commentSize){
                             $.ajax({
                                 url:"http://bdp.deeporiginalx.com/v2/ns/coms/c?did="+del_html_tags(base64encode(docid),"=",""),
@@ -770,4 +775,6 @@ $(function() {
         }
     }
     setTimeout(scrollTo,0,0,0);
+    //alert($('#scroller1').height());
+    //$('body').height($('#scroller1').height());
 });
