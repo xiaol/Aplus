@@ -22,37 +22,26 @@
             var vWidths=src.substr(src.indexOf("width=")+6,3);
             vHeights=src.substr(src.indexOf("height=")+7,3);
             var vids=src.replace(new RegExp(vWidths, 'g'),vWidth).replace(new RegExp(vHeights, 'g'),Math.ceil(vWidth*vHeights/vWidths)).replace(new RegExp('preview.html','g'),'player.html');
-            $(".iframes").attr('height',Math.ceil(vWidth*vHeights/vWidths));
-            $(".iframes").attr('width',vWidth);console.log(vids);
+            $(".iframes").attr('height',Math.ceil(vWidth*vHeights/vWidths)).attr('width',vWidth).css('margin-top',(hei-Math.ceil(vWidth*vHeights/vWidths))/2);
+
         }else{
             var vids=src;
 //            alert(vids);
+            $('.iframes').attr({'width':win,'height':win/2}).css('margin-top',(hei-win/2)/2);
+
         }
         if((src.match('youku')=='youku')||(src.match('.html')=='.html')){
 //            alert(1);
-            $(".iframes").attr({'src':vids}).css({'display':'block','margin':'auto'});
+            $(".iframes").attr({'src':vids}).css({'display':'block'});
             $(".zy_media").css("display",'none');
         }else{
             $(".sources").attr('src',src);
             $(".zy_media").css({"display":'block'});
             $(".iframes").css('display','none');
-//            $('.zy_media').
-//            zymedia('video');
         }
 
 
     })
-//    <!--function launchFullScreen(element) {-->
-//        <!--if(element.requestFullscreen) {-->
-//            <!--element.requestFullscreen();-->
-//        <!--} else if(element.mozRequestFullScreen) {-->
-//            <!--element.mozRequestFullScreen();-->
-//        <!--} else if(element.webkitRequestFullscreen) {-->
-//            <!--element.webkitRequestFullscreen();-->
-//        <!--} else if(element.msRequestFullscreen) {-->
-//            <!--element.msRequestFullscreen();-->
-//        <!--}-->
-//    <!--}-->
 
 </script>
 <style>
@@ -80,7 +69,7 @@
         object-fit: contain;
     }
 </style>
-<body>
+<body style="background:#000">
 <!--http://video.jiecao.fm/9/9/%E5%8D%97/%E5%88%9B%E6%84%8F%E7%94%BB.mp4-->
 <!--http://v.qq.com/iframe/player.html?vid=p0327a7pt4p&width=290&height=217.5&auto=0-->
 <div class="zy_media">
@@ -90,21 +79,13 @@
         您的浏览器不支持HTML5视频
     </video>
 </div>
-<input type="button"/>
-<!--<video src="http://video.jiecao.fm/9/9/%E5%8D%97/%E5%88%9B%E6%84%8F%E7%94%BB.mp4" class="videoresres"    poster=""   id="videoid" onclick="paly_('0')" width="100%"></video>-->
+
 <iframe src="" frameborder="0" allowfullscreen='true' class="iframes"></iframe>
-<!--<video src="http://video.jiecao.fm/9/6/%E7%83%A8/%E7%9B%B8%E5%A3%B0.mp4" class="videoresres"    poster=""   id="videoid" onclick="paly_('0')" width="100%" preload="auto"></video>-->
-<!--<script src="js/zy.media.min.js"></script>-->
 <script>
 
     zymedia('video',{preload:'auto',autoplay:true,success:function(){
     },videoHeight:$(window).height()});
-//    $(function(){
-//        $("input").click(function(){
-//            launchFullScreen($('video')[0]);
-//        })
-//        $("input").trigger('click');
-//    })
+
 </script>
 
 </body>
