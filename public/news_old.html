@@ -10,16 +10,14 @@
     <title>奇点资讯</title>
     <script src="js/jquery.min.js"></script>
     <link rel="stylesheet" href="css/ex.css"/>
-    <link rel="stylesheet" href="css/news2.css"/>
+    <link rel="stylesheet" href="css/news.css"/>
     <script src="js/note.js"></script>
     <script src="js/iscroll-probe.js"></script>
-    <script src="js/ex7.js"></script>
+    <script src="js/ex6.js"></script>
 </head>
 <script>
     $(function(){
-
-
-        $('body').on("touchstart", function(e) {
+       $('body').on("touchstart", function(e) {
 //        e.preventDefault();
         startX = e.originalEvent.changedTouches[0].pageX;
                 startY = e.originalEvent.changedTouches[0].pageY;
@@ -37,7 +35,6 @@ $("body").on("touchmove", function(e) {
         $(".footer").css("display","none")
     }
 })
-
     });
 
 </script>
@@ -66,7 +63,7 @@ $("body").on("touchmove", function(e) {
         -webkit-touch-callout: none;
         -webkit-user-select: text;
         -moz-user-select: text;
-        -ms-user-select: text;/
+        -ms-user-select: text;
         user-select: text;
         -webkit-text-size-adjust: none;
         -moz-text-size-adjust: none;
@@ -80,7 +77,7 @@ $("body").on("touchmove", function(e) {
         left: 0;
         width: 100%;
         text-align: center;
-        background-color: black;
+        background-color: balck;
     }
     body{
         background-color: #f6f6f6;
@@ -93,17 +90,19 @@ $("body").on("touchmove", function(e) {
     })
 </script>
 <body>
+
 <div id="wrapper1">
     <div id="scroller1">
         <!-- <div id = "scroller-pullDown" style="position: fixed;top: -43px;left: 0;width: 100%">
             <span id = "up-icon" class = "icon-double-angle-up pull-up-icon">↑↑</span>
             <span id = "pullDown-msg" class = "pull-up-msg" style="display:block;text-align: center;width: 100%;">下拉加载更多</span>
         </div> -->
-        <!--<div class="qidianTop">-->
-            <!--<div class="qidianlogo"><img src="img/qiDian.png"></div>-->
-            <!--<div class="qidianCirle"><div></div></div>-->
-            <!--<div class="qidianWord">读奇点 阅天下</div>-->
-        <!--</div>-->
+        <!-- top logo -->
+        <!-- <div class="qidianTop">
+            <div class="qidianlogo"><img src="img/qiDian.png"></div>
+            <div class="qidianCirle"><div></div></div>
+            <div class="qidianWord">读奇点 阅天下</div>
+        </div> -->
 <div class="banner" style="top:25px">
     <div class="yingdao">
         <img src="img/tishi.png">
@@ -121,10 +120,8 @@ $("body").on("touchmove", function(e) {
 <div class="cardbox" style="padding-top: 20px;">
 </div>
 <!-- 精选评论 start -->
-        <div class="elte-commentbox">
-            <div class="xiangguanVideoword">
-                <span>精选评论</span>
-            </div>
+ <div class="elte-comments">
+    <div class="comments-title">精选评论</div>
     <div class="comments">
         <!--<div class="comment clearfix">-->
             <!--<div class="comment-img"> <img src="http://photocdn.sohu.com/20160315/mp63444225_1457989131470_1.jpeg"> </div>-->
@@ -187,18 +184,72 @@ $("body").on("touchmove", function(e) {
     </div>
      </a>
 </div>
-        <!-- 精选评论 end -->
-        <!-- 相关推荐-->
-        <div class="xiangguanVideo">
-            <div class="xiangguanVideoword">
-                <span>相关推荐</span>
-            </div>
-            <div class="videoCardbox">
+<!-- 精选评论 end -->
+<!-- 相关观点 start -->
+<div class="related-idea">
+    <div class="idea-title">相关观点</div>
+    <!-- 关键字-->
+    <!--<div class="idea-tabs">-->
+        <!--<div class="idea-tab">气质搭配</div>-->
+        <!--<div class="idea-tab">气质搭</div>-->
+        <!--<div class="idea-tab">气质</div>-->
+    <!--</div>-->
+    <div class="idea-infos">
+        <!--<div class="idea-info">-->
+            <!--<div class="info-time">88/88</div>-->
+            <!--<div class="info-icon">-->
+                <!--<div class="info-line"></div>-->
+            <!--</div>-->
+            <!--<div class="info-text">-->
+                <!--<div class="text-word"></div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="infoBox">-->
 
-            </div>
-            <div class="loadMord">正在加载更多新闻...</div>
-        </div>
-        <!-- 相关观点 end -->
+            <!--<div class="infoDatas">-->
+                <!--<div class="infoCircle"></div>-->
+                <!--<div class="infoData">08/12</div>-->
+            <!--</div>-->
+            <!--<div class="infoInnerbox">-->
+                <!--<div class="infoTitle">腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技</div>-->
+                <!--<div class="infoForm">腾讯科技</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="infoBox">-->
+            <!--<a href="">-->
+            <!--<div class="infoDatas">-->
+                <!--<div class="infoCircle"></div>-->
+                <!--<div class="infoData">08/12</div>-->
+            <!--</div>-->
+            <!--<div class="infoInnerbox">-->
+                <!--<div class="infoInnerL">-->
+                <!--<div class="infoTitle">腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技</div>-->
+                <!--<div class="infoForm">腾讯科技</div>-->
+                <!--</div>-->
+                <!--<div class="infoInnerR"><img src=""></div>-->
+            <!--</div>-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--<div class="infoBox">-->
+            <!--<div class="infoDatas">-->
+                <!--<div class="infoCircle"></div>-->
+                <!--<div class="infoData year">2016</div>-->
+            <!--</div>-->
+            <!--<div class="infoDatas">-->
+                <!--<div class="infoCircle"></div>-->
+                <!--<div class="infoData">08/12</div>-->
+            <!--</div>-->
+            <!--<div class="infoInnerbox">-->
+                <!--<div class="infoTitle">腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技腾讯科技</div>-->
+                <!--<div class="infoForm">腾讯科技</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+    </div>
+    <div class="loadMord">正在加载更多新闻...</div>
+</div>
+
+<!-- 相关观点 end -->
         <div id = "scroller-pullUp1">
             <!--<span id = "up-icon" class = "icon-double-angle-up pull-up-icon">↑↑</span>-->
             <!--<span id = "pullUp-msg" class = "pull-up-msg">上拉加载更多</span>-->
@@ -234,17 +285,7 @@ $("body").on("touchmove", function(e) {
     </div>
 </div>
 <script type="text/javascript" src="branch/js/public.js"></script>
-<!--<script type="text/javascript" src="js/note.js"></script>-->
-<!--<script>-->
-    <!--if(document.all){-->
-        <!--document.onselectstart= function(){return true;}; //for ie-->
-    <!--}else{-->
-        <!--alert(1)-->
-        <!--document.onmousedown= function(){return true;};-->
-        <!--document.onmouseup= function(){return true;};-->
-    <!--}-->
-    <!--document.onselectstart = new Function('event.returnValue=true;');-->
-<!--</script>-->
+<script type="text/javascript" src="js/note.js"></script>
 </body>
 </html>
 
