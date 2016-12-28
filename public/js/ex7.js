@@ -379,23 +379,18 @@ $(function() {
                 jsonpCallback:"jsonpCallback1",
                 contentType: "application/x-www-form-urlencoded; charset=utf-8",
                 success:function(data){
-                    backdata = data;
+                    if(data.code==2000){
+                        $('.xiangguanVideo').css('display','block');
+                        backdata = data;
                     //equiptype = "IOS";
                     getRelate (backdata,beginNum,endNum,equiptype);
-
-                    //$(".year").each(function(i){
-                    //    //$($(this).html()).push(yearArr);
-                    //    //yearArr.push($(this).html())
-                    //    if($($(".year")[i+1]).html()==$(".year").html()){
-                    //        $($(".year")[i+1]).html('');
-                    //    }
-                    //})
-                    //console.log(yearArr);
                     $("img").load(function(){
                         setTimeout(function () {
                             myScroll1.refresh();
                         }, 100);
                     })
+                    }
+                    
                 }
                 // error: function () {
                 //     alert("数据请求失败");

@@ -259,7 +259,7 @@ a{text-decoration: none}
 	width: 94%;height:auto;margin:30px auto 0 auto;display: block;
 }
 .xiangguanVideo{
-	width: 94%;height:auto;margin:30px auto 0 auto;
+	width: 94%;height:auto;margin:30px auto 0 auto;display: none;
 }
 .xiangguanVideoword{
 	width:100%;height:auto;border-bottom: 1px solid #e4e4e4;padding-bottom:7px ;
