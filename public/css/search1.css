@@ -277,13 +277,13 @@
     }
 
     .searchInput{
-        width: 85%;height: 35px;border: 0;border-radius: 30px;font-size: 20px;color: #8e8e93;padding: 0 2%;
+        width: 85%;height: 35px;border: 0;border-radius: 30px;font-size: 20px;color: #8e8e93;padding: 0 13% 0 2%;
     }
     .searchInput:focus{
         outline: none;
     }
     .searchForm>div{
-        width: 13%;height: 40px;font-size:20px;color: #8e8e93;text-align: center;line-height: 35px;float: right;
+        width: 13%;height: 40px;font-size:16px;color: #8e8e93;text-align: center;line-height: 35px;float: right;
     }
     .searchIcon {
         width: 5%;

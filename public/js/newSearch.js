@@ -369,9 +369,10 @@ $(function(){
                searchItems?getMore(searchItems):'';
             },
             error:function(){
-                $(".errorTitle span").html($('.sInput').val());
+                $(".errorTitle span").html(sw);
                 $("#test").css("display","none");
                 $(".wait").css("display","none");
+                $(".phoneWait").css("display", "none");
                 $('.errorBox').css("display","block");
                 $(".buttonBox").css('display','none');
             }
