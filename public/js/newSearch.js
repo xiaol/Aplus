@@ -4,7 +4,7 @@ $(function(){
     var url=location.hash;
     var mm=new Object();
     if(url!=''){
-        var hash=url;
+        var hash=decodeURIComponent(url);
         var hashs=hash.split("=");
         mm[hashs[0]]=hashs[1];
         sw=mm['#sw'];
