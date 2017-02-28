@@ -256,7 +256,7 @@ a{text-decoration: none}
 }
 /*相关推荐*/
 .elte-commentbox{
-	width: 94%;height:auto;margin:30px auto 0 auto;display: block;
+	width: 94%;height:auto;margin:30px auto 0 auto;display: none;
 }
 .xiangguanVideo{
 	width: 94%;height:auto;margin:30px auto 0 auto;display: none;
