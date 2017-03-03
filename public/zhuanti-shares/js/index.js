@@ -77,15 +77,13 @@ $(function(){
         $(".downbtn").click(function(){
             $(".yingdao").css("display","block");
         });
-        $("#footertu").click(function(){
+    }
+    if(isAndroid){$(".downbtn a").attr("href","https://qidianapkstatic.oss-cn-beijing.aliyuncs.com/qidian_official_v3.6.3_20170303.apk");}else if(isiOS||webApp){$(".downbtn a").attr("href","https://itunes.apple.com/cn/app/tou-tiao-bai-jia/id987333155?mt=8");}else{$(".downbtn a").attr("href","http://deeporiginalx.com/");}
+    if(isWeiXin()){
+        $(".downbtn").click(function(){
             $(".yingdao").css("display","block");
-        })
-        $(".down a").click(function(){
-            $(".yingdao").css("display","block");
-        })
+            $(".downbtn a").attr('href','');
+        });
 
     }
-    if(isAndroid){if(qq){$(".downbtn a").attr("href","https://qidianapkstatic.oss-cn-beijing.aliyuncs.com/qidian_official_v3.6.3_20170303.apk");}}else if(isiOS||webApp){$(".downbtn a").attr("href","https://itunes.apple.com/cn/app/tou-tiao-bai-jia/id987333155?mt=8");}else{$(".downbtn a").attr("href","http://deeporiginalx.com/");}
-
-
 });
