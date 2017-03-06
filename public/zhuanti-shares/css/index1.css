@@ -89,23 +89,26 @@ a{
     width: auto;height:auto;float: left;margin-top:18px;margin-left:18px;
 }
 .wordBox>span{
-    font-size:18px;color:#fb7a12;vertical-align: middle;display: inline-block;
+    font-size:18px;color:#fb7a12;vertical-align: middle;display: inline-block;line-height: 18px;
 }
 .word{
-    font-size: 14px;color:#787878;margin-top:5px;
+    font-size: 14px;color:#787878;margin-top:5px;line-height: 14px;
 }
 .downbtn{
     padding: 11px 21px;font-size: 16px;color: #fff;border-radius: 4px;background: rgba(251,122,18,0.7);float: right;margin-top:18px;
 }
 .yingdao {
-    width: 60%;
+    width: 45.6%;
     height: auto;
     position: fixed;
-    top: 0px;
-    right: 5%;
+    top: 2px;
+    right: 3.3%;
     display: none;
     z-index: 99;
 }
 .yingdao>img{
     width: 100%;
+}
+.yingdao>span{
+    font-size:14px;color:#fff;position: absolute;top:45.7%;left:0;width:100%;text-align: center;line-height: 15px;
 }
