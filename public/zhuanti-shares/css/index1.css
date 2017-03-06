@@ -112,3 +112,8 @@ a{
 .yingdao>span{
     font-size:14px;color:#fff;position: absolute;top:45.7%;left:0;width:100%;text-align: center;line-height: 15px;
 }
+@media screen and (max-width: 640px){
+    .yingdao>span{
+        line-height: 14px;
+    }
+}
