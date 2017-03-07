@@ -250,6 +250,7 @@ $(function(){
             $(".related-idea").hide();
             $(".loadMord").hide();
         }
+        $('.videoPlay').css('height',($('.videoPlay').width())/1.5);
     }
     setTimeout(scrollTo,0,0,0);
 

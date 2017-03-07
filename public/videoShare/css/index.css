@@ -47,7 +47,7 @@
     width: 33.3%;height:auto;float: left;margin-left:8%;position: relative;
 }
 .videoPlay img{
-    width: 100%;
+    width: 100%;height: 100%;
 }
 .bgPlay{
     width:100%;height:auto;position: absolute;bottom:0;overflow: hidden;padding: 5px 0;background: url("../img/bgPlay.png");
