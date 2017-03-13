@@ -12,10 +12,12 @@ $(function(){
         datatype:'json',
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         success:function(data){
+            $('.load').hide();
+            if(data.code==2000){
             //var data=JSON.parse(e).data;//将字符串转化为json格式
             var imgData=data.data.topicBaseInfo.cover;
             $('.topImg img').attr('src',imgData);
-            data.data.topicBaseInfo.description==''?$('.absBox').css('display','none'):$('.absWord').html(data.data.topicBaseInfo.description);
+            data.data.topicBaseInfo.description==''?$('.absBox').css('display','none'):$('.absWord').html(data.data.topicBaseInfo.description).parent('.absBox').show();
             var topicClass=data.data.topicClass;
             for(var i in topicClass){
                 var getData='';
@@ -53,7 +55,9 @@ $(function(){
                 getData+='</div>';
                 $('.mainBox').append(getData);
             }
-
+        }else{
+            $('.error').show();
+        }
         },
         error:function(){
             alert('error');

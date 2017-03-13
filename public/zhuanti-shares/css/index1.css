@@ -12,7 +12,7 @@ a{
 }
 /*摘要*/
 .absBox{
-    width: 100%;height:auto;padding:13px 3.2%;border-bottom: 1px solid #e4e4e4;background: #f6f6f6;
+    width: 100%;height:auto;padding:13px 3.2%;border-bottom: 1px solid #e4e4e4;background: #f6f6f6;display: none;
 }
 .abs{
     font-size:12px;color: #e94220;border: 1px solid #e94220;padding: 1px;
@@ -111,6 +111,21 @@ a{
 }
 .yingdao>span{
     font-size:14px;color:#fff;position: absolute;top:45.7%;left:0;width:100%;text-align: center;line-height: 15px;
+}
+.load{
+    width:100%;height:auto;text-align:center;margin-top:30%;
+}
+.loadImg{
+    width: 20px;vertical-align: middle;
+}
+.loadWord{
+    font-size: 12px;vertical-align: middle;margin-left:5px;
+}
+.error{
+    width:100%;height:auto;text-align: center;margin-top:20%;display: none;
+}
+.error>img{
+    width:30%;
 }
 @media screen and (max-width: 640px){
     .yingdao>span{
