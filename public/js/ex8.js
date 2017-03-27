@@ -321,6 +321,9 @@ $(function() {
                             myScroll1.refresh();
                         }, 100);
                     })
+                    setTimeout(function () {
+                            myScroll1.refresh();
+                        }, 100);
                     if(commentSize){
                         $.ajax({
                             url:"http://bdp.deeporiginalx.com/v2/ns/coms/h?did="+del_html_tags(base64encode(docid),"=",""),
