@@ -40,36 +40,41 @@ function dates2(){
      $.ajaxSetup({
             async: false
         });
-            $.ajax({
-        url:'http://bdp.deeporiginalx.com/v2/au/sin/g?token=1',
-        type:'post',
-        datatype:"json",
-        data:JSON.stringify (datas),
-        contentType:'application/json',
-        success:function(data,status,xhr){
-            // console.log(data);
-            if(data.code==2000){
-                Authorizations=data.token;
-                $.cookie('Authorizations',Authorizations);
-            }else{
+            if($.cookie('uid')==null){
                 $.ajax({
                     url:'http://bdp.deeporiginalx.com/v2/au/sin/g?token=1',
                     type:'post',
-                    datatype:'json',
-                    data:JSON.stringify(datas),
+                    datatype:"json",
+                    data:JSON.stringify (datas),
                     contentType:'application/json',
                     success:function(data,status,xhr){
-                        Authorizations=data.token;
-                        $.cookie('Authorizations',Authorizations);
+                        // console.log(data);
+                        if(data.code==2000){
+                            Authorizations=data.token;
+                            $.cookie('Authorizations',Authorizations,{expires:365});
+                            $.cookie('uid',data.data.uid,{expires:365});
+                        }else{
+                            $.ajax({
+                                url:'http://bdp.deeporiginalx.com/v2/au/sin/g?token=1',
+                                type:'post',
+                                datatype:'json',
+                                data:JSON.stringify(datas),
+                                contentType:'application/json',
+                                success:function(data,status,xhr){
+                                    Authorizations=data.token;
+                                    $.cookie('Authorizations',Authorizations,{expires:365});
+                                    $.cookie('uid',data.data.uid,{expires:365});
+                                }
+                            })
+                        }
+                        //console.log(xhr.getResponseHeader('Authorization'));
+
                     }
                 })
             }
-            //console.log(xhr.getResponseHeader('Authorization'));
 
-        }
-    })
             $.ajax({
-                url:'http://bdp.deeporiginalx.com/v2/ns/fed/l?cid='+ids+"&tcr="+transdate(nowTime)+'&tmk=0',
+                url:'http://bdp.deeporiginalx.com/v2/ns/fed/l?cid='+ids+"&tcr="+transdate(nowTime)+'&tmk=0'+'&uid='+ $.cookie('uid'),
                 //url:'http://192.168.199.196:8080/json/test.json',
                 type:'get',
                 dataType:'json',

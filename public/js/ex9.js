@@ -254,8 +254,44 @@ $(function() {
         }
     }else if(type==0){
             //安卓get
+        var datas={"utype":2,"platform":3,"province":"北京市","city":"北京市","district":"东城区"};
+        $.ajaxSetup({
+            async: false
+        });
+        if($.cookie('uid')==null){
             $.ajax({
-                url:"http://bdp.deeporiginalx.com/v2/ns/con?nid="+str,//del_html_tags(base64encode(str),"=",""),
+                url:'http://bdp.deeporiginalx.com/v2/au/sin/g?token=1',
+                type:'post',
+                datatype:"json",
+                data:JSON.stringify (datas),
+                contentType:'application/json',
+                success:function(data,status,xhr){
+                    // console.log(data);
+                    if(data.code==2000){
+                        Authorizations=data.token;
+                        $.cookie('Authorizations',Authorizations,{expires:365});
+                        $.cookie('uid',data.data.uid,{expires:365});
+                    }else{
+                        $.ajax({
+                            url:'http://bdp.deeporiginalx.com/v2/au/sin/g?token=1',
+                            type:'post',
+                            datatype:'json',
+                            data:JSON.stringify(datas),
+                            contentType:'application/json',
+                            success:function(data,status,xhr){
+                                Authorizations=data.token;
+                                $.cookie('Authorizations',Authorizations,{expires:365});
+                                $.cookie('uid',data.data.uid,{expires:365});
+                            }
+                        })
+                    }
+                    //console.log(xhr.getResponseHeader('Authorization'));
+
+                }
+            })
+        }
+            $.ajax({
+                url:"http://bdp.deeporiginalx.com/v2/ns/con?nid="+str+"&uid="+$.cookie('uid'),//del_html_tags(base64encode(str),"=",""),
                 type:"get",
                 cache:"false",
                 async:"false",
