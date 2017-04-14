@@ -36,7 +36,7 @@ var getData='',pname,transdates;
                     var images=news[i].imgs;
                     if(images.length==1){
                         getData+='<a href="http://deeporiginalx.com/news.html?type=0&nid='+nid+'"><li><div class="imgbox"><img src='+images+'></div>';
-                        getData+='<div class="wordBox"><p class="titleWord">'+title+'</p><div class="fromBox"><span class="from">'+pname+'</span></div></div></li></a>';
+                        getData+='<div class="wordBox"><p class="titleWord">'+title+'</p><div class="fromBox"><span class="from">'+pnames+'</span></div></div></li></a>';
                     }else{
                         getData+='<a href="http://deeporiginalx.com/news.html?type=0&nid='+nid+'"><li><p class="titleWord">'+title+'</p><div class="imgboxs">';
                         for(var j=0;j<images.length;j++){
