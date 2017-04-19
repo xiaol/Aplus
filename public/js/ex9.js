@@ -496,7 +496,12 @@ $(function() {
                     if(time_mouth.length==1){time_mouth = "0" + time_mouth}
                     if(time_day.length==1){time_day = "0" + time_day}
                     flag++;
-                    relateDiv+='<div class="videoCard"><a href="'+relateO.url+'">';
+                    if(!("duration" in relateO)){
+                        relateDiv+='<div class="videoCard"><a href="'+relateO.url+'">';
+                    }else{
+                        relateDiv+='<div class="videoCard"><a href=http://deeporiginalx.com/videoShare/index.html?nid="'+relateO.nid+'">';
+                    }
+
                     if(relateO.img&&relateO.img!=""){
                         relateDiv+='<div class="videoWord"><div class="videoDes">'+title+'</div>';
                         relateDiv+='<div class="videoFrom">'+relateO.pname+'</div></div><div class="videoPlay"><img src="'+relateO.img+'"></div>';
