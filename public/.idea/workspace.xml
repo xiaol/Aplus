@@ -120,15 +120,15 @@
       <file leaf-file-name="ex9.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/ex9.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2443778">
-              <caret line="493" column="48" selection-start-line="493" selection-start-column="48" selection-end-line="493" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.31634182">
+              <caret line="480" column="13" selection-start-line="480" selection-start-column="13" selection-end-line="480" selection-end-column="13" />
               <folding>
                 <element signature="e#226#1836#0" expanded="false" />
                 <element signature="e#2096#2250#0" expanded="false" />
                 <element signature="e#2287#2586#0" expanded="false" />
                 <element signature="e#2948#3756#0" expanded="false" />
                 <element signature="e#4206#10179#0" expanded="false" />
-                <marker date="1492587536000" expanded="true" signature="12750:12763" placeholder="..." />
+                <marker date="1492589521000" expanded="true" signature="12750:12763" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -157,8 +157,8 @@
         <option value="$PROJECT_DIR$/search.html" />
         <option value="$PROJECT_DIR$/indexQidian.html" />
         <option value="$PROJECT_DIR$/news.html" />
-        <option value="$PROJECT_DIR$/js/ex9.js" />
         <option value="$PROJECT_DIR$/css/news2.css" />
+        <option value="$PROJECT_DIR$/js/ex9.js" />
       </list>
     </option>
   </component>
@@ -737,15 +737,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/ex9.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2443778">
-          <caret line="493" column="48" selection-start-line="493" selection-start-column="48" selection-end-line="493" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.31634182">
+          <caret line="480" column="13" selection-start-line="480" selection-start-column="13" selection-end-line="480" selection-end-column="13" />
           <folding>
             <element signature="e#226#1836#0" expanded="false" />
             <element signature="e#2096#2250#0" expanded="false" />
             <element signature="e#2287#2586#0" expanded="false" />
             <element signature="e#2948#3756#0" expanded="false" />
             <element signature="e#4206#10179#0" expanded="false" />
-            <marker date="1492587536000" expanded="true" signature="12750:12763" placeholder="..." />
+            <marker date="1492589521000" expanded="true" signature="12750:12763" placeholder="..." />
           </folding>
         </state>
       </provider>
