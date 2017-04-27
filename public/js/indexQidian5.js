@@ -34,7 +34,7 @@ function dates2(){
         $(obj).addClass("border");
         var val=$(obj).find("a").html();
         var ids=$(obj).attr("id");
-        var title,pubTime,pubName,urls,nowTime,imgLists,timeCha,nid,Authorizations,urlA;
+        var title,pubTime,pubName,urls,nowTime,imgLists,timeCha,nid,Authorizations,urlA,style;
         nowTime=getNowFormatDate();console.log(nowTime);
     var datas={"utype":2,"platform":3,"province":"北京市","city":"北京市","district":"东城区"};
      $.ajaxSetup({
@@ -74,7 +74,7 @@ function dates2(){
             }
 
             $.ajax({
-                url:'http://bdp.deeporiginalx.com/v2/ns/fed/l?cid='+ids+"&tcr="+transdate(nowTime)+'&tmk=0'+'&uid='+ $.cookie('uid'),
+                url:'http://bdp.deeporiginalx.com/v2/ns/fed/ln?cid='+ids+"&tcr="+transdate(nowTime)+'&tmk=0&t=0'+'&uid='+ $.cookie('uid'),
                 //url:'http://192.168.199.196:8080/json/test.json',
                 type:'get',
                 dataType:'json',
@@ -100,9 +100,10 @@ function dates2(){
                                 pubName=data[i].pname;
                                 //urls=data[i].url;
                                 nid=data[i].nid;
+                                style=data[i].style;
                                 //console.log(encodeURI(data[i].docid));
                                 //var aUrl=del_html_tags(base64encode(urls),"=","");console.log(aUrl);
-                                if(!("imgs" in data[i])){
+                                if(style==0){
                                     $("<a class='a' target='_blank'></a>").attr({"id":"a"+i,"href":"http://deeporiginalx.com/news.html?type=0&nid="+nid}).appendTo(".mainBox");
                                     $("<li></li>").attr("id","li"+i).appendTo("#a"+i);
                                     $("<p class='titleWord'></p>").html(title).appendTo("#li"+i);
@@ -112,7 +113,7 @@ function dates2(){
                                 }else{
                                     imgLists=data[i].imgs;
                                     //alert(false)
-                                    if(imgLists.length==1){
+                                    if(style==1){
                                         $("<a class='a' target='_blank'></a>").attr({"id":"a"+i,"href":"http://deeporiginalx.com/news.html?type=0&nid="+nid}).appendTo(".mainBox");
                                         $("<li></li>").attr("id","li"+i).appendTo("#a"+i);
                                         $("<div class='imgbox'></div>").attr("id","img"+i).appendTo("#li"+i);
@@ -122,7 +123,7 @@ function dates2(){
                                         $("<div class='fromBox'></div>").attr("id","from"+i).appendTo("#word"+i);
                                         $("<div class='from'></div>").html(pubName).appendTo("#from"+i);
                                         $("<div class='time'></div>").html(timeCha).appendTo("#from"+i);
-                                    }else if(imgLists.length>1){
+                                    }else if(style>1){
                                         //alert(1)
                                         $("<a class='a' target='_blank'></a>").attr({"id":"a"+i,"href":"http://deeporiginalx.com/news.html?type=0&nid="+nid}).appendTo(".mainBox");
                                         $("<li></li>").attr("id","li"+i).appendTo("#a"+i);

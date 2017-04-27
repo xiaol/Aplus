@@ -7,7 +7,7 @@
     <title>奇点资讯</title>
     <link rel="stylesheet" href="css/indexQidian.css"/>
     <script src="js/jquery.min.js"></script>
-    <script src="js/indexQidian4.js"></script>
+    <script src="js/indexQidian5.js"></script>
     <script src="js/note.js"></script>
      <script src="js/iscroll-probe.js"></script>
      <script src="js/jquery.cookie.js"></script>
@@ -149,85 +149,7 @@
                     //并且，由于alert会阻塞后续的动画效果，所以，
                     //添加了后面的一行代码，移除之前添加上的一个样式
                     // alert("slideDown");
-                    $(".refresh").css("display","block");
-                    var ids=$(".border").attr("id");
-                    var first=$(".first").html();
-                    $(".first").remove();
-                    var title,pubTime,pubName,urls,nowTime,imgLists;
-                    nowTime=getNowFormatDate();
-                    $.ajax({
-                        url:"http://api.deeporiginalx.com/bdp/news/refresh?cid="+ids+"&tstart="+transdate(first),
-                        type:"get",
-                        dataType:"json",
-                        success:function(e){
-                            $(".refresh").css("display","none");
-                            console.log(e);
-                            var data=e['data'];
-                            var code=e['code'];
-                            if(code==1){
-                                $("<div id='tishi'></div>").css({width:"100%",height:"20px",fontSize:"16px",textAlign:"center",lineHeight:"20px",marginTop:"10px"}).html("已加载到最新").insertBefore(".a:first()");
-                                setTimeout(function(){
-                                    $("#tishi").remove();
-                                },3000)
-                            }else if(code==0){
-                                $("<span class='first'></span>").css("display","none").html(data[0].pubTime).appendTo("body");
-                                for(var i=data.length-1;i>=0;i--){
-                                    is++;
-                                    title=data[i].title;
-                                    pubTime=data[i].pubTime;
-                                    timeCha=timeDifference(nowTime,pubTime);
-                                    pubName=data[i].pubName;
-                                    urls=data[i].url;
-                                    var aUrl=del_html_tags(base64encode(urls),"=","");
-                                    if(!("imgList" in data[i])){
-                                        $("<a class='a'></a>").attr({"id":"au"+is,"href":"http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface"}).insertBefore(".a:first()");
-                                        $("<li></li>").attr("id","liu"+is).appendTo("#au"+is);
-                                        $("<p class='titleWord'></p>").html(title).appendTo("#liu"+is);
-                                        $("<div class='fromBox'></div>").attr("id","fromu"+is).appendTo("#liu"+is);
-                                        $("<div class='from'></div>").html(pubName).appendTo("#fromu"+is);
-                                        $("<div class='time'></div>").html(timeCha).appendTo("#fromu"+is);
-                                    }else{
-                                        imgLists=data[i].imgList;
-                                        //alert(false)
-
-                                        if(imgLists.length==1){
-                                            $("<a class='a'></a>").attr({"id":"au"+is,"href":"http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface"}).insertBefore(".a:first()");
-                                            $("<li></li>").attr("id","liu"+is).appendTo("#au"+is);
-                                            $("<div class='imgbox'></div>").attr("id","imgu"+is).appendTo("#liu"+is);
-                                            $("<img src="+imgLists[0]+">").appendTo("#imgu"+is);
-                                            $("<div class='wordBox'></div>").attr("id","wordu"+is).appendTo("#liu"+is);
-                                            $("<p class='titleWord'></p>").html(title).appendTo("#wordu"+is);
-                                            $("<div class='fromBox'></div>").attr("id","fromu"+is).appendTo("#wordu"+is);
-                                            $("<div class='from'></div>").html(pubName).appendTo("#fromu"+is);
-                                            $("<div class='time'></div>").html(timeCha).appendTo("#fromu"+is);
-                                        }else if(imgLists.length>1){
-                                            //alert(1)
-                                            $("<a class='a'></a>").attr({"id":"au"+is,"href":"http://deeporiginalx.com/news.html?type=0&url="+aUrl+"&interface"}).insertBefore(".a:first()");
-                                            $("<li></li>").attr("id","liu"+is).appendTo("#au"+is);
-                                            $("<p class='titleWord'></p>").html(title).appendTo("#liu"+is);
-                                            $("<div class='imgboxs'></div>").attr("id","tuboxu"+is).appendTo("#liu"+is);
-                                            for(var j=0;j<imgLists.length;j++){
-                                                //alert(imgList.length)
-                                                $("<div><img src="+imgLists[j]+"></div>").appendTo("#tuboxu"+is);
-                                            }
-                                            $("<div class='fromBox'></div>").attr("id","fromu"+is).appendTo("#liu"+is);
-                                            $("<div class='from'></div>").html(pubName).appendTo("#fromu"+is);
-                                            $("<div class='time'></div>").html(timeCha).appendTo("#fromu"+is);
-                                        }
-                                    }
-
-                                }
-                            }
-
-                            $("img").load(function(){
-                                setTimeout(function () {
-                                    myScroll1.refresh();
-                                }, 100);
-                            })
-
-                        }
-
-                    })
+                
                     upIcon.removeClass("reverse_icon");
                 }
             });
@@ -244,10 +166,10 @@
                     var ids=$(".border").attr("id");
                     var last=$(".last").html();
                     $(".last").remove();
-                    var title,pubTime,pubName,nid,nowTime,imgLists;
+                    var title,pubTime,pubName,nid,nowTime,imgLists,style;
                     nowTime=getNowFormatDate();console.log(last)
                     $.ajax({
-                        url:"http://bdp.deeporiginalx.com/v2/ns/fed/l?cid="+ids+"&tcr="+transdate(last)+'&tmk=0',
+                        url:"http://bdp.deeporiginalx.com/v2/ns/fed/ln?cid="+ids+"&tcr="+transdate(last)+'&tmk=0&t=0'+'&uid='+ $.cookie('uid'),
                         type:"get",
                         dataType:"json",
                         beforeSend:function(request){
@@ -264,8 +186,9 @@
                                 timeCha=timeDifference(nowTime,pubTime);
                                 pubName=data[i].pname;
                                 nid=data[i].nid;
+                                style=data[i].style;
 //                                var aUrl=del_html_tags(base64encode(urls),"=","");
-                                if(!("imgs" in data[i])){
+                                if(style==0){
                                     $("<a class='a' target='_blank'></a>").attr({"id":"ad"+is,"href":"http://deeporiginalx.com/news.html?type=0&nid="+nid}).insertAfter(".a:last()");
                                     $("<li></li>").attr("id","lid"+is).appendTo("#ad"+is);
                                     $("<p class='titleWord'></p>").html(title).appendTo("#lid"+is);
@@ -276,7 +199,7 @@
                                     imgLists=data[i].imgs;
                                     //alert(false)
 
-                                    if(imgLists.length==1){
+                                    if(style==1){
                                         $("<a class='a' target='_blank'></a>").attr({"id":"ad"+is,"href":"http://deeporiginalx.com/news.html?type=0&nid="+nid}).insertAfter(".a:last()");
                                         $("<li></li>").attr("id","lid"+is).appendTo("#ad"+is);
                                         $("<div class='imgbox'></div>").attr("id","imgd"+is).appendTo("#lid"+is);
@@ -286,7 +209,7 @@
                                         $("<div class='fromBox'></div>").attr("id","fromd"+is).appendTo("#wordd"+is);
                                         $("<div class='from'></div>").html(pubName).appendTo("#fromd"+is);
                                         $("<div class='time'></div>").html(timeCha).appendTo("#fromd"+is);
-                                    }else if(imgLists.length>1){
+                                    }else if(style>1){
                                         //alert(1)
                                         $("<a class='a' target='_blank'></a>").attr({"id":"ad"+is,"href":"http://deeporiginalx.com/news.html?type=0&nid="+nid}).insertAfter(".a:last()");
                                         $("<li></li>").attr("id","lid"+is).appendTo("#ad"+is);
@@ -342,7 +265,7 @@
 </div>
 <ul class="navBox">
     <div class="jiantou"><img src="img/qiDianjiantou.png"></div>
-    <li class="border channel" id="1"><a>热点</a></li>
+    <li class="border channel" id="1"><a>奇点</a></li>
     <li class="channel" id="4"><a>科技</a></li>
     <li class="channel" id="26"><a>美女</a></li>
     <li class="channel" id="24"><a >健康</a></li>
