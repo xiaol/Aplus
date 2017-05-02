@@ -129,6 +129,7 @@ $(function(){
         var title=e['data']['title'];
         var videourl=e['data']['videourl'];
         var thumbnail=e['data']['thumbnail'];
+        var docid=e['data']['docid'];
         $('.imgPlayer').attr('poster',thumbnail).attr('src',videourl);
         //$('.zy_media').css('display','block')
         //$('.videoBox').attr('src',videourl);
