@@ -4,10 +4,10 @@
 
 if (Meteor.users.find().count() === 0) {
   var userObj = {
-      username: 'xiaol', 
-      email: 'liuxiao.in@qq.com', 
-      password: 'qpalzm4',
-      profile: {name: 'xiaol'},
+      username: 'admin', 
+      email: 'admin', 
+      password: 'admin',
+      profile: {name: 'admin'},
       roles: 'admin',
     };
   Accounts.createUser(userObj);
